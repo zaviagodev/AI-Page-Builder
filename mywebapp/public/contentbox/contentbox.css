@@ -2968,7 +2968,7 @@ body.fullview.topspace .is-content-view iframe {
   gap:4px;
   background:white;
   border-radius:7px;
-  padding:2px;
+  padding:5px;
   width:fit-content
 }
 
@@ -2985,7 +2985,7 @@ body.fullview.topspace .is-content-view iframe {
   gap:4px;
   background:white;
   border-radius:7px;
-  padding:2px;
+  padding:5px;
   width:fit-content;
   flex-wrap:wrap;
 }
@@ -3003,6 +3003,13 @@ body.fullview.topspace .is-content-view iframe {
 .dark .is-ui .is-btn {
   background: #7676803D;
   color: #fff;
+}
+
+.dark #_cbhtml button:hover, 
+.dark #_cbhtml .is-btn:hover, 
+.dark .is-ui button:hover, 
+.dark .is-ui .is-btn:hover {
+  background:#636366
 }
 
 .dark #_cbhtml .cmd-target,

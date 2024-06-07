@@ -2269,6 +2269,9 @@ button:focus-visible {
   cursor: pointer;
   box-shadow: none;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .is-modal-close .is-icon-flex {
@@ -2553,21 +2556,23 @@ button:focus-visible {
   align-items: flex-start;
 }
 
-#_cbhtml .is-modal.page-timeline .is-modal-bar,
-.is-ui .is-modal.page-timeline .is-modal-bar,
-#_cbhtml .is-modal.animatescroll .is-modal-bar,
-.is-ui .is-modal.animatescroll .is-modal-bar,
-#_cbhtml .is-modal.edittable .is-modal-bar,
-.is-ui .is-modal.edittable .is-modal-bar,
-#_cbhtml .is-modal.buttoneditor .is-modal-bar,
-.is-ui .is-modal.buttoneditor .is-modal-bar {
-  height: 70px;
+#_cbhtml .is-modal .is-modal-bar,
+.is-ui .is-modal .is-modal-bar {
+  height: 70px !important;
   font-weight:700;
   font-size:30px !important;
   display:flex;
-  padding:20px;
+  padding:20px !important;
   letter-spacing:-0.2px;
+  font-family:'Inter', sans-serif
 }
+
+#_cbhtml .is-modal.wordcount .is-modal-bar,
+.is-ui .is-modal.wordcount .is-modal-bar {
+  position:relative;
+  margin-bottom:-50px;
+}
+
 #_cbhtml .is-modal.edittable .is-modal-bar .is-modal-close,
 .is-ui .is-modal.edittable .is-modal-bar .is-modal-close {
   width: 40px;
@@ -3778,7 +3783,7 @@ button:focus-visible {
   height: 43px;
   display: block;
   background: transparent;
-  box-shadow: 0px 3px 6px -6px rgba(0, 0, 0, 0.32);
+  box-shadow: none;
 }
 #_cbhtml button.classic:hover,
 #_cbhtml .is-btn.classic:hover,
@@ -3796,9 +3801,9 @@ button:focus-visible {
   padding-left: 25px;
   padding-right: 25px;
   min-width: 110px;
-  background: #f5f5f5;
+  background: white;
   border: transparent 1px solid;
-  box-shadow: 0px 3px 6px -6px rgba(0, 0, 0, 0.32);
+  box-shadow: none;
 }
 #_cbhtml button.classic-primary:hover,
 #_cbhtml .is-btn.classic-primary:hover,
@@ -3816,7 +3821,7 @@ button:focus-visible {
   padding-left: 25px;
   padding-right: 25px;
   border: transparent 1px solid;
-  box-shadow: 0px 3px 6px -6px rgba(0, 0, 0, 0.32);
+  box-shadow: none;
 }
 #_cbhtml button.classic-secondary:hover,
 #_cbhtml .is-btn.classic-secondary:hover,
@@ -3938,7 +3943,7 @@ button:focus-visible {
 .is-ui .is-rangeslider {
   -webkit-appearance: none;
   width: 100%;
-  height: 24px;
+  height: 4px;
   background: #e3e3e3;
   outline: none;
   border: none !important;
@@ -3963,8 +3968,8 @@ button:focus-visible {
   appearance: none;
   width: 25px !important;
   height: 24px !important;
-  border-radius: 3px !important;
-  background: #0e75de;
+  border-radius: 9999px !important;
+  background: white;
   cursor: pointer;
   margin: 0 !important;
 }
@@ -3972,8 +3977,8 @@ button:focus-visible {
 .is-ui .is-rangeslider::-moz-range-thumb {
   width: 25px !important;
   height: 24px !important;
-  border-radius: 3px !important;
-  background: #0e75de;
+  border-radius: 9999px !important;
+  background: white;
   cursor: pointer;
   margin: 0 !important;
 }
@@ -6394,14 +6399,8 @@ div[data-html] {
   background:#1A1A1CE0 !important
 }
 
-.dark #_cbhtml .is-modal.page-timeline .is-modal-bar,
-.dark .is-ui .is-modal.page-timeline .is-modal-bar,
-.dark #_cbhtml .is-modal.animatescroll .is-modal-bar,
-.dark .is-ui .is-modal.animatescroll .is-modal-bar,
-.dark #_cbhtml .is-modal.edittable .is-modal-bar,
-.dark .is-ui .is-modal.edittable .is-modal-bar,
-.dark #_cbhtml .is-modal.buttoneditor .is-modal-bar,
-.dark .is-ui .is-modal.buttoneditor .is-modal-bar {
+.dark #_cbhtml .is-modal div.is-modal-bar, 
+.dark .is-ui .is-modal div.is-modal-bar {
   color:#fff
 }
 
@@ -6614,6 +6613,24 @@ i.bi, i.icon {
 .dark #_cbhtml .is-modal button.on, 
 .dark .is-ui .is-modal button.on {
   background: #636366 !important;
+}
+
+#_cbhtml .is-modal.page-command {
+  height: 400px !important;
+}
+
+#_cbhtml .is-modal.page-command > div:not(.is-modal-bar){
+  border-top-width:80px !important;
+}
+
+#_cbhtml .is-modal.page-command textarea {
+  height: 100% !important;
+}
+
+#_cbhtml .is-modal.page-command textarea + div {
+  gap:8px;
+  padding:8px;
+  display:flex;
 }
 
 /* block tool */

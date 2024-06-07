@@ -134,7 +134,14 @@ function User(props) {
 
     return <>
         <div className={styles.user}>
-
+            <div className='flex flex-col gap-2 pl-4'>
+                <h4 className='text-2xl flex items-center gap-4 font-bold'>{props.username}{props.enabled?'':<>
+                <span className='font-light text-xs text-white bg-red-700 px-3 items-center flex rounded-full h-5'>Inactive</span>
+                </>}</h4>
+                <div className='text-sm text-[#929292]'>{props.email}</div>
+            </div>
+            {props.domainName?<div className='text-sm'>{props.domainName}</div>:
+            <div className='text-sm text-gray-400'>No Domain</div>}
 
         <Menu as="div" className={styles.more}>
                 
@@ -174,13 +181,6 @@ function User(props) {
                 </Transition>
                 
             </Menu>
-
-            <h4 className='text-xl font-normal'>{props.username}{props.enabled?'':<>
-            <span className='ml-2 font-light text-sm text-red-700'>inactive</span>
-            </>}</h4>
-            <div className='mt-3 text-sm'>{props.email}</div>
-            {props.domainName?<div className='mt-3 text-sm'>{props.domainName}</div>:
-            <div className='mt-3 text-sm text-gray-400'>No Domain</div>}
         </div>
 
         <Transition appear show={settingsModalIsOpen} as={Fragment}>
@@ -270,7 +270,7 @@ function User(props) {
                                     checked={enabled}
                                     onChange={setEnabled}
                                     className={`${
-                                        enabled ? 'bg-indigo-600' : 'bg-gray-200'
+                                        enabled ? '!bg-indigo-600' : '!bg-gray-200'
                                     } relative inline-flex items-center h-7 rounded-full w-12 px-0 justify-start`}
                                     >
                                     <span className="sr-only">Active</span>
