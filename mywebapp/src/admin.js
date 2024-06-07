@@ -44,10 +44,10 @@ function Admin() {
 
     return <>
         <div className={styles.dashboard}>
-            <div className={`${isSidebarOpen ? 'bg-black/50 w-screen h-screen fixed top-0 left-0 lg:hidden z-[8]' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
-            <div className={`fixed lg:static flex flex-col items-start min-w-[256px] border-r border-r-[#F4F4F4] h-screen bg-white z-[9] ${isSidebarOpen ? 'left-0' : '-left-[100%]'}`}>
+            <div className={`${isSidebarOpen ? 'sidebar-overlay' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
+            <div className={`main-sidebar ${isSidebarOpen ? 'active' : ''}`}>
                 <div className='p-3 border-b border-b-[#F4F4F4] gap-2 w-full'>
-                    <button className='p-0 mb-4 bg-white gap-2 items-center lg:hidden' onClick={() => setIsSidebarOpen(false)}>
+                    <button className='close-sidebar-btn' onClick={() => setIsSidebarOpen(false)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevrons-left"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg>
                         Close
                     </button>
@@ -56,9 +56,9 @@ function Admin() {
                 </div>
             </div>
 
-            <div className='absolute p-4 border-b border-b-[#F4F4F4] top-0 right-0 w-full lg:w-[calc(100%_-_256px)] bg-white z-[7]'>
-                <div className='flex justify-between lg:justify-end'>
-                    <button className='p-0 bg-white lg:hidden' onClick={() => setIsSidebarOpen(true)}>
+            <div className='topbar'>
+                <div className='topbar-menu'>
+                    <button className='open-sidebar-btn' onClick={() => setIsSidebarOpen(true)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                     </button>
                     <Menu as="div" className={styles.more + ' ml-2'}>

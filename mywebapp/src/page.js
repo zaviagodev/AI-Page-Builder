@@ -322,15 +322,15 @@ function Page(props) {
     return <>
         <div className={styles.card}>
             <div className='flex flex-col gap-y-2 w-full pl-4'>
-                <h2 className='flex items-center gap-4'>{props.slug?'/'+props.slug:'/...home'}
+                <h2 className='list-title'>{props.slug?'/'+props.slug:'/...home'}
                     {props.online?<div className={styles.onlineinfo}>
                     Published
                     </div>:null} 
                 </h2>
-                <p className='text-[#929292]'>{props.title?limit(props.title, 60):''}</p>
+                <p className='list-desc'>{props.title?limit(props.title, 60):''}</p>
             </div>
 
-            <div className='w-full flex justify-end items-center'>
+            <div className='w-full flex justify-end items-center gap-2'>
 
                 {props.online?
                     props.mainHost && session.user.name!=='admin'?
@@ -436,7 +436,7 @@ function Page(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-black/50" />
+                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm modal-overlay" />
                 </Transition.Child>
 
                 {/* This element is to trick the browser into centering the modal contents. */}
@@ -492,7 +492,7 @@ function Page(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-black/50" />
+                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm modal-overlay" />
                 </Transition.Child>
 
                 {/* This element is to trick the browser into centering the modal contents. */}
@@ -587,7 +587,7 @@ function Page(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-black/50" />
+                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm modal-overlay" />
                 </Transition.Child>
 
                 {/* This element is to trick the browser into centering the modal contents. */}
