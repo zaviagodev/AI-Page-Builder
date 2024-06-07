@@ -727,7 +727,6 @@ export default function Home(props) {
               { css: "/box/box-flex.css" },
               { css: "/assets/scripts/glide/css/glide.core.css" },
               { css: "/assets/scripts/glide/css/glide.theme.css" },
-              { css: "/assets/styles/pagestudioai.css" },
               { css: "/assets/scripts/navbar/navbar.css" }]}/>
 
             <RenderCssIncludes cssIncludes={props.cssIncludes}/>

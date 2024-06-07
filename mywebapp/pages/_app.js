@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '../public/assets/styles/pagestudioai.css'
 import { SessionProvider } from "next-auth/react"
 import { Inter } from 'next/font/google'
 
