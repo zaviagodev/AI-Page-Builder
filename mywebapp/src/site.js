@@ -185,7 +185,10 @@ function Site(props) {
     }
 
     return (<>
-        <button className='button-normal w-full justify-start hover:bg-gray-100' onClick={()=>setIsOpen(true)}>Site Settings</button>
+        <button className='button-normal w-full justify-start hover:bg-gray-100 gap-2 items-center' onClick={()=>setIsOpen(true)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            Site Settings
+        </button>
         
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog
@@ -284,7 +287,7 @@ function Site(props) {
                                                             checked={customDomainOnly}
                                                             onChange={()=>{setCustomDomainOnly(!customDomainOnly)}}
                                                             className={`${
-                                                                customDomainOnly ? 'bg-indigo-600' : 'bg-gray-200'
+                                                                customDomainOnly ? '!bg-indigo-600' : '!bg-gray-200'
                                                             } relative inline-flex items-center h-7 rounded-full w-12 px-0 justify-start`}
                                                             >
                                                             <span className="sr-only">Use custom domain only</span>
@@ -339,7 +342,7 @@ function Site(props) {
                                                     checked={!noSignup}
                                                     onChange={()=>{setNoSignup(!noSignup)}}
                                                     className={`${
-                                                        !noSignup ? 'bg-indigo-600' : 'bg-gray-200'
+                                                        !noSignup ? '!bg-indigo-600' : '!bg-gray-200'
                                                     } relative inline-flex items-center h-7 rounded-full w-12 px-0 justify-start`}
                                                     >
                                                     <span className="sr-only">Enable Signup</span>

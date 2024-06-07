@@ -71,7 +71,10 @@ function Account(props) {
     }
 
     return <>
-        <button className='button-normal w-full justify-start hover:bg-gray-100' onClick={openModalHandler}>Account</button>
+        <button className='button-normal w-full justify-start hover:bg-gray-100 items-center gap-2' onClick={openModalHandler}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+            Account
+        </button>
 
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog

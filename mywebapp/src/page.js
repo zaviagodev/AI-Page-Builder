@@ -321,7 +321,7 @@ function Page(props) {
 
     return <>
         <div className={styles.card}>
-            <div className='flex flex-col gap-y-2 w-full'>
+            <div className='flex flex-col gap-y-2 w-full pl-4'>
                 <h2 className='flex items-center gap-4'>{props.slug?'/'+props.slug:'/...home'}
                     {props.online?<div className={styles.onlineinfo}>
                     Published
