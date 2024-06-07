@@ -212,7 +212,7 @@ function Site(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-black/50" />
+                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm modal-overlay" />
                 </Transition.Child>
 
                 {/* This element is to trick the browser into centering the modal contents. */}

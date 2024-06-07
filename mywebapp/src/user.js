@@ -134,13 +134,13 @@ function User(props) {
 
     return <>
         <div className={styles.user}>
-            <div className='flex flex-col gap-2 pl-4'>
+            <div className='flex flex-col gap-2 pl-4 w-1/3'>
                 <h4 className='text-2xl flex items-center gap-4 font-bold'>{props.username}{props.enabled?'':<>
                 <span className='font-light text-xs text-white bg-red-700 px-3 items-center flex rounded-full h-5'>Inactive</span>
                 </>}</h4>
                 <div className='text-sm text-[#929292]'>{props.email}</div>
             </div>
-            {props.domainName?<div className='text-sm'>{props.domainName}</div>:
+            {props.domainName?<div className='text-sm text-left'>{props.domainName}</div>:
             <div className='text-sm text-gray-400'>No Domain</div>}
 
         <Menu as="div" className={styles.more}>
@@ -202,7 +202,7 @@ function User(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-black/50" />
+                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm modal-overlay" />
                 </Transition.Child>
 
                 {/* This element is to trick the browser into centering the modal contents. */}
@@ -313,7 +313,7 @@ function User(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-black/50" />
+                <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm modal-overlay" />
                 </Transition.Child>
 
                 {/* This element is to trick the browser into centering the modal contents. */}
