@@ -329,14 +329,14 @@ export default function Home(props) {
                     // You can add more logic here to interact with the studio instance
                 };
             };
-
             const container = document.querySelector('.ai_selector')
-            var studio =  PageStudioAI(container, {
+            var studio =  new PageStudioAI(container, {
                 sendCommandUrl: '/api/sendcommand', 
                 textToImageUrl: '/api/texttoimage', 
                 upscaleImageUrl: '/api/upscaleimage',
                 enableImageGeneration: true,
                 imageAutoUpscale: true,
+                snippetsCss: 'assets/content-preview.css',
                 assetSelect: '/assets/',
                 placeholderPath: '/assets/placeholders/',
                 contentStylePath: '/assets/styles/',
@@ -727,7 +727,6 @@ export default function Home(props) {
               { css: "/box/box-flex.css" },
               { css: "/assets/scripts/glide/css/glide.core.css" },
               { css: "/assets/scripts/glide/css/glide.theme.css" },
-              { css: "/assets/styles/pagestudioai.css" },
               { css: "/assets/scripts/navbar/navbar.css" }]}/>
 
             <RenderCssIncludes cssIncludes={props.cssIncludes}/>
