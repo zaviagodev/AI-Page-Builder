@@ -1,0 +1,37 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+.type-kellyslab-yantramanav {
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1.34rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+.type-kellyslab-yantramanav h1, .type-kellyslab-yantramanav h2, .type-kellyslab-yantramanav h3, .type-kellyslab-yantramanav h4, .type-kellyslab-yantramanav h5, .type-kellyslab-yantramanav h6 {
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 2px;   
+}        
+
+.type-kellyslab-yantramanav h1 {font-size: 3.2rem;}
+.type-kellyslab-yantramanav h2 {font-size: 2.6rem;}
+.type-kellyslab-yantramanav h3 {font-size: 2.1rem;}
+.type-kellyslab-yantramanav h4 {font-size: 1.8rem;}
+.type-kellyslab-yantramanav h5 {font-size: 1.5rem;}
+.type-kellyslab-yantramanav h6 {font-size: 1.34rem;}
+
+.type-kellyslab-yantramanav .display { margin-bottom: 0.5rem; }
+.type-kellyslab-yantramanav .display h1 {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 4.3rem;
+    letter-spacing: 4px;
+    line-height: 1.1;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0.4rem 0 1rem;
+}
+.type-kellyslab-yantramanav .display p {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}

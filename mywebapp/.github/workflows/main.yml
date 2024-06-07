@@ -1,0 +1,123 @@
+name: Build & Publish
+
+on:
+  push:
+    branches:
+      - "**"             # all branches
+      - "!dependabot/**"      # exclude dependbot branches
+  
+  workflow_dispatch:      # Manually run the workflow
+env:
+  IMAGE_NAME: mywebapp
+  MAIN_HOST: ${{secrets.MAIN_HOST}}
+  NEXTAUTH_URL: ${{secrets.NEXTAUTH_URL}}
+  NEXTAUTH_SECRET: ${{secrets.NEXTAUTH_SECRET}}
+  MONGODB_HOSTNAME: ${{secrets.MONGODB_HOSTNAME}}
+  MONGODB_PORT: ${{secrets.MONGODB_PORT}}
+  MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}
+  MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+  MONGODB_DATABASE: ${{secrets.MONGODB_DATABASE}}
+  MONGODB_URI: ${{secrets.MONGODB_URI}}
+  MONGODB_CERT: ${{secrets.MONGODB_CERT}}
+  SPACES_KEY: ${{secrets.SPACES_KEY}}
+  SPACES_SECRET: ${{secrets.SPACES_SECRET}}
+  SPACES_BUCKET: ${{secrets.SPACES_BUCKET}}
+  SPACES_ENDPOINT: ${{secrets.SPACES_ENDPOINT}}
+  SPACES_URL: ${{secrets.SPACES_URL}}
+  WEB_ASSETS_PATH: ${{secrets.WEB_ASSETS_PATH}}
+  WEB_ASSETS_URL: ${{secrets.WEB_ASSETS_URL}}
+  EMAIL_SMTP: ${{secrets.EMAIL_SMTP}}
+  EMAIL_PORT: ${{secrets.EMAIL_PORT}}
+  EMAIL_USER: ${{secrets.EMAIL_USER}}
+  EMAIL_PASSWORD: ${{secrets.EMAIL_PASSWORD}}
+  EMAIL_FROM: ${{secrets.EMAIL_FROM}}
+  EMAIL_NAME: ${{secrets.EMAIL_NAME}}
+  OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
+  DG_API_KEY: ${{secrets.DG_API_KEY}}
+  GETIMG_API_KEY: ${{secrets.GETIMG_API_KEY}}
+jobs:
+  next-build:
+    if: ${{ github.event_name == 'workflow_dispatch' }}       # Run only if triggered manually
+    runs-on: ubuntu-latest
+    container: node:lts          # Use node LTS container version, same as Dockerfile base image
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2       # Checkout the code
+      - run: npm ci            #install dependencies
+      - run: npm run build
+      - name: Upload Next build          # Upload the artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: |
+            .next
+            public
+          retention-days: 7         # artifact retention duration, can be upto 30 days
+  docker-push:
+    needs: next-build        # Job depends on next-build(above) job
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+
+      - name: Log in to registry
+        # This is where you will update the PAT to GITHUB_TOKEN
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Push image
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "master" ] && VERSION=latest
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION
+          
+      - name: Deploy package to digitalocean
+        uses: appleboy/ssh-action@v0.1.4
+        env:
+          GITHUB_USERNAME: ${{secrets.USERNAME}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          envs: GITHUB_USERNAME, GITHUB_TOKEN, IMAGE_NAME, MAIN_HOST, NEXTAUTH_URL, NEXTAUTH_SECRET, MONGODB_HOSTNAME, MONGODB_PORT, MONGODB_USERNAME, MONGODB_PASSWORD, MONGODB_DATABASE, WEB_ASSETS_PATH, WEB_ASSETS_URL, EMAIL_SMTP, EMAIL_PORT, EMAIL_USER, EMAIL_PASSWORD, EMAIL_FROM, EMAIL_NAME, OPENAI_API_KEY, DG_API_KEY, GETIMG_API_KEY
+          script: |
+            docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+
+            IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+
+            # Change all uppercase to lowercase
+            IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+            # Strip git ref prefix from version
+            VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+            # Strip "v" prefix from tag name
+            [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+            # Use Docker `latest` tag convention
+            [ "$VERSION" == "master" ] && VERSION=latest
+            echo IMAGE_ID=$IMAGE_ID
+            echo VERSION=$VERSION
+
+            docker pull $IMAGE_ID:$VERSION
+            docker stop $IMAGE_NAME
+            docker system prune -f
+            docker run -v ~/uploads:/app/uploads/ --link mongodb:mongodb --env MAIN_HOST=$MAIN_HOST --env NEXTAUTH_URL=$NEXTAUTH_URL --env NEXTAUTH_SECRET=$NEXTAUTH_SECRET --env OPENAI_API_KEY=$OPENAI_API_KEY --env DG_API_KEY=$DG_API_KEY --env GETIMG_API_KEY=$GETIMG_API_KEY --env MONGODB_USERNAME=$MONGODB_USERNAME --env MONGODB_PASSWORD=$MONGODB_PASSWORD --env MONGODB_HOSTNAME=$MONGODB_HOSTNAME --env MONGODB_PORT=$MONGODB_PORT --env MONGODB_DATABASE=$MONGODB_DATABASE --env WEB_ASSETS_PATH=$WEB_ASSETS_PATH --env WEB_ASSETS_URL=$WEB_ASSETS_URL --env EMAIL_SMTP=$EMAIL_SMTP --env EMAIL_PORT=$EMAIL_PORT --env EMAIL_USER=$EMAIL_USER --env EMAIL_PASSWORD=$EMAIL_PASSWORD --env EMAIL_FROM=$EMAIL_FROM --env EMAIL_NAME=$EMAIL_NAME --restart unless-stopped --name $IMAGE_NAME -dit -p 3000:3000 $IMAGE_ID:$VERSION
+            
+            # docker run --env MAIN_HOST=$MAIN_HOST --env NEXTAUTH_URL=$NEXTAUTH_URL --env NEXTAUTH_SECRET=$NEXTAUTH_SECRET --env MONGODB_USERNAME=$MONGODB_USERNAME --env MONGODB_PASSWORD=$MONGODB_PASSWORD --env MONGODB_HOSTNAME=$MONGODB_HOSTNAME --env MONGODB_PORT=$MONGODB_PORT --env MONGODB_DATABASE=$MONGODB_DATABASE --env SPACES_KEY=$SPACES_KEY --env SPACES_SECRET=$SPACES_SECRET --env SPACES_ENDPOINT=$SPACES_ENDPOINT --env SPACES_BUCKET=$SPACES_BUCKET --env SPACES_URL=$SPACES_URL --restart unless-stopped --name $IMAGE_NAME -dit -p 3000:3000 $IMAGE_ID:$VERSION
+            # docker run -v ~/certificates:/certs --env MAIN_HOST=$MAIN_HOST --env NEXTAUTH_URL=$NEXTAUTH_URL --env NEXTAUTH_SECRET=$NEXTAUTH_SECRET --env MONGODB_USERNAME=$MONGODB_USERNAME --env MONGODB_PASSWORD=$MONGODB_PASSWORD --env MONGODB_HOSTNAME=$MONGODB_HOSTNAME --env MONGODB_PORT=$MONGODB_PORT --env MONGODB_DATABASE=$MONGODB_DATABASE --env MONGODB_URI=$MONGODB_URI --env MONGODB_CERT=/certs/ca-certificate.crt --env SPACES_KEY=$SPACES_KEY --env SPACES_SECRET=$SPACES_SECRET --env SPACES_BUCKET=$SPACES_BUCKET --env SPACES_URL=$SPACES_URL --restart unless-stopped --name $IMAGE_NAME -dit -p 3000:3000 $IMAGE_ID:$VERSION

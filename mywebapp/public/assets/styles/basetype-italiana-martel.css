@@ -1,0 +1,36 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Martel', serif;
+    font-size: 0.88rem; 
+    line-height: 1.5;
+    font-weight: 200;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}        
+
+h1 {font-size: 2.9rem;}
+h2 {font-size: 2.4rem;}
+h3 {font-size: 2rem;}
+h4 {font-size: 1.6rem;}
+h5 {font-size: 1.3rem;}
+h6 {font-size: 1.04rem;}
+
+.display { margin-bottom: 0.5rem; }
+.display h1 {
+    font-family: 'Italiana', serif;
+    font-size: 4.2rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0.4rem 0 1rem;
+}
+.display p {
+    font-family: 'Martel', serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

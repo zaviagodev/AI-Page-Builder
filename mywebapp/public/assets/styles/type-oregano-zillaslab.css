@@ -1,0 +1,37 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.type-oregano-zillaslab {
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.22rem;
+    line-height: 1.5;
+    font-weight: 300;
+}
+.type-oregano-zillaslab h1, .type-oregano-zillaslab h2, .type-oregano-zillaslab h3, .type-oregano-zillaslab h4, .type-oregano-zillaslab h5, .type-oregano-zillaslab h6 {
+    font-family: 'Oregano', cursive;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}        
+
+.type-oregano-zillaslab h1 {font-size: 3rem;}
+.type-oregano-zillaslab h2 {font-size: 2.5rem;}
+.type-oregano-zillaslab h3 {font-size: 2.1rem;}
+.type-oregano-zillaslab h4 {font-size: 1.8rem;}
+.type-oregano-zillaslab h5 {font-size: 1.5rem;}
+.type-oregano-zillaslab h6 {font-size: 1.22rem;}
+
+.type-oregano-zillaslab .display { margin-bottom: 0.5rem; }
+.type-oregano-zillaslab .display h1 {
+	font-family: 'Oregano', cursive;
+    font-size: 4rem;
+    letter-spacing: 6px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0.4rem 0 1rem;
+}
+.type-oregano-zillaslab .display p {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}

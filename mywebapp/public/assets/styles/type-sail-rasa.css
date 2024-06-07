@@ -1,0 +1,37 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rasa:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.type-sail-rasa {
+    font-family: 'Rasa', serif;
+    font-size: 1.34rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+.type-sail-rasa h1, .type-sail-rasa h2, .type-sail-rasa h3, .type-sail-rasa h4, .type-sail-rasa h5, .type-sail-rasa h6 {
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 1px;  
+}        
+
+.type-sail-rasa h1 {font-size: 3.2rem;line-height: 1.15;}
+.type-sail-rasa h2 {font-size: 2.5rem;line-height: 1.15;}
+.type-sail-rasa h3 {font-size: 2rem;}
+.type-sail-rasa h4 {font-size: 1.7rem;}
+.type-sail-rasa h5 {font-size: 1.5rem;}
+.type-sail-rasa h6 {font-size: 1.34rem;}
+
+.type-sail-rasa .display { margin-bottom: 0.5rem; }
+.type-sail-rasa .display h1 {
+    font-family: 'Sail', cursive;
+    font-size: 5.2rem;
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    margin: 0.4rem 0 1rem;
+}
+.type-sail-rasa .display p {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
