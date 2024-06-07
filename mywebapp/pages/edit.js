@@ -329,14 +329,14 @@ export default function Home(props) {
                     // You can add more logic here to interact with the studio instance
                 };
             };
-
             const container = document.querySelector('.ai_selector')
-            var studio =  PageStudioAI(container, {
+            var studio =  new PageStudioAI(container, {
                 sendCommandUrl: '/api/sendcommand', 
                 textToImageUrl: '/api/texttoimage', 
                 upscaleImageUrl: '/api/upscaleimage',
                 enableImageGeneration: true,
                 imageAutoUpscale: true,
+                snippetsCss: 'assets/content-preview.css',
                 assetSelect: '/assets/',
                 placeholderPath: '/assets/placeholders/',
                 contentStylePath: '/assets/styles/',

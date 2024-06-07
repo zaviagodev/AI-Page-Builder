@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 * {
   font-family:'Inter', sans-serif
@@ -61,47 +59,6 @@
   }
 }
 
-@layer components {
-  .button-normal {
-    @apply px-4 py-2 transform transition font-medium text-xs rounded-md bg-white text-gray-800
-    flex justify-center items-center border border-transparent focus:outline-none 
-  }
-  .button-normal[disabled] {
-    @apply bg-brand-disabled hover:bg-brand-disabled 
-    shadow-none
-  }
-  .button-primary {
-    @apply px-4 py-3 transform transition tracking-wide font-medium shadow-sm text-sm rounded-md text-white
-    flex justify-center items-center border border-transparent focus:outline-none
-  }
-  .button-secondary {
-    @apply px-4 py-2 transform transition font-normal shadow-sm text-sm rounded bg-brand hover:bg-brand-light text-gray-800
-    flex justify-center items-center border border-transparent focus:outline-none
-  }
-  .button-wait{
-    @apply px-4 py-3 transform transition tracking-wide font-medium shadow-sm text-sm rounded-md text-white
-    ease-in-out duration-150 cursor-not-allowed
-    flex justify-center items-center border border-transparent focus:outline-none
-  }
-  .button-warning {
-    @apply px-4 py-3 transform transition tracking-wide font-medium shadow-sm text-sm rounded-md bg-red-600 hover:bg-red-700 text-white
-    flex justify-center items-center border border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500
-  }
-
-  .cookie-consent {
-    background: rgba(255,255,255,0.8) !important;
-    color: #000 !important;
-    border-top: #777 1px solid !important;
-  }
-  
-  .cookie-consent button {
-    background: #ddd !important;
-    color: #000 !important;
-    font-size: 14px !important;
-    padding: 8px 20px !important;
-    margin: 5px 20px 5px 15px !important;
-  }
-}
 
 input[type=text], input[type=email], input[type=password] {
   border: none;

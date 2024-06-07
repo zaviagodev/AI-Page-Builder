@@ -3355,3 +3355,10 @@ button:focus-visible {
 /* div#headlessui-dialog-overlay-\:r3\: {
   display: none;
 } */
+
+.is-wrapper {
+  opacity: 1 !important;
+}
+body.frame-center.fullview.topspace {
+  overflow-y: scroll !important;
+}
