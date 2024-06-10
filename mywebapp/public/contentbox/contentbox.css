@@ -1665,10 +1665,6 @@ input.clr-color {
 .is-rangeslider:hover {
   opacity: 1;
 }
-.is-rangeslider:focus {
-  outline: #3e93f7 2px solid;
-  outline-offset: 2px;
-}
 .is-rangeslider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;

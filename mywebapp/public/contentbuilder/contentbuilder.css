@@ -6421,8 +6421,8 @@ div[data-html] {
 .dark .is-ui input[type=text],
 .dark #_cbhtml .is-modal button, 
 .dark .is-ui .is-modal button {
-  background: #7676803D;
-  color:#fff
+  background: #7676803D !important;
+  color:#fff !important
 }
 
 i.bi, i.icon {
@@ -6620,6 +6620,7 @@ i.bi, i.icon {
 
 #_cbhtml .is-modal.page-command textarea {
   height: 100% !important;
+  font-family:'Inter', sans-serif !important;
 }
 
 #_cbhtml .is-modal.page-command textarea + div {
@@ -6644,6 +6645,37 @@ i.bi, i.icon {
 
 #_cbhtml .is-pop.pop1, .is-ui .is-pop.pop1 {
   z-index: 10006 !important;
+}
+
+#_cbhtml .is-modal.commandconfig {
+  z-index: 10007;
+}
+
+#_cbhtml .is-modal.commandconfig .is-modal-content {
+  padding:80px 20px 20px !important;
+}
+
+#_cbhtml .input-reset,
+.is-ui .input-reset {
+  height:auto;
+  margin:12px 0;
+  background: transparent !important;
+}
+
+.is-modal.commandlist .is-modal-content > div {
+  gap:16px;
+}
+
+.is-modal.commandlist .is-modal-content > div > div {
+  margin:0 !important;
+  box-shadow:none !important;
+  background: white;
+  border: none !important;
+  padding:16px !important;
+}
+
+.dark .is-modal.commandlist .is-modal-content > div > div {
+  background:#7676803D
 }
 
 /* block tool */
