@@ -270,7 +270,7 @@ function User(props) {
                                     checked={enabled}
                                     onChange={setEnabled}
                                     className={`${
-                                        enabled ? '!bg-indigo-600' : '!bg-gray-200'
+                                        enabled ? 'bg-indigo-600' : 'bg-gray-200'
                                     } relative inline-flex items-center h-7 rounded-full w-12 px-0 justify-start`}
                                     >
                                     <span className="sr-only">Active</span>

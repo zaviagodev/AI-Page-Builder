@@ -287,7 +287,7 @@ function Site(props) {
                                                             checked={customDomainOnly}
                                                             onChange={()=>{setCustomDomainOnly(!customDomainOnly)}}
                                                             className={`${
-                                                                customDomainOnly ? '!bg-indigo-600' : '!bg-gray-200'
+                                                                customDomainOnly ? 'bg-indigo-600' : 'bg-gray-200'
                                                             } relative inline-flex items-center h-7 rounded-full w-12 px-0 justify-start`}
                                                             >
                                                             <span className="sr-only">Use custom domain only</span>
@@ -342,7 +342,7 @@ function Site(props) {
                                                     checked={!noSignup}
                                                     onChange={()=>{setNoSignup(!noSignup)}}
                                                     className={`${
-                                                        !noSignup ? '!bg-indigo-600' : '!bg-gray-200'
+                                                        !noSignup ? 'bg-indigo-600' : 'bg-gray-200'
                                                     } relative inline-flex items-center h-7 rounded-full w-12 px-0 justify-start`}
                                                     >
                                                     <span className="sr-only">Enable Signup</span>
