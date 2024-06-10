@@ -6606,6 +6606,10 @@ i.bi, i.icon {
   background: #636366 !important;
 }
 
+.dark #_cbhtml .is-modal.page-command textarea {
+  color: white;
+}
+
 #_cbhtml .is-modal.page-command {
   height: 400px !important;
 }
