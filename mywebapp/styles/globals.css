@@ -159,6 +159,19 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   color:#929292
 }
 
+.inactive {
+  font-weight:300;
+  font-size:12px;
+  color:white;
+  padding-left:12px;
+  padding-right:12px;
+  display:flex;
+  border-radius:9999px;
+  height:20px;
+  background-color: rgb(185 28 28);
+  align-items:center;
+}
+
 .open-sidebar-btn {
   padding:0;
   background-color:white;

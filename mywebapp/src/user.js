@@ -135,10 +135,10 @@ function User(props) {
     return <>
         <div className={styles.user}>
             <div className='flex flex-col gap-2 pl-4 w-1/3'>
-                <h4 className='text-2xl flex items-center gap-4 font-bold'>{props.username}{props.enabled?'':<>
-                <span className='font-light text-xs text-white bg-red-700 px-3 items-center flex rounded-full h-5'>Inactive</span>
-                </>}</h4>
-                <div className='text-sm text-[#929292]'>{props.email}</div>
+                <h2 className='list-title'>{props.username}{!props.enabled?'':<>
+                <span className='inactive'>Inactive</span>
+                </>}</h2>
+                <div className='list-desc'>{props.email}</div>
             </div>
             {props.domainName?<div className='text-sm text-left'>{props.domainName}</div>:
             <div className='text-sm text-gray-400'>No Domain</div>}
