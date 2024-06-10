@@ -46,7 +46,7 @@ function Admin() {
         <div className={styles.dashboard}>
             <div className={`${isSidebarOpen ? 'sidebar-overlay' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
             <div className={`main-sidebar ${isSidebarOpen ? 'active' : ''}`}>
-                <div className='p-3 border-b border-b-[#F4F4F4] gap-2 w-full'>
+                <div className='sidebar-menu-sec'>
                     <button className='close-sidebar-btn' onClick={() => setIsSidebarOpen(false)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevrons-left"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg>
                         Close

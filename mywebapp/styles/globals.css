@@ -93,7 +93,15 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   z-index:9;
   left:-100%;
   min-width:256px;
+}
+
+.sidebar-menu-sec {
   padding:12px;
+  border-bottom:1px solid #F4F4F4;
+  display:flex;
+  gap:8px;
+  width:100%;
+  flex-direction:column;
 }
 
 .sidebar-overlay {
