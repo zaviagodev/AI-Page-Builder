@@ -8,7 +8,7 @@ import ContentBox from '@innovastudio/contentbox';
 import { getSiteByDomain } from '../src/domain';
 import Notif from '../src/notif';
 import { RenderCssIncludes, RenderJsIncludes } from '../src/render';
-import PageStudioAI from './pagestudio.js';
+import PageStudioAI from '../pagestudio.js';
 
 
 export default function Home(props) {
