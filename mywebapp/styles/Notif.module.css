@@ -6,7 +6,7 @@
   width: 200px;
   /* left: calc(50% - 250px); */
   left: 30px;
-  background: #4e4ef5;
+  background: #2C2C2E;
   color: #fff;
   padding: 12px 22px;
   display: flex;
@@ -16,10 +16,11 @@
   letter-spacing: 1px;
   line-height: 1.4;
   z-index:100000;
+  border-radius:13px;
 }
 .wait {
   opacity: 1;
-  background: #4e4ef5;
+  background: #2C2C2E;
   color: #fff;
 }
 .error {

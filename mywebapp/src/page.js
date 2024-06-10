@@ -345,9 +345,9 @@ function Page(props) {
                     </svg>
                 </a> */}
 
-                <a className={styles.cardbutton + ' ml-2'} href={'/edit?page='+props.slug} target="_blank">Edit</a>
+                <a className={styles.cardbutton} href={'/edit?page='+props.slug} target="_blank">Edit</a>
 
-                <Menu as="div" className={styles.more + ' ml-2'}>
+                <Menu as="div" className={styles.more}>
                     
                     <Menu.Button>
                         {showSvgIcon('more', 25, 25)}
