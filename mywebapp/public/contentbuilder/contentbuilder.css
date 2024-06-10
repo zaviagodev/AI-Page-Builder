@@ -239,12 +239,10 @@ button:focus-visible {
 .is-ui {
   /*
   * { 
-      font-family:sans-serif;
       line-height: inherit;
       // Prevent overide
   } 
   */
-  font-family: sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 300;
@@ -2240,7 +2238,6 @@ button:focus-visible {
   border: none;
   box-sizing: border-box;
   text-align: center;
-  font-family: sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
   color: black;
@@ -2450,7 +2447,6 @@ button:focus-visible {
 #_cbhtml .is-modal.pickgradientcolor .is-settings > div.is-label,
 .is-ui .is-modal.pickgradientcolor .is-settings > div.is-label {
   height: auto;
-  font-family: sans-serif;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -2754,7 +2750,6 @@ button:focus-visible {
 }
 #_cbhtml .is-modal.shortcuts td,
 .is-ui .is-modal.shortcuts td {
-  font-family: sans-serif;
   font-size: 15px;
   font-weight: 300;
   padding: 7px 2px;
@@ -3673,7 +3668,6 @@ button:focus-visible {
   box-sizing: border-box;
   background: #fff;
   transition: all ease 0.3s;
-  font-family: sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
   z-index: 10003;
@@ -3726,7 +3720,6 @@ button:focus-visible {
   width: auto;
   height: 43px;
   border: none;
-  font-family: sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: 300;
@@ -3891,7 +3884,6 @@ button:focus-visible {
   height: 43px;
   box-sizing: border-box;
   margin: 0;
-  font-family: sans-serif;
   font-size: 15px;
   letter-spacing: 1px;
   padding: 0;
@@ -4105,7 +4097,6 @@ button:focus-visible {
   white-space: nowrap;
   margin: 10px 20px;
   box-sizing: border-box;
-  font-family: sans-serif;
   font-size: 11px;
   line-height: 1.8 !important;
   text-transform: uppercase;
@@ -4180,7 +4171,6 @@ button:focus-visible {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -4297,7 +4287,6 @@ button:focus-visible {
   text-align: center;
   font-size: 12px;
   cursor: pointer;
-  font-family: sans-serif;
 }
 .featured-categories.tabs,.is-sidebar-content {
   background:rgba(248, 247, 247, 0.67) !important;
@@ -4572,7 +4561,6 @@ button:focus-visible {
 #_cbhtml .elementstyles .is-settings > div.is-label,
 .is-ui .elementstyles .is-settings > div.is-label {
   height: auto;
-  font-family: sans-serif;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -4840,7 +4828,6 @@ button:focus-visible {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   letter-spacing: 1px;
   font-size: 12px;
   font-weight: 300;
@@ -5424,7 +5411,6 @@ button:focus-visible {
 .row-add-initial {
   width: 100%;
   height: 120px;
-  font-family: sans-serif;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -6650,6 +6636,10 @@ i.bi, i.icon {
 
 #_cbhtml .is-pop-overlay.pop1, .is-ui .is-pop-overlay.pop1 {
   z-index: 10005 !important;
+}
+
+#_cbhtml .is-pop.pop1, .is-ui .is-pop.pop1 {
+  z-index: 10006 !important;
 }
 
 /* block tool */

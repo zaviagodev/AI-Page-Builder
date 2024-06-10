@@ -52,9 +52,9 @@ function Dashboard(props) {
                     <Site mainHost={props.mainHost} owner={props.owner} />
                 </div>
                 <div className='sidebar-menu-sec'>
+                    <Account />
                     <AddPage onAdd={getPages} />
                     <AssetButton fileType={'all'}/>
-                    <Account />
                 </div>
             </div>
 
