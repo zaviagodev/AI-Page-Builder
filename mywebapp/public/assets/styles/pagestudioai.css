@@ -815,6 +815,10 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  margin-left:1.25rem;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
