@@ -74,12 +74,13 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 }
 
 .button-primary, .button-wait {
-  background: rgb(44, 44, 46);
+  background-color: rgb(44, 44, 46) !important;
   border-radius:13px;
+  color: white;
 }
 
 .button-wait {
-  background:rgba(44, 44, 46, 0.67)
+  background-color:rgba(44, 44, 46, 0.67) !important
 }
 
 .main-sidebar {

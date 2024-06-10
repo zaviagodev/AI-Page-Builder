@@ -100,7 +100,7 @@ function Admin() {
                 </div>
             </div>
 
-            <div className='px-5 py-8 w-full bg-front-gradient mt-[53px]'>
+            <div className='main-dashboard bg-front-gradient'>
 
                 <h1>Admin</h1>
 

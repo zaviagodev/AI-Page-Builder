@@ -102,7 +102,7 @@ function Dashboard(props) {
                 </div>
             </div>
 
-            <div className='main-dashboard'>
+            <div className='main-dashboard bg-front-gradient'>
                 <h1>Dashboard</h1>
 
                 <div className="flex flex-wrap">
