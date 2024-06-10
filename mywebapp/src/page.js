@@ -385,13 +385,13 @@ function Page(props) {
                                 )}
                             </Menu.Item>
 
-                            <div className={styles.menuseparator}></div>
+                            {/* <div className={styles.menuseparator}></div> */}
                             <Menu.Item>
                                 {({ active }) => (
                                     <button className={`${active ? styles.active : ""}`}  title={'Settings'} onClick={settingsHandler}>Settings</button>
                                 )}
                             </Menu.Item>
-                            <Menu.Item>
+                            {/* <Menu.Item>
                                 {({ active }) => (
                                     <button className={`${active ? styles.active : ""}`}  title={'Includes'} onClick={includesHandler}>Includes</button>
                                 )}
@@ -400,7 +400,7 @@ function Page(props) {
                                 {({ active }) => (
                                     <a className={`${active ? styles.active : ""}`}  title={'HTML'} target="_blank" href={`/code?page=${props.slug}`}>HTML</a>
                                 )}
-                            </Menu.Item>
+                            </Menu.Item> */}
                         
                             {props.slug?
                             <>

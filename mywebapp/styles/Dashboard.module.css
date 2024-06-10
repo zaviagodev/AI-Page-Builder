@@ -37,7 +37,7 @@
 
 .modal2 {
     @apply z-10 bg-white max-w-[800px] w-full relative rounded-[13px]
-    inline-block p-8 md:p-16 my-8 overflow-hidden text-left align-middle transition-all transform 
+    inline-block p-8 my-8 overflow-hidden text-left align-middle transition-all transform 
 }
 
 .card {
@@ -57,6 +57,10 @@
     no-underline flex justify-center items-center */
     @apply px-6 py-2.5 font-normal shadow-sm text-base rounded-full bg-[#2C2C2E] text-white h-fit
     no-underline flex justify-center items-center
+}
+
+.more {
+    @apply relative
 }
 
 .more button {

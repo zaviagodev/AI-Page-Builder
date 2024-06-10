@@ -52,7 +52,7 @@ function Dashboard(props) {
                     <Site mainHost={props.mainHost} owner={props.owner} />
                 </div>
                 <div className='sidebar-menu-sec'>
-                    <Account />
+                    {/* <Account /> */}
                     <AddPage onAdd={getPages} />
                     <AssetButton fileType={'all'}/>
                 </div>
@@ -64,10 +64,11 @@ function Dashboard(props) {
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                     </button>
                     <Menu as="div" className={styles.more + ' ml-2'}>
-                        <Menu.Button>
-                            MENU
+                        <Menu.Button className='gap-2'>
+                            Help
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
                         </Menu.Button>
-                        
+
                         <Transition
                             as={Fragment}
                             enter="transition ease-out duration-100"
@@ -80,12 +81,32 @@ function Dashboard(props) {
                             <Menu.Items className={`${styles.moremenu} focus:outline-none topbar-moremenu`}>
                                 <Menu.Item>
                                     {({ active }) => (
-                                        <button className={`${active ? styles.active : ""}`} title={'Logout'} onClick={() => window.location.href = '/admin'}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hotel"><path d="M10 22v-6.57"/><path d="M12 11h.01"/><path d="M12 7h.01"/><path d="M14 15.43V22"/><path d="M15 16a5 5 0 0 0-6 0"/><path d="M16 11h.01"/><path d="M16 7h.01"/><path d="M8 11h.01"/><path d="M8 7h.01"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-                                            Admin
+                                        <button className={`${active ? styles.active : ""}`} title={'Logout'} onClick={logoutHandler}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                                            Logout
                                         </button>
                                     )}
                                 </Menu.Item>
+                            </Menu.Items>
+
+                        </Transition>
+                        
+                    </Menu>
+                    <Menu as="div" className={styles.more + ' ml-4'}>
+                        <Menu.Button className='avatar'>
+                            A
+                        </Menu.Button>
+                        
+                        <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95">
+
+                            <Menu.Items className={`${styles.moremenu} focus:outline-none topbar-moremenu`}>
                                 <Menu.Item>
                                     {({ active }) => (
                                         <button className={`${active ? styles.active : ""}`} title={'Logout'} onClick={logoutHandler}>

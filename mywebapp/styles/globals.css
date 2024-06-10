@@ -130,18 +130,23 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 
 .topbar {
   position:absolute;
-  padding:16px;
+  padding:4px 19px;
+  height:53px;
   border-bottom:1px solid #F4F4F4;
   top:0;
   right:0;
   background-color: white;
   z-index:7;
   width:100%;
+  align-items: center;
+  display:flex;
+  justify-content: flex-end;
 }
 
 .topbar-menu {
   display:flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .topbar-moremenu {
@@ -165,6 +170,8 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   display:flex;
   align-items:center;
   gap:16px;
+  font-size:17px !important;
+  font-weight:400 !important;
 }
 
 .list-desc {
@@ -182,6 +189,13 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   height:20px;
   background-color: rgb(185 28 28);
   align-items:center;
+}
+
+.avatar {
+  height:32px;
+  width:32px;
+  background-color:lightgray !important;
+  border-radius:9999px !important;
 }
 
 .open-sidebar-btn {
