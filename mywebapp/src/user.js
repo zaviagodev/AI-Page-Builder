@@ -135,7 +135,7 @@ function User(props) {
     return <>
         <div className={styles.user}>
             <div className='flex flex-col gap-2 pl-4 w-1/3'>
-                <h2 className='list-title'>{props.username}{!props.enabled?'':<>
+                <h2 className='list-title'>{props.username}{props.enabled?'':<>
                 <span className='inactive'>Inactive</span>
                 </>}</h2>
                 <div className='list-desc'>{props.email}</div>
