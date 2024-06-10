@@ -5589,13 +5589,18 @@ button:focus-visible {
 .is-tooltip {
   position: absolute;
   display: none;
-  padding: 1px 8px;
-  font-size: 11px;
+  padding: 5px 10px;
+  font-size: 12px;
   background: #333;
-  border-radius: 0px;
+  border-radius: 9999px;
   color: #fefefe;
   z-index: 100005;
   -webkit-font-smoothing: auto;
+}
+
+.dark .is-tooltip {
+  background: #fefefe;
+  color: #333;
 }
 
 /*!
@@ -6631,6 +6636,20 @@ i.bi, i.icon {
   gap:8px;
   padding:8px;
   display:flex;
+}
+
+#_cbhtml .is-pop-overlay, .is-ui .is-pop-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+#_cbhtml .is-pop-overlay.pop1, .is-ui .is-pop-overlay.pop1 {
+  z-index: 10005 !important;
 }
 
 /* block tool */

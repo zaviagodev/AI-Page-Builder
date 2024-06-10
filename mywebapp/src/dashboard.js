@@ -77,7 +77,7 @@ function Dashboard(props) {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95">
 
-                            <Menu.Items className={`${styles.moremenu} focus:outline-none top-10`}>
+                            <Menu.Items className={`${styles.moremenu} focus:outline-none topbar-moremenu`}>
                                 <Menu.Item>
                                     {({ active }) => (
                                         <button className={`${active ? styles.active : ""}`} title={'Logout'} onClick={() => window.location.href = '/admin'}>
