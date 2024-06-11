@@ -6653,7 +6653,9 @@ i.bi, i.icon {
   z-index: 10005 !important;
 }
 
-#_cbhtml .is-pop.pop1, .is-ui .is-pop.pop1 {
+#_cbhtml .is-pop.pop1, .is-ui .is-pop.pop1,
+#_cbhtml .is-pop-overlay.pop2,
+.is-ui .is-pop-overlay.pop2 {
   z-index: 10006 !important;
 }
 

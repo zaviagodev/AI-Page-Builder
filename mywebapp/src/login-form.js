@@ -85,6 +85,7 @@ function LoginForm(props) {
             email: email,
             password: password 
         });
+        
         if(!result.error) { 
             if(props.redirect) {
                 window.location.href = props.redirect;
@@ -96,7 +97,7 @@ function LoginForm(props) {
     }
 
     return <>
-        <div className={styles.dashboard + ' mx-auto max-w-[400px] h-[50vh] flex flex-col justify-center'}>
+        <div className={styles.dashboard + ' login-form'}>
             {!forgot?<>
                 <h1>Login</h1>
 

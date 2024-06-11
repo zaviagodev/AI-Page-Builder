@@ -337,6 +337,16 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   margin-right:16px !important;
 }
 
+.login-form {
+  margin-left:auto;
+  margin-right:auto;
+  max-width:400px;
+  height:50vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
 @media (min-width: 768px){
   .main-sidebar {
     position:static;

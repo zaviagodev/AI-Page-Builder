@@ -869,11 +869,15 @@ body.controlpanel .is-content-view.mobile {
   opacity: 0;
   transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
 }
-.builder-ui .accordion-content[aria-hidden=false] {
+.builder-ui .accordion-content[aria-hidden=false],
+#contenttext1 {
   max-height: 1000px;
   opacity: 1;
   transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
 }
+
+#contenttext1 {display: block !important}
+
 .builder-ui .accordion-content.last[aria-hidden=true] {
   transition: max-height 0.2s ease-out, opacity 0.1s ease-out;
 }
