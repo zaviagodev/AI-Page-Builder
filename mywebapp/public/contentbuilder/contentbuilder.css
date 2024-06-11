@@ -594,7 +594,7 @@ button:focus-visible {
 }
 #_cbhtml .is-pop-tabs > div,
 .is-ui .is-pop-tabs > div {
-  background: #f7f7f7;
+  background: white;
   width: 50%;
   height: 30px;
   line-height: 30px;
@@ -611,7 +611,7 @@ button:focus-visible {
 }
 #_cbhtml .is-pop-tabs > div.active,
 .is-ui .is-pop-tabs > div.active {
-  background: transparent;
+  background: #f1f1f1;
   cursor: auto;
 }
 #_cbhtml .is-rte-tool,
@@ -4979,9 +4979,7 @@ button:focus-visible {
   width: 95px;
   height: 24px;
 }
-#_cbhtml .is-pop.columnmore button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.columnmore button.on,
 #_cbhtml .is-pop.columnmore button:hover {
   background-color: #f1f1f1;
 }
@@ -5015,9 +5013,7 @@ button:focus-visible {
   width: 95px;
   height: 24px;
 }
-#_cbhtml .is-pop.rowmore button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.rowmore button.on,
 #_cbhtml .is-pop.rowmore button:hover {
   background-color: #f1f1f1;
 }
@@ -5051,12 +5047,11 @@ button:focus-visible {
   width: 95px;
   height: 24px;
 }
-#_cbhtml .is-pop.elmmore button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.elmmore button.on,
 #_cbhtml .is-pop.elmmore button:hover {
   background-color: #f1f1f1;
 }
+
 #_cbhtml .is-pop.quickadd {
   width: 430px;
   box-sizing: border-box;
@@ -5065,6 +5060,8 @@ button:focus-visible {
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 #_cbhtml .is-pop.quickadd button {
   float: left;
@@ -5078,9 +5075,7 @@ button:focus-visible {
   box-shadow: none;
   border-radius: 3px;
 }
-#_cbhtml .is-pop.quickadd button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.quickadd button.on,
 #_cbhtml .is-pop.quickadd button:hover {
   background-color: #f1f1f1;
 }
@@ -6602,12 +6597,27 @@ i.bi, i.icon {
 }
 
 .dark #_cbhtml .is-modal button.on, 
-.dark .is-ui .is-modal button.on {
+.dark .is-ui .is-modal button.on,
+.dark #_cbhtml .is-pop.columnmore button.on,
+.dark #_cbhtml .is-pop.columnmore button:hover,
+.dark #_cbhtml .is-pop.rowmore button.on,
+.dark #_cbhtml .is-pop.rowmore button:hover,
+.dark #_cbhtml .is-pop.elmmore button.on,
+.dark #_cbhtml .is-pop.elmmore button:hover,
+.dark #_cbhtml .is-pop.quickadd button.on,
+.dark #_cbhtml .is-pop.quickadd button:hover {
   background: #636366 !important;
 }
 
 .dark #_cbhtml .is-modal.page-command textarea {
   color: white;
+}
+
+.dark #_cbhtml button svg,
+.dark #_cbhtml .is-btn svg,
+.dark .is-ui button svg,
+.dark .is-ui .is-btn svg {
+  fill: white;
 }
 
 #_cbhtml .is-modal.page-command {

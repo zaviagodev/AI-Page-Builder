@@ -99,9 +99,78 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   padding:12px;
   border-bottom:1px solid #F4F4F4;
   display:flex;
-  gap:8px;
+  gap:4px;
   width:100%;
   flex-direction:column;
+}
+
+.sidebar-menu-sec button {
+  font-size:12px;
+  background-color:transparent;
+  transition:background-color 150ms;
+}
+
+.sidebar-menu-sec button:hover {
+  background-color:#FAFAFC;
+  transition:background-color 150ms;
+}
+
+.sidebar-top-logo {
+  display:flex;
+  align-items:center;
+  padding:12px 14px 16px;
+  border-bottom:1px solid #F4F4F4;
+  position:relative;
+}
+
+.sidebar-top-logo .three-dots {
+  position: absolute;
+  right:14px;
+  color:#656F7D
+}
+
+.sidebar-logo {
+  min-width:37px;
+  min-height:37px;
+  position:relative;
+  width:fit-content;
+}
+
+.sidebar-logo-title {
+  font-size:18px !important;
+  line-height: 1.75rem !important;
+  font-weight:600;
+  background: linear-gradient(90deg, #6F23E7 0%, #1169E2 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar-logo-shadow {
+  width:33px;
+  height:33px;
+  position:absolute;
+  top:8px;
+  background:linear-gradient(248.71deg, rgba(251, 152, 106, 0.16) 9.18%, rgba(251, 152, 106, 0.16) 32.04%, rgba(244, 99, 173, 0.16) 50.41%, rgba(34, 85, 207, 0.16) 90.82%);
+  left:2px;
+  border-radius:5px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px -1px rgba(0, 0, 0, 0.10);
+  transition:top 150ms;
+  z-index:-1;
+}
+
+.sidebar-top-logo:hover .sidebar-logo-shadow {
+  top:12px;
+  transition:top 150ms;
+}
+
+.sidebar-site {
+  color:#5A5A5A;
+  font-weight:500;
+  letter-spacing:-0.33px;
+  font-size:11px;
+  overflow:hidden;
+  mask-image:linear-gradient(to right, white 65%, transparent 85%);
+  margin-top:-2px;
 }
 
 .sidebar-overlay {
@@ -112,6 +181,23 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   top:0;
   left:0;
   background-color:#00000080
+}
+
+.pro-button {
+  background:linear-gradient(139.97deg, rgb(0, 117, 224) -0.75%, rgb(158, 0, 233) 127.99%);
+  padding:6px;
+  display:flex;
+  color:white;
+  align-items:center;
+  font-size:13px;
+  line-height:15px;
+  font-weight:600;
+  height:26px;
+  column-gap:5px;
+  border-radius:12px;
+  margin-right:16px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  cursor:pointer;
 }
 
 .main-sidebar.active {
@@ -147,6 +233,7 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   display:flex;
   justify-content: space-between;
   align-items: center;
+  width:100%
 }
 
 .topbar-moremenu {
@@ -164,6 +251,10 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 
 .button-normal:hover {
   background-color:#F4F4F4
+}
+
+.dark .button-normal:hover {
+  background-color:#2C2C2E;
 }
 
 .list-title {
@@ -192,10 +283,15 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 }
 
 .avatar {
+  min-width:32px;
   height:32px;
   width:32px;
   background-color:lightgray !important;
   border-radius:9999px !important;
+}
+
+.avatar-group .avatar {
+  margin-right:-8px;
 }
 
 .open-sidebar-btn {
@@ -211,6 +307,36 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   align-items:center;
   gap:8px
 }
+
+.dark .sidebar-menu-sec {
+  border-color:#2C2C2E;
+}
+
+.dark .topbar,
+.dark .main-sidebar {
+  background-color:#1A1A1C;
+  color:white;
+  border-color:#2C2C2E;
+}
+
+.dark .bg-front-gradient {
+  background:#1A1A1C;
+}
+
+.dark .list-title {
+  color: white;
+}
+
+.is-sidebar-button[title='HTML']{
+  display: none !important
+}
+
+.additional-menu-btn {
+  padding:0 !important;
+  background:transparent !important;
+  margin-right:16px !important;
+}
+
 @media (min-width: 768px){
   .main-sidebar {
     position:static;

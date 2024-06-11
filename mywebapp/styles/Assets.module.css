@@ -11,6 +11,10 @@
     backdrop-filter: blur(20px)
 }
 
+:global(.dark) .tabcontent {
+    background: #1A1A1CE0;
+}
+
 /* File List */
 
 .filelist {

@@ -1953,9 +1953,6 @@ body.frame-center.controlpanel .is-content-view {
 .dark .builder-ui button svg {
   color: #fff;
 }
-.dark .builder-ui button.is-btn-color {
-  border: 1px solid transparent;
-}
 .dark .builder-ui button.on,
 .dark .builder-ui button:not(.is-btn-color):hover {
   background-color: #636366;
