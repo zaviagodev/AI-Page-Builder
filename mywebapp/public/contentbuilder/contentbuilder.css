@@ -318,7 +318,8 @@ button:focus-visible {
 }
 #_cbhtml .style-helper.snippet-tab-item-background-active,
 .is-ui .style-helper.snippet-tab-item-background-active {
-  background: whitesmoke;
+  background: #3D73FF;
+  color:white !important;
 }
 #_cbhtml .style-helper.snippet-tab-item-background-hover,
 .is-ui .style-helper.snippet-tab-item-background-hover {
@@ -2247,6 +2248,19 @@ button:focus-visible {
   line-height: 35px;
   height: 35px;
 }
+
+#_cbhtml .is-modal div.is-modal-bar::before,
+.is-ui .is-modal div.is-modal-bar::before {
+  content:'';
+  width:50px;
+  height:4px;
+  background:#6D787C;
+  position:absolute;
+  top:10px;
+  border-radius:9999px;
+  left:calc(50% - 20px)
+}
+
 #_cbhtml .is-modal div.is-modal-bar .is-modal-close,
 .is-ui .is-modal div.is-modal-bar .is-modal-close {
   z-index: 1;
@@ -3775,14 +3789,9 @@ button:focus-visible {
   width: 100%;
   height: 43px;
   display: block;
-  background: transparent;
+  background: white;
   box-shadow: none;
-}
-#_cbhtml button.classic:hover,
-#_cbhtml .is-btn.classic:hover,
-.is-ui button.classic:hover,
-.is-ui .is-btn.classic:hover {
-  background: #f1f1f1;
+  outline: none;
 }
 #_cbhtml button.classic-primary,
 #_cbhtml .is-btn.classic-primary,
@@ -3936,8 +3945,8 @@ button:focus-visible {
   -webkit-appearance: none;
   width: 100%;
   height: 4px;
-  background: #e3e3e3;
-  outline: none;
+  background: #78788052;
+  outline: none !important;
   border: none !important;
   opacity: 1;
   -webkit-transition: 0.2s;
@@ -3964,6 +3973,7 @@ button:focus-visible {
   background: white;
   cursor: pointer;
   margin: 0 !important;
+  box-shadow: 0px 6px 13px 0px #0000001F;
 }
 #_cbhtml .is-rangeslider::-moz-range-thumb,
 .is-ui .is-rangeslider::-moz-range-thumb {
@@ -3973,6 +3983,7 @@ button:focus-visible {
   background: white;
   cursor: pointer;
   margin: 0 !important;
+  box-shadow: 0px 6px 13px 0px #0000001F;
 }
 #_cbhtml .is-rangeslider::-webkit-slider-runnable-track,
 .is-ui .is-rangeslider::-webkit-slider-runnable-track {
@@ -6609,6 +6620,16 @@ i.bi, i.icon {
   background: #636366 !important;
 }
 
+.dark #_cbhtml .is-pop-tabs > div.active, 
+.dark .is-ui .is-pop-tabs > div.active {
+  background:#636366
+}
+.dark #_cbhtml .is-pop-tabs > div,
+.dark .is-ui .is-pop-tabs > div {
+  background:#7676803D;
+  color: #fff
+}
+
 .dark #_cbhtml .is-modal.page-command textarea {
   color: white;
 }
@@ -6668,7 +6689,9 @@ i.bi, i.icon {
 }
 
 #_cbhtml .input-reset,
-.is-ui .input-reset {
+.is-ui .input-reset,
+.dark #_cbhtml .input-reset,
+.dark .is-ui .input-reset {
   height:auto;
   margin:12px 0;
   background: transparent !important;
@@ -6688,6 +6711,21 @@ i.bi, i.icon {
 
 .dark .is-modal.commandlist .is-modal-content > div > div {
   background:#7676803D
+}
+
+.mega-menu {
+  height: 100% !important;
+  max-height: none !important;
+}
+
+#_cbhtml .div-assistant-mode,
+.is-ui .div-assistant-mode {
+  gap:8px;
+}
+
+#_cbhtml .div-assistant-mode button,
+.is-ui .div-assistant-mode button {
+  margin:0 !important;
 }
 
 /* block tool */

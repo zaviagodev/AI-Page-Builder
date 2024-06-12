@@ -95,6 +95,10 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   min-width:256px;
 }
 
+.dark .sidebar-menu-sec svg {
+  fill:none;
+}
+
 .sidebar-menu-sec {
   padding:12px;
   border-bottom:1px solid #F4F4F4;
@@ -104,8 +108,15 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   flex-direction:column;
 }
 
+.sidebar-menu-title {
+  color:#8A8A8A !important;
+  font-size:14px !important;
+  font-weight:400 !important;
+  padding:0 14px;
+}
+
 .sidebar-menu-sec button {
-  font-size:12px;
+  font-size:13px;
   background-color:transparent;
   transition:background-color 150ms;
 }
@@ -308,7 +319,8 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   gap:8px
 }
 
-.dark .sidebar-menu-sec {
+.dark .sidebar-menu-sec,
+.dark .sidebar-top-logo {
   border-color:#2C2C2E;
 }
 
@@ -323,7 +335,8 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   background:#1A1A1C;
 }
 
-.dark .list-title {
+.dark .list-title,
+.dark .sidebar-site {
   color: white;
 }
 

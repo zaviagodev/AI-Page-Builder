@@ -877,6 +877,11 @@ body.controlpanel .is-content-view.mobile {
 }
 
 #contenttext1 {display: block !important}
+[aria-controls='contenttext1'] {
+  cursor: default !important;
+  background:transparent !important;
+}
+[aria-controls='contenttext1'] span {display: none !important}
 
 .builder-ui .accordion-content.last[aria-hidden=true] {
   transition: max-height 0.2s ease-out, opacity 0.1s ease-out;

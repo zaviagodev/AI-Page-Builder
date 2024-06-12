@@ -149,6 +149,10 @@ function Dashboard(props) {
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevrons-left"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg>
                         Close
                     </button>
+                    <button className='button-normal w-full justify-start items-center gap-2' onClick={() => {}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-hotel"><path d="M10 22v-6.57"/><path d="M12 11h.01"/><path d="M12 7h.01"/><path d="M14 15.43V22"/><path d="M15 16a5 5 0 0 0-6 0"/><path d="M16 11h.01"/><path d="M16 7h.01"/><path d="M8 11h.01"/><path d="M8 7h.01"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+                        Dashboard
+                    </button>
                     <button className='button-normal w-full justify-start items-center gap-2' onClick={() => window.open("/", {target: "_blank"})}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-app-window"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></svg>
                         View Site
@@ -157,7 +161,12 @@ function Dashboard(props) {
                 </div>
 
                 <div className='sidebar-menu-sec'>
+                    <h2 className='sidebar-menu-title'>Your workspace</h2>
                     {/* <Account /> */}
+                    <button className='button-normal w-full justify-start items-center gap-2' onClick={() => {}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-panel-left"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+                        Pages
+                    </button>
                     <AddPage onAdd={getPages} />
                     <AssetButton fileType={'all'}/>
                 </div>
