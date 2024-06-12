@@ -1,3 +1,20 @@
+*::-webkit-scrollbar {
+  width:8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2C2C2EB0 !important;
+  border-radius:9999px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: #F8F7F7B0;
+}
+
 .dark .is-builder[gridoutline] > div > div {
   outline: 1px solid rgba(132, 132, 132, 0.27);
 }
@@ -74,15 +91,15 @@
 }
 .dark #_cbhtml .style-helper.snippet-background,
 .dark .is-ui .style-helper.snippet-background {
-  background: #cacaca;
+  background: #1A1A1C;
 }
 .dark #_cbhtml .style-helper.snippet-tabs-background,
 .dark .is-ui .style-helper.snippet-tabs-background {
-  background: #4e4e4e;
+  background: #1A1A1C;
 }
 .dark #_cbhtml .style-helper.snippet-tab-item-background,
 .dark .is-ui .style-helper.snippet-tab-item-background {
-  background: rgba(129, 129, 129, 0.55);
+  background: #2C2C2E
 }
 .dark #_cbhtml .style-helper.snippet-tab-item-background-active,
 .dark .is-ui .style-helper.snippet-tab-item-background-active {
@@ -173,7 +190,6 @@
 .dark #_cbhtml .is-area-2nd,
 .dark .is-ui .is-area-2nd {
   color: #fafafa !important;
-  background: #cacaca !important;
 }
 .dark #_cbhtml .is-area-2nd button,
 .dark .is-ui .is-area-2nd button {
@@ -186,14 +202,13 @@
 .dark #_cbhtml .is-pop,
 .dark .is-ui .is-pop {
   color: #fafafa;
-  background: #343434;
-  border: 1px solid #343434;
+  background: #1A1A1CE0;
+  backdrop-filter: blur(20px);
   box-shadow: 4px 17px 20px 0px rgba(0, 0, 0, 0.08);
 }
 .dark #_cbhtml .is-pop button,
 .dark .is-ui .is-pop button {
   color: #fafafa;
-  background-color: transparent !important;
 }
 .dark #_cbhtml .is-pop button svg,
 .dark .is-ui .is-pop button svg {
@@ -546,7 +561,7 @@
 .dark .is-ui .is-modal.is-modal-content,
 .dark .is-ui .is-modal .is-modal-content {
   color: #fafafa;
-  background: #343434;
+  background: #1A1A1CE0;
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 4px 17px 20px 0px rgba(0, 0, 0, 0.23);
@@ -560,7 +575,7 @@
 .dark #_cbhtml .is-modal:not(.is-modal-content) > div:not(.is-modal-overlay),
 .dark .is-ui .is-modal:not(.is-modal-content) > div:not(.is-modal-overlay) {
   color: #fafafa;
-  background: #343434;
+  background: #1A1A1CE0;
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 4px 17px 20px 0px rgba(0, 0, 0, 0.23);
@@ -606,7 +621,7 @@
 }
 .dark #_cbhtml .is-modal.grideditor,
 .dark .is-ui .is-modal.grideditor {
-  background: #343434;
+  background: #1A1A1CE0;
 }
 .dark #_cbhtml .is-modal.grideditor button.on,
 .dark .is-ui .is-modal.grideditor button.on {
@@ -636,21 +651,12 @@
 }
 .dark #_cbhtml .is-modal.edittable .is-modal-bar,
 .dark .is-ui .is-modal.edittable .is-modal-bar {
-  background-color: #4e4e4e;
+  background-color: #1A1A1CE0;
 }
 .dark #_cbhtml .is-modal.edittable button.is-btn-color,
 .dark .is-ui .is-modal.edittable button.is-btn-color {
   background-color: rgba(255, 255, 255, 0.2);
   border: rgba(255, 255, 255, 0.22) 1px solid;
-}
-.dark #_cbhtml .is-modal.buttoneditor .is-modal-bar,
-.dark .is-ui .is-modal.buttoneditor .is-modal-bar {
-  background-color: #4e4e4e;
-}
-.dark #_cbhtml .is-modal.columnsettings .is-modal-bar, .dark #_cbhtml .is-modal.rowsettings .is-modal-bar,
-.dark .is-ui .is-modal.columnsettings .is-modal-bar,
-.dark .is-ui .is-modal.rowsettings .is-modal-bar {
-  background-color: #4e4e4e;
 }
 .dark #_cbhtml .is-modal.columnsettings button.is-btn-color, .dark #_cbhtml .is-modal.rowsettings button.is-btn-color,
 .dark .is-ui .is-modal.columnsettings button.is-btn-color,
@@ -731,10 +737,6 @@
 .dark #_cbhtml .is-modal.pickcolormore div.is-modal-content > div,
 .dark .is-ui .is-modal.pickcolormore div.is-modal-content > div {
   opacity: 0.9;
-}
-.dark #_cbhtml .is-modal.pickfontfamily .is-modal-bar,
-.dark .is-ui .is-modal.pickfontfamily .is-modal-bar {
-  background: #4e4e4e;
 }
 .dark #_cbhtml .is-modal.insertimage .is-drop-area,
 .dark .is-ui .is-modal.insertimage .is-drop-area {
@@ -968,7 +970,6 @@
 .dark #_cbhtml .is-tabs a.active,
 .dark .is-ui .is-tabs a.active {
   background: transparent;
-  border-bottom: rgba(250, 250, 250, 0.5) 1px solid;
 }
 .dark #_cbhtml .is-tabs a svg,
 .dark .is-ui .is-tabs a svg {
@@ -1288,32 +1289,6 @@
 .dark .is-tooltip {
   background: #333;
   color: #fefefe;
-}
-.dark .scroll * {
-  scrollbar-width: thin;
-  scrollbar-color: #505050 auto;
-}
-.dark .scroll *::-webkit-scrollbar {
-  width: 12px;
-}
-.dark .scroll *::-webkit-scrollbar-track {
-  background: transparent;
-}
-.dark .scroll *::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-.dark .scroll-darker * {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(78, 78, 78, 0.62) auto;
-}
-.dark .scroll-darker *::-webkit-scrollbar {
-  width: 12px;
-}
-.dark .scroll-darker *::-webkit-scrollbar-track {
-  background: transparent;
-}
-.dark .scroll-darker *::-webkit-scrollbar-thumb {
-  background-color: rgba(78, 78, 78, 0.62);
 }
 .dark .custom-select .select-styled span {
   color: #000;

@@ -1082,6 +1082,7 @@ body.controlpanel .is-wrapper {
 }
 .builder-ui .is-controlpanel > .is-devpanel .btn-close {
   background: none;
+  border-radius:9999px;
 }
 .builder-ui .is-controlpanel .panelnav {
   margin-top: 30px;
@@ -2680,6 +2681,10 @@ body.frame-center.controlpanel .is-content-view {
 .ai-disclaimer .input-ok:focus {
   outline: #3e93f7 2px solid !important;
   outline-offset: 2px !important;
+}
+
+.dark #divStyles > div {
+  color: #fff;
 }
 
 /*

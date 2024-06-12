@@ -17,7 +17,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #2C2C2EB0;
+  background: #2C2C2EB0 !important;
   border-radius:9999px;
 }
 
