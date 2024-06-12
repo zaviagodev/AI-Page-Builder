@@ -7,15 +7,15 @@
 }
 
 .dashboard h2 {
-    @apply font-semibold text-2xl text-gray-900 dark:text-white
+    @apply font-semibold text-2xl text-gray-900
 }
 
 .dashboard h3 {
-    @apply font-bold text-2xl leading-6 text-gray-900 dark:text-white
+    @apply font-bold text-2xl leading-6 text-gray-900
 }
 
 .dashboard label {
-    @apply block text-sm font-medium text-gray-900 dark:text-white
+    @apply block text-sm font-medium text-gray-900
 }
 
 .dashboard input[type="text"].error {
@@ -26,7 +26,7 @@
     @apply px-4 py-2 bg-white text-black bg-transparent shadow-none
 }
 .dashboard button.tabactive {
-    @apply px-4 py-2 transform transition tracking-wide font-medium shadow-sm text-sm rounded-md bg-[#EDEDED] dark:bg-[#636366]
+    @apply px-4 py-2 transform transition tracking-wide font-medium shadow-sm text-sm rounded-md bg-[#EDEDED]
     flex justify-center items-center border border-transparent
 }
 
@@ -37,12 +37,35 @@
 
 .modal2 {
     @apply z-10 bg-white max-w-[800px] w-full relative rounded-[13px]
-    inline-block p-8 md:p-16 my-8 overflow-hidden text-left align-middle transition-all transform 
+    inline-block p-8 my-8 overflow-hidden text-left align-middle transition-all transform 
+}
+
+:global(.dark) .modal,
+:global(.dark) .modal2 {
+    @apply bg-[#1A1A1C]
 }
 
 .card {
     /* @apply rounded mr-10 mb-10 w-14 w-[255px] min-h-[250px] shadow-[6px_5px_0px_0px_rgba(239,241,248,1)] p-6 flex justify-between flex-col relative tracking-wide border border-solid border-gray-400/75 */
     @apply w-full py-6 flex justify-between relative tracking-wide border-b border-solid border-b-[#EBEBEB] items-center h-[160px]
+}
+
+:global(.dark) .card {
+    @apply border-b-[#2C2C2E]
+}
+
+:global(.dark) .dashboard h1,
+:global(.dark) .dashboard h2,
+:global(.dark) .dashboard h3,
+:global(.dark) .dashboard label {
+    @apply text-white
+}
+
+:global(.dark) .dashboard button.tab {
+    @apply text-white
+}
+:global(.dark) .dashboard button.tabactive {
+    @apply bg-[#636366]
 }
 
 .onlineinfo {
@@ -59,12 +82,16 @@
     no-underline flex justify-center items-center
 }
 
+.more {
+    @apply relative
+}
+
 .more button {
     @apply bg-transparent hover:bg-transparent text-gray-800 p-0 focus:outline-none shadow-none rounded-sm
 }
 
 .moremenu {
-    @apply z-10 top-24 right-2 absolute w-40 bg-white rounded flex flex-col tracking-wide border border-solid border-[#F4F4F4] shadow-md p-1
+    @apply z-10 right-2 absolute w-40 bg-white rounded flex flex-col tracking-wide border border-solid border-[#F4F4F4] shadow-md p-1
 }
 
 .moremenu button,

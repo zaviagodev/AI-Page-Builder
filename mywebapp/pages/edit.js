@@ -20,18 +20,19 @@ export default function Home(props) {
 
     const [builderObj, setBuilderObj] = useState();
     const [isDarkMode, setIsDarkMode] = useState(false)
+    const [sitename, setSitename] = useState('')
 
     useEffect(()=>{
 
         builder();
 
+        if (typeof window !== undefined){
+            setSitename(new URLSearchParams(window.location.search).get("page"))
+        }
 
         return () => {
             obj.destroy();
         };
-
-
-
 
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     // https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
@@ -261,14 +262,14 @@ export default function Home(props) {
         //         obj.openSettings(e);
         //     }
         // });
-        obj.addButton({ 
-            'pos': 5,
-            'title': 'Clear Content',
-            'html': '<svg class="is-icon-flex"><use xlink:href="#icon-eraser"></use></svg>', 
-            'onClick': (e)=>{
-                obj.clear();
-            }
-        });
+        // obj.addButton({ 
+        //     'pos': 5,
+        //     'title': 'Clear Content',
+        //     'html': '<svg class="is-icon-flex"><use xlink:href="#icon-eraser"></use></svg>', 
+        //     'onClick': (e)=>{
+        //         obj.clear();
+        //     }
+        // });
         if(enableAiAssistant) {
             obj.addButton({ 
                 'pos': 6,
@@ -418,7 +419,8 @@ export default function Home(props) {
     }
 
     function back() {
-        window.close();
+        // window.close();
+        window.location.href = "/dashboard"
     }
 
     function undo(e) {
@@ -621,23 +623,26 @@ export default function Home(props) {
                 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
             </Head>
 
-
-
             <div className="ai_selector" style={{ background: 'black' }}></div>
 
             <div className="builder-ui keep-selection custom-topbar" style={{opacity:'0'}} data-tooltip>
                 <div>
-                    
+                    <button className="additional-menu-btn" onClick={() => {}}>
+                        <div dangerouslySetInnerHTML={{ __html: `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                        ` }} />
+                    </button>
+                    <span className='ml-2'>/{sitename}</span>
                 </div>
                 <div>
-                    {/* <button className="btn-back" onClick={back} title="Back">
+                    <button className="btn-back" onClick={back} title="Back">
                         <div dangerouslySetInnerHTML={{ __html: `
                         <svg><use xlink:href="#icon-back"></use></svg>
                         ` }} />
                         <span>Back</span>
-                    </button> */}
+                    </button>
 
-                    
+                    <div className="separator"></div>
 
                     <button className="btn-undo" onClick={undo} title="Undo">
                         <div dangerouslySetInnerHTML={{ __html: `
@@ -665,22 +670,21 @@ export default function Home(props) {
                     </button>
                 </div>
                 <div>
-
                     <button className="btn-device-desktop" data-device="desktop" onClick={setScreenMode} title="Desktop">
                         <div dangerouslySetInnerHTML={{ __html: `
                             <svg style="width:18px;height:18px;"><use xlink:href="#icon-device-desktop"></use></svg>
                         ` }} />
                     </button>
-                    <button className="btn-device-tablet-landscape" data-device="tablet-landscape" onClick={setScreenMode} title="Tablet - Landscape">
+                    <button className="btn-device-tablet-landscape" data-device="tablet-landscape" onClick={setScreenMode} title="Tablet"> {/* title="Tablet - Landscape" */}
                         <div dangerouslySetInnerHTML={{ __html: `
                         <svg style="width:18px;height:18px;transform:rotate(-90deg)"><use xlink:href="#icon-device-tablet"></use></svg>
                         ` }} />
                     </button>
-                    <button className="btn-device-tablet" data-device="tablet" onClick={setScreenMode} title="Tablet - Portrait">
+                    {/* <button className="btn-device-tablet" data-device="tablet" onClick={setScreenMode} title="Tablet - Portrait">
                         <div dangerouslySetInnerHTML={{ __html: `
                         <svg  style="width:18px;height:18px;"><use xlink:href="#icon-device-tablet"></use></svg>
                         ` }} />
-                    </button>
+                    </button> */}
                     <button className="btn-device-mobile" data-device="mobile" onClick={setScreenMode} title="Mobile">
                         <div dangerouslySetInnerHTML={{ __html: `
                         <svg  style="width:18px;height:18px;"><use xlink:href="#icon-device-mobile"></use></svg>
@@ -691,15 +695,18 @@ export default function Home(props) {
                         <svg  style="width:18px;height:18px;"><use xlink:href="#icon-fullview"></use></svg>
                         ` }} />
                     </button>
-                    <button onClick={toggleAppearance} title="Appearance">
+                    <button className="btn-additional-menu" data-device="additional-menu" data-title="Additional Menu" onClick={() => {}} title="Additional Menu">
+                        <div dangerouslySetInnerHTML={{ __html: `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                        ` }} />
+                    </button>
+                    {/* <button onClick={toggleAppearance} title="Appearance" dataTheme={isDarkMode ? "dark" : "light"}>
                         <div dangerouslySetInnerHTML={{ __html: `
                         ${isDarkMode ? 
                             '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>' : 
                             '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>'}
                         ` }} />
-                    </button>
-
-                    <div className="separator"></div>
+                    </button> */}
 
                     {/* <button className="btn-download" onClick={download} title="Download">
                         <div dangerouslySetInnerHTML={{ __html: `
@@ -707,11 +714,11 @@ export default function Home(props) {
                         ` }} />
                     </button> */}
 
-                    <button className="btn-html" onClick={viewHtml} title="HTML">
+                    {/* <button className="btn-html" onClick={viewHtml} title="HTML">
                         <div dangerouslySetInnerHTML={{ __html: `
                         <svg><use xlink:href="#icon-code"></use></svg>
                         ` }} />
-                    </button>
+                    </button> */}
 
                     <button className="btn-preview" onClick={preview} title="Preview">
                         <div dangerouslySetInnerHTML={{ __html: `

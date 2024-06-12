@@ -869,11 +869,20 @@ body.controlpanel .is-content-view.mobile {
   opacity: 0;
   transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
 }
-.builder-ui .accordion-content[aria-hidden=false] {
+.builder-ui .accordion-content[aria-hidden=false],
+#contenttext1 {
   max-height: 1000px;
   opacity: 1;
   transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
 }
+
+#contenttext1 {display: block !important}
+[aria-controls='contenttext1'] {
+  cursor: default !important;
+  background:transparent !important;
+}
+[aria-controls='contenttext1'] span {display: none !important}
+
 .builder-ui .accordion-content.last[aria-hidden=true] {
   transition: max-height 0.2s ease-out, opacity 0.1s ease-out;
 }
@@ -1073,6 +1082,7 @@ body.controlpanel .is-wrapper {
 }
 .builder-ui .is-controlpanel > .is-devpanel .btn-close {
   background: none;
+  border-radius:9999px;
 }
 .builder-ui .is-controlpanel .panelnav {
   margin-top: 30px;
@@ -1665,10 +1675,6 @@ input.clr-color {
 .is-rangeslider:hover {
   opacity: 1;
 }
-.is-rangeslider:focus {
-  outline: #3e93f7 2px solid;
-  outline-offset: 2px;
-}
 .is-rangeslider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -1956,9 +1962,6 @@ body.frame-center.controlpanel .is-content-view {
 }
 .dark .builder-ui button svg {
   color: #fff;
-}
-.dark .builder-ui button.is-btn-color {
-  border: 1px solid transparent;
 }
 .dark .builder-ui button.on,
 .dark .builder-ui button:not(.is-btn-color):hover {
@@ -2678,6 +2681,10 @@ body.frame-center.controlpanel .is-content-view {
 .ai-disclaimer .input-ok:focus {
   outline: #3e93f7 2px solid !important;
   outline-offset: 2px !important;
+}
+
+.dark #divStyles > div {
+  color: #fff;
 }
 
 /*

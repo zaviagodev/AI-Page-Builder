@@ -306,11 +306,11 @@ button:focus-visible {
 }
 #_cbhtml .style-helper.snippet-background,
 .is-ui .style-helper.snippet-background {
-  background: #fff;
+  background: #F8F7F7;
 }
 #_cbhtml .style-helper.snippet-tabs-background,
 .is-ui .style-helper.snippet-tabs-background {
-  background: whitesmoke;
+  background: #F8F7F7;
 }
 #_cbhtml .style-helper.snippet-tab-item-background,
 .is-ui .style-helper.snippet-tab-item-background {
@@ -318,7 +318,8 @@ button:focus-visible {
 }
 #_cbhtml .style-helper.snippet-tab-item-background-active,
 .is-ui .style-helper.snippet-tab-item-background-active {
-  background: whitesmoke;
+  background: #3D73FF;
+  color:white !important;
 }
 #_cbhtml .style-helper.snippet-tab-item-background-hover,
 .is-ui .style-helper.snippet-tab-item-background-hover {
@@ -594,7 +595,7 @@ button:focus-visible {
 }
 #_cbhtml .is-pop-tabs > div,
 .is-ui .is-pop-tabs > div {
-  background: #f7f7f7;
+  background: white;
   width: 50%;
   height: 30px;
   line-height: 30px;
@@ -611,7 +612,7 @@ button:focus-visible {
 }
 #_cbhtml .is-pop-tabs > div.active,
 .is-ui .is-pop-tabs > div.active {
-  background: transparent;
+  background: #f1f1f1;
   cursor: auto;
 }
 #_cbhtml .is-rte-tool,
@@ -2247,6 +2248,19 @@ button:focus-visible {
   line-height: 35px;
   height: 35px;
 }
+
+#_cbhtml .is-modal div.is-modal-bar::before,
+.is-ui .is-modal div.is-modal-bar::before {
+  content:'';
+  width:50px;
+  height:4px;
+  background:#6D787C;
+  position:absolute;
+  top:10px;
+  border-radius:9999px;
+  left:calc(50% - 20px)
+}
+
 #_cbhtml .is-modal div.is-modal-bar .is-modal-close,
 .is-ui .is-modal div.is-modal-bar .is-modal-close {
   z-index: 1;
@@ -3775,14 +3789,9 @@ button:focus-visible {
   width: 100%;
   height: 43px;
   display: block;
-  background: transparent;
+  background: white;
   box-shadow: none;
-}
-#_cbhtml button.classic:hover,
-#_cbhtml .is-btn.classic:hover,
-.is-ui button.classic:hover,
-.is-ui .is-btn.classic:hover {
-  background: #f1f1f1;
+  outline: none;
 }
 #_cbhtml button.classic-primary,
 #_cbhtml .is-btn.classic-primary,
@@ -3936,8 +3945,8 @@ button:focus-visible {
   -webkit-appearance: none;
   width: 100%;
   height: 4px;
-  background: #e3e3e3;
-  outline: none;
+  background: #78788052;
+  outline: none !important;
   border: none !important;
   opacity: 1;
   -webkit-transition: 0.2s;
@@ -3964,6 +3973,7 @@ button:focus-visible {
   background: white;
   cursor: pointer;
   margin: 0 !important;
+  box-shadow: 0px 6px 13px 0px #0000001F;
 }
 #_cbhtml .is-rangeslider::-moz-range-thumb,
 .is-ui .is-rangeslider::-moz-range-thumb {
@@ -3973,6 +3983,7 @@ button:focus-visible {
   background: white;
   cursor: pointer;
   margin: 0 !important;
+  box-shadow: 0px 6px 13px 0px #0000001F;
 }
 #_cbhtml .is-rangeslider::-webkit-slider-runnable-track,
 .is-ui .is-rangeslider::-webkit-slider-runnable-track {
@@ -4292,6 +4303,7 @@ button:focus-visible {
   background:rgba(248, 247, 247, 0.67) !important;
   backdrop-filter:blur(20px) !important
 }
+
 #_cbhtml .is-design-list,
 .is-ui .is-design-list {
   height: auto;
@@ -4979,9 +4991,7 @@ button:focus-visible {
   width: 95px;
   height: 24px;
 }
-#_cbhtml .is-pop.columnmore button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.columnmore button.on,
 #_cbhtml .is-pop.columnmore button:hover {
   background-color: #f1f1f1;
 }
@@ -5015,9 +5025,7 @@ button:focus-visible {
   width: 95px;
   height: 24px;
 }
-#_cbhtml .is-pop.rowmore button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.rowmore button.on,
 #_cbhtml .is-pop.rowmore button:hover {
   background-color: #f1f1f1;
 }
@@ -5051,12 +5059,11 @@ button:focus-visible {
   width: 95px;
   height: 24px;
 }
-#_cbhtml .is-pop.elmmore button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.elmmore button.on,
 #_cbhtml .is-pop.elmmore button:hover {
   background-color: #f1f1f1;
 }
+
 #_cbhtml .is-pop.quickadd {
   width: 430px;
   box-sizing: border-box;
@@ -5065,6 +5072,8 @@ button:focus-visible {
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 #_cbhtml .is-pop.quickadd button {
   float: left;
@@ -5078,9 +5087,7 @@ button:focus-visible {
   box-shadow: none;
   border-radius: 3px;
 }
-#_cbhtml .is-pop.quickadd button.on {
-  background-color: #f1f1f1;
-}
+#_cbhtml .is-pop.quickadd button.on,
 #_cbhtml .is-pop.quickadd button:hover {
   background-color: #f1f1f1;
 }
@@ -5582,11 +5589,6 @@ button:focus-visible {
   color: #fefefe;
   z-index: 100005;
   -webkit-font-smoothing: auto;
-}
-
-.dark .is-tooltip {
-  background: #fefefe;
-  color: #333;
 }
 
 /*!
@@ -6374,6 +6376,11 @@ div[data-html] {
   box-shadow: 0 0 1px #0e75de;
 }
 
+.dark #_cbhtml .custom-select .select-styled span,
+.dark .is-ui .custom-select .select-styled span {
+  color:white;
+}
+
 .dark .div-font-list > button img,
 .colored-dark .div-font-list > button img,
 .colored .div-font-list > button img {
@@ -6381,14 +6388,14 @@ div[data-html] {
   filter: invert(1);
 }
 
-.dark #_cbhtml .is-modal.is-modal-content,
+/* .dark #_cbhtml .is-modal.is-modal-content,
 .dark #_cbhtml .is-modal .is-modal-content,
 .dark .is-ui .is-modal.is-modal-content,
 .dark .is-ui .is-modal .is-modal-content,
 .dark #_cbhtml .is-pop, 
 .dark .is-ui .is-pop {
   background:#1A1A1CE0 !important
-}
+} */
 
 .dark #_cbhtml .is-modal div.is-modal-bar, 
 .dark .is-ui .is-modal div.is-modal-bar {
@@ -6422,7 +6429,7 @@ div[data-html] {
 .dark #_cbhtml .is-modal button, 
 .dark .is-ui .is-modal button {
   background: #7676803D;
-  color:#fff
+  color:#fff !important
 }
 
 i.bi, i.icon {
@@ -6602,12 +6609,37 @@ i.bi, i.icon {
 }
 
 .dark #_cbhtml .is-modal button.on, 
-.dark .is-ui .is-modal button.on {
+.dark .is-ui .is-modal button.on,
+.dark #_cbhtml .is-pop.columnmore button.on,
+.dark #_cbhtml .is-pop.columnmore button:hover,
+.dark #_cbhtml .is-pop.rowmore button.on,
+.dark #_cbhtml .is-pop.rowmore button:hover,
+.dark #_cbhtml .is-pop.elmmore button.on,
+.dark #_cbhtml .is-pop.elmmore button:hover,
+.dark #_cbhtml .is-pop.quickadd button.on,
+.dark #_cbhtml .is-pop.quickadd button:hover {
   background: #636366 !important;
+}
+
+.dark #_cbhtml .is-pop-tabs > div.active, 
+.dark .is-ui .is-pop-tabs > div.active {
+  background:#636366
+}
+.dark #_cbhtml .is-pop-tabs > div,
+.dark .is-ui .is-pop-tabs > div {
+  background:#7676803D;
+  color: #fff
 }
 
 .dark #_cbhtml .is-modal.page-command textarea {
   color: white;
+}
+
+.dark #_cbhtml button svg,
+.dark #_cbhtml .is-btn svg,
+.dark .is-ui button svg,
+.dark .is-ui .is-btn svg {
+  fill: white;
 }
 
 #_cbhtml .is-modal.page-command {
@@ -6620,6 +6652,7 @@ i.bi, i.icon {
 
 #_cbhtml .is-modal.page-command textarea {
   height: 100% !important;
+  font-family:'Inter', sans-serif !important;
 }
 
 #_cbhtml .is-modal.page-command textarea + div {
@@ -6642,8 +6675,58 @@ i.bi, i.icon {
   z-index: 10005 !important;
 }
 
-#_cbhtml .is-pop.pop1, .is-ui .is-pop.pop1 {
+#_cbhtml .is-pop.pop1, .is-ui .is-pop.pop1,
+#_cbhtml .is-pop-overlay.pop2,
+.is-ui .is-pop-overlay.pop2 {
   z-index: 10006 !important;
+}
+
+#_cbhtml .is-modal.commandconfig {
+  z-index: 10007;
+}
+
+#_cbhtml .is-modal.commandconfig .is-modal-content {
+  padding:80px 20px 20px !important;
+}
+
+#_cbhtml .input-reset,
+.is-ui .input-reset,
+.dark #_cbhtml .input-reset,
+.dark .is-ui .input-reset {
+  height:auto;
+  margin:12px 0;
+  background: transparent !important;
+}
+
+.is-modal.commandlist .is-modal-content > div {
+  gap:16px;
+}
+
+.is-modal.commandlist .is-modal-content > div > div {
+  margin:0 !important;
+  box-shadow:none !important;
+  background: white;
+  border: none !important;
+  padding:16px !important;
+}
+
+.dark .is-modal.commandlist .is-modal-content > div > div {
+  background:#7676803D
+}
+
+.mega-menu {
+  height: 100% !important;
+  max-height: none !important;
+}
+
+#_cbhtml .div-assistant-mode,
+.is-ui .div-assistant-mode {
+  gap:8px;
+}
+
+#_cbhtml .div-assistant-mode button,
+.is-ui .div-assistant-mode button {
+  margin:0 !important;
 }
 
 /* block tool */
