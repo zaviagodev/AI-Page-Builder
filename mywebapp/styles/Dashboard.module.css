@@ -91,7 +91,7 @@
 }
 
 .moremenu {
-    @apply z-10 right-2 absolute w-40 bg-white rounded flex flex-col tracking-wide border border-solid border-[#F4F4F4] shadow-md p-1
+    @apply z-10 right-2 absolute min-w-40 bg-white rounded flex flex-col border border-solid border-[#F4F4F4] shadow-md p-1
 }
 
 .moremenu button,
