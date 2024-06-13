@@ -207,6 +207,7 @@
 .dark .is-ui .is-pop {
   color: #fafafa;
   background: #1A1A1CE0;
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 4px 17px 20px 0px rgba(0, 0, 0, 0.08);
 }

@@ -1052,6 +1052,7 @@ body.controlpanel .is-wrapper {
 .builder-ui .is-controlpanel::before {
   background-color: rgba(248, 247, 247, 0.67);
   content: '';
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index:-1;
   position: fixed;
@@ -1388,6 +1389,7 @@ body.controlpanel .is-wrapper {
   height: 100%;
   display: none;
   background-color: rgba(248, 247, 247, 0.67);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter:blur(20px);
   border-radius:17px;
   overflow-y: auto;
@@ -2109,6 +2111,7 @@ body.frame-center.controlpanel .is-content-view {
   width: 60px;
   height: fit-content !important; /* Original: 100vh */
   background: rgba(255, 255, 255, 0.67);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   color: rgba(0, 0, 0, 0.8);
   border-right: rgba(0, 0, 0, 0.05) 1px solid;
@@ -2161,6 +2164,7 @@ body.frame-center.controlpanel .is-content-view {
   box-sizing: border-box;
   padding: 0;
   background: rgba(255, 255, 255, 0.67);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   color: rgba(0, 0, 0, 0.8);
   transition-property: transform;
