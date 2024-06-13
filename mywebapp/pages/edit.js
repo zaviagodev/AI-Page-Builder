@@ -23,6 +23,7 @@ export default function Home(props) {
     const [sitename, setSitename] = useState('')
 
     useEffect(()=>{
+        localStorage.setItem("_theme", "1")
 
         builder();
 
@@ -83,7 +84,7 @@ export default function Home(props) {
             iframeCentered: true,
 
             toggleDeviceButton: false,
-            deviceButtons: false,
+            deviceButtons: true,
 
             // To enable AI Assistant
             sendCommandUrl: enableAiAssistant?'/api/sendcommand':'',
