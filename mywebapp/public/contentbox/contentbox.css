@@ -1084,6 +1084,9 @@ body.controlpanel .is-wrapper {
   background: none;
   border-radius:9999px;
 }
+.builder-ui .is-controlpanel > .is-devpanel .btn-more {
+  display: none
+}
 .builder-ui .is-controlpanel .panelnav {
   margin-top: 30px;
   padding: 8px 24px 8px;
@@ -1257,14 +1260,6 @@ body.controlpanel .is-wrapper {
 .builder-ui .is-controlpanel .group.editmodule button {
   width: 100%;
   height: 39px;
-  background: rgb(135, 116, 215);
-  color: #fff;
-}
-.builder-ui .is-controlpanel .group.editmodule button svg {
-  fill: #fff;
-}
-.builder-ui .is-controlpanel .group.editmodule button:hover {
-  background: rgb(135, 116, 215);
 }
 .builder-ui .is-controlpanel .group.editspacing, .builder-ui .is-controlpanel .group.moreoptions, .builder-ui .is-controlpanel .group.resetrotation {
   width: 222px;
@@ -1893,18 +1888,6 @@ body.frame-center.controlpanel .is-content-view {
   background-color: rgba(192, 192, 192, 0.3607843137) !important;
 }
 
-.dark #_cbhtml .is-side, .dark .is-ui .is-side {
-  color: #d3d3d3 !important;
-  background: #181818 !important;
-}
-.dark #_cbhtml .is-side button, .dark .is-ui .is-side button {
-  color: #d3d3d3 !important;
-  background: transparent !important;
-}
-.dark #_cbhtml .is-side button:hover, .dark .is-ui .is-side button:hover,
-.dark #_cbhtml .is-side button.on, .dark .is-ui .is-side button.on {
-  background-color: #636366 !important;
-}
 .dark #_cbhtml .is-side input[type=text], .dark #_cbhtml .is-side textarea, .dark .is-ui .is-side input[type=text], .dark .is-ui .is-side textarea {
   color: #c7c7c7 !important;
   background-color: #7676803D !important;
@@ -2998,21 +2981,6 @@ body.fullview.topspace .is-content-view iframe {
 .dark #_cbhtml .div-anim-apply-to .flex-nowrap,
 .dark #_cbhtml .anim-controls .flex-nowrap {
   background: #7676803D;
-}
-
-.dark #_cbhtml button, 
-.dark #_cbhtml .is-btn, 
-.dark .is-ui button, 
-.dark .is-ui .is-btn {
-  background: #7676803D;
-  color: #fff;
-}
-
-.dark #_cbhtml button:hover, 
-.dark #_cbhtml .is-btn:hover, 
-.dark .is-ui button:hover, 
-.dark .is-ui .is-btn:hover {
-  background:#636366
 }
 
 .dark #_cbhtml .cmd-target,

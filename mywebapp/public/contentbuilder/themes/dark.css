@@ -11,6 +11,10 @@
   border-radius:9999px;
 }
 
+.dark * {
+  scrollbar-width: inherit !important;
+}
+
 .dark *::-webkit-scrollbar-thumb {
   background: #F8F7F7B0;
 }
@@ -75,7 +79,7 @@
 }
 .dark #_cbhtml .style-helper.modal-background,
 .dark .is-ui .style-helper.modal-background {
-  background: #343434;
+  background: #1A1A1C;
 }
 .dark #_cbhtml .style-helper.button-pickcolor-border,
 .dark .is-ui .style-helper.button-pickcolor-border {
@@ -248,12 +252,12 @@
 }
 .dark #_cbhtml .is-pop-tabs > div,
 .dark .is-ui .is-pop-tabs > div {
-  background: rgba(129, 129, 129, 0.4);
+  background: #7676803D;
   color: rgba(250, 250, 250, 0.95);
 }
 .dark #_cbhtml .is-pop-tabs > div.active,
 .dark .is-ui .is-pop-tabs > div.active {
-  background: transparent;
+  background: #636366
 }
 .dark #_cbhtml .is-general-options,
 .dark .is-ui .is-general-options {
@@ -521,16 +525,15 @@
 .dark #_cbhtml .is-modal button,
 .dark .is-ui .is-modal button {
   color: #fafafa;
-  background: rgba(103, 103, 103, 0.55);
-  box-shadow: 0px 3px 6px -6px rgba(0, 0, 0, 0.32);
+  background: #7676803D;
 }
 .dark #_cbhtml .is-modal button:hover,
 .dark .is-ui .is-modal button:hover {
-  background: rgba(113, 113, 113, 0.55);
+  background: #636366;
 }
 .dark #_cbhtml .is-modal button.on,
 .dark .is-ui .is-modal button.on {
-  background: rgba(78, 78, 78, 0.55);
+  background: #636366
 }
 .dark #_cbhtml .is-modal .is-separator,
 .dark .is-ui .is-modal .is-separator {
@@ -563,7 +566,6 @@
   color: #fafafa;
   background: #1A1A1CE0;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 4px 17px 20px 0px rgba(0, 0, 0, 0.23);
 }
 .dark #_cbhtml .is-modal.is-modal-content svg,
@@ -577,7 +579,6 @@
   color: #fafafa;
   background: #1A1A1CE0;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 4px 17px 20px 0px rgba(0, 0, 0, 0.23);
 }
 .dark #_cbhtml .is-modal:not(.is-modal-content) > div:not(.is-modal-overlay) svg,
@@ -591,6 +592,7 @@
 .dark #_cbhtml .is-modal div.is-modal-bar .is-modal-close,
 .dark .is-ui .is-modal div.is-modal-bar .is-modal-close {
   color: #fafafa;
+  background: #7676803D;
 }
 .dark #_cbhtml .is-modal.viewhtml textarea,
 .dark .is-ui .is-modal.viewhtml textarea {
@@ -836,24 +838,21 @@
 }
 .dark #_cbhtml .is-side,
 .dark .is-ui .is-side {
-  color: #fafafa;
-  box-shadow: rgba(52, 52, 52, 0.05) 0 0 16px 0px;
-  background: #343434;
+  color: #d3d3d3;
+  background: #181818;
 }
 .dark #_cbhtml .is-side button,
 .dark .is-ui .is-side button {
-  color: #fafafa;
-  background: rgba(103, 103, 103, 0.55);
-  box-shadow: 0px 3px 6px -6px rgba(0, 0, 0, 0.32);
+  color: #d3d3d3;
+  background: transparent;
 }
 .dark #_cbhtml .is-side button:hover,
-.dark .is-ui .is-side button:hover {
-  background: rgba(113, 113, 113, 0.55);
-}
+.dark .is-ui .is-side button:hover,
 .dark #_cbhtml .is-side button.on,
 .dark .is-ui .is-side button.on {
-  background: rgba(78, 78, 78, 0.55);
+  background: #636366
 }
+
 .dark #_cbhtml .is-side svg,
 .dark .is-ui .is-side svg {
   fill: #fafafa;
@@ -867,14 +866,13 @@
 .dark .is-ui button,
 .dark .is-ui .is-btn {
   color: rgba(250, 250, 250, 0.95);
-  background: #343434;
-  box-shadow: 0px 3px 6px -6px rgba(0, 0, 0, 0.32);
+  background: #7676803D;
 }
 .dark #_cbhtml button:hover,
 .dark #_cbhtml .is-btn:hover,
 .dark .is-ui button:hover,
 .dark .is-ui .is-btn:hover {
-  background: #393939;
+  background: #636366;
 }
 .dark #_cbhtml button svg,
 .dark #_cbhtml .is-btn svg,
@@ -937,7 +935,7 @@
 .dark #_cbhtml select,
 .dark .is-ui select {
   color: rgba(250, 250, 250, 0.83);
-  background-color: #5d5d5d;
+  background-color: #7676803D;
 }
 .dark #_cbhtml select option,
 .dark .is-ui select option {
@@ -948,7 +946,7 @@
   color: rgba(250, 250, 250, 0.83);
   border: none;
   border-bottom: none;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: #7676803D;
 }
 .dark #_cbhtml input[type=checkbox],
 .dark .is-ui input[type=checkbox] {
@@ -960,16 +958,15 @@
 }
 .dark #_cbhtml .is-tabs,
 .dark .is-ui .is-tabs {
-  background: rgba(129, 129, 129, 0.3);
+  background: #7676803D;
 }
 .dark #_cbhtml .is-tabs a,
 .dark .is-ui .is-tabs a {
   color: rgba(250, 250, 250, 0.95);
-  border-bottom: transparent 1px solid;
 }
 .dark #_cbhtml .is-tabs a.active,
 .dark .is-ui .is-tabs a.active {
-  background: transparent;
+  background: #636366;
 }
 .dark #_cbhtml .is-tabs a svg,
 .dark .is-ui .is-tabs a svg {
@@ -1308,4 +1305,26 @@
 }
 .dark .custom-select .select-options li.selected {
   background-color: #656565;
+}
+.dark .is-modal.commandlist .is-modal-content > div > div {
+  background:#7676803D
+}
+.dark #_cbhtml .is-modal.page-command textarea {
+  color: white;
+}
+.dark #_cbhtml .is-modal.editmodule iframe,
+.dark .is-ui .is-modal.editmodule iframe {
+  background: transparent;
+}
+.dark #_cbhtml .is-modal.imagesource .input-upload, 
+.dark #_cbhtml .is-modal.mediasource .input-upload,
+.dark .is-ui .is-modal.imagesource .input-upload,
+.dark .is-ui .is-modal.mediasource .input-upload {
+  background:#7676803D;
+}
+.dark #_cbhtml .is-modal.imagesource .input-upload:hover, 
+.dark #_cbhtml .is-modal.mediasource .input-upload:hover,
+.dark .is-ui .is-modal.imagesource .input-upload:hover,
+.dark .is-ui .is-modal.mediasource .input-upload:hover {
+  background:#636366
 }

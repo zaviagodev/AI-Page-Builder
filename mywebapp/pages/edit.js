@@ -23,6 +23,7 @@ export default function Home(props) {
     const [sitename, setSitename] = useState('')
 
     useEffect(()=>{
+        localStorage.setItem("_theme", "1")
 
         builder();
 

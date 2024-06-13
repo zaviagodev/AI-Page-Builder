@@ -290,7 +290,7 @@ button:focus-visible {
 }
 #_cbhtml .style-helper.modal-background,
 .is-ui .style-helper.modal-background {
-  background: #fff;
+  background: rgb(248, 247, 247);
 }
 #_cbhtml .style-helper.button-pickcolor-border,
 .is-ui .style-helper.button-pickcolor-border {
@@ -3178,6 +3178,7 @@ button:focus-visible {
 .is-ui .is-modal.imagesource .image-src,
 .is-ui .is-modal.mediasource .image-src {
   display: flex;
+  gap:8px;
 }
 #_cbhtml .is-modal.imagesource .image-src > button, #_cbhtml .is-modal.mediasource .image-src > button,
 .is-ui .is-modal.imagesource .image-src > button,
@@ -3197,6 +3198,13 @@ button:focus-visible {
 .is-ui .is-modal.mediasource .input-upload {
   width: 50px;
   height: 43px;
+  background:white;
+  border-radius:8px;
+}
+#_cbhtml .is-modal.imagesource .input-upload:hover, #_cbhtml .is-modal.mediasource .input-upload:hover,
+.is-ui .is-modal.imagesource .input-upload:hover,
+.is-ui .is-modal.mediasource .input-upload:hover {
+  background:rgb(237, 237, 237)
 }
 #_cbhtml .is-modal.pickfontfamily .is-modal-bar,
 .is-ui .is-modal.pickfontfamily .is-modal-bar {
@@ -3867,7 +3875,7 @@ button:focus-visible {
   color: #4a4a4a;
   border-radius: 5px;
   border: none;
-  background-color: #f6f6f6;
+  background-color: white;
   width: auto;
   display: inline-block;
   background-image: none;
@@ -6388,48 +6396,15 @@ div[data-html] {
   filter: invert(1);
 }
 
-/* .dark #_cbhtml .is-modal.is-modal-content,
-.dark #_cbhtml .is-modal .is-modal-content,
-.dark .is-ui .is-modal.is-modal-content,
-.dark .is-ui .is-modal .is-modal-content,
-.dark #_cbhtml .is-pop, 
-.dark .is-ui .is-pop {
-  background:#1A1A1CE0 !important
-} */
-
-.dark #_cbhtml .is-modal div.is-modal-bar, 
-.dark .is-ui .is-modal div.is-modal-bar {
-  color:#fff
-}
-
-.dark #_cbhtml .is-tabs, 
-.dark .is-ui .is-tabs {
-  background: #7676803D;
-}
-
-.dark #_cbhtml .is-tabs a, 
-.dark .is-ui .is-tabs a {
-  color: #fff
-}
-
-.dark #_cbhtml .is-tabs a.active, 
-.dark .is-ui .is-tabs a.active {
-  background: #636366;
-}
-
 .dark .featured-categories.tabs, 
 .dark .is-sidebar-content {
   background: #1A1A1CE0 !important
 }
 
 .dark #_cbhtml .inp-snippets.custom-select, 
-.dark .is-ui .inp-snippets.custom-select,
-.dark #_cbhtml input[type=text], 
-.dark .is-ui input[type=text],
-.dark #_cbhtml .is-modal button, 
-.dark .is-ui .is-modal button {
+.dark .is-ui .inp-snippets.custom-select {
   background: #7676803D;
-  color:#fff !important
+  color:#fff
 }
 
 i.bi, i.icon {
@@ -6453,11 +6428,6 @@ i.bi, i.icon {
 .dark .is-ui .is-modal button.input-cancel {
   background:#f99 !important
 }
-.dark #_cbhtml .is-modal div.is-modal-bar .is-modal-close,
-.dark .is-ui .is-modal div.is-modal-bar .is-modal-close {
-  background: #EBEBF599 !important;
-}
-
 
 #_cbhtml .pickgradientcolor, .is-ui .pickgradientcolor {
   width: 380px;
@@ -6621,27 +6591,6 @@ i.bi, i.icon {
   background: #636366 !important;
 }
 
-.dark #_cbhtml .is-pop-tabs > div.active, 
-.dark .is-ui .is-pop-tabs > div.active {
-  background:#636366
-}
-.dark #_cbhtml .is-pop-tabs > div,
-.dark .is-ui .is-pop-tabs > div {
-  background:#7676803D;
-  color: #fff
-}
-
-.dark #_cbhtml .is-modal.page-command textarea {
-  color: white;
-}
-
-.dark #_cbhtml button svg,
-.dark #_cbhtml .is-btn svg,
-.dark .is-ui button svg,
-.dark .is-ui .is-btn svg {
-  fill: white;
-}
-
 #_cbhtml .is-modal.page-command {
   height: 400px !important;
 }
@@ -6710,10 +6659,6 @@ i.bi, i.icon {
   padding:16px !important;
 }
 
-.dark .is-modal.commandlist .is-modal-content > div > div {
-  background:#7676803D
-}
-
 .mega-menu {
   height: 100% !important;
   max-height: none !important;
@@ -6727,6 +6672,23 @@ i.bi, i.icon {
 #_cbhtml .div-assistant-mode button,
 .is-ui .div-assistant-mode button {
   margin:0 !important;
+}
+
+#_cbhtml .is-modal.editmodule iframe,
+.is-ui .is-modal.editmodule iframe {
+  background: #F8F7F7E0;
+  backdrop-filter:blur(20px);
+  border-top-width:60px !important
+}
+
+#_cbhtml .is-modal.editmodule .input-ok,
+.is-ui .is-modal.editmodule .input-ok {
+  margin:20px;
+  width:calc(100% - 40px) !important
+}
+
+#imageList {
+  border: none !important;
 }
 
 /* block tool */
