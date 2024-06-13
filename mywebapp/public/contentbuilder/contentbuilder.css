@@ -6695,6 +6695,19 @@ i.bi, i.icon {
   border: none !important;
 }
 
+@media (max-width:1380px){
+  .btn-device-tablet-landscape,
+  .btn-device-mobile {
+    display: none !important
+  }
+}
+
+@media (min-width:1380px){
+  .is-content-view .is-responsive-toolbar {
+    display:none
+  }
+}
+
 /* block tool */
 /*
 .is-block-tool {

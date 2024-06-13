@@ -1038,7 +1038,7 @@ body.controlpanel .is-wrapper {
   height: 100vh;
   display: flex;
   top: 0;
-  right: -380px;
+  right: -400px;
   z-index: 1;
   display: flex;
   overflow-y: scroll;
