@@ -7,6 +7,13 @@
     top: 0;
     left: 0;
     border-top: 120px transparent solid;
+    background: rgba(248, 247, 247, 0.67);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px)
+}
+
+:global(.dark) .tabcontent {
+    background: #1A1A1CE0;
 }
 
 /* File List */
@@ -29,7 +36,6 @@
     justify-content: flex-end;
     align-items: center;
     color: #282828;
-    margin: 0 20px 20px 0;
     cursor: pointer;
     line-height: 1;
     flex-flow: column;
