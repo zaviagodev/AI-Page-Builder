@@ -26943,9 +26943,13 @@ class ClientInfo {
                   `;
           mainTool.insertAdjacentHTML('beforeend', html);
           let btn = mainTool.querySelector(`.btn-tool-${index}`);
-          btn.addEventListener('click', () => {
-            item.onClick();
-          });
+            if (typeof item.onClick === 'function') {
+                btn.addEventListener('click', () => {
+                    item.onClick();
+                });
+            } else {
+                console.error(`onClick is not a function for item at index ${index}`, item);
+            }
         }
       });
   

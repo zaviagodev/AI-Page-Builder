@@ -1,5 +1,5 @@
-body {
-  overflow-x: hidden !important;
+body.frame-center.topspace {
+  overflow-y: scroll !important;
 }
 
 svg {
