@@ -5,7 +5,28 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        * { font-family:'Inter',sans-serif }
+        *::-webkit-scrollbar {
+            width:8px;
+        }
+        
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        *::-webkit-scrollbar-thumb {
+            background: #2C2C2EB0 !important;
+            border-radius:9999px;
+        }
+        
+        .dark *::-webkit-scrollbar-thumb {
+            background: #F8F7F7B0;
+        }
+
         html { height:100%; }
         body { margin:20px;height:100%;overflow:hidden;font-family:Sans-Serif;font-size:14px;font-weight:300;line-height:1.7; 
             opacity: 0;
@@ -17,6 +38,7 @@
             display:inline-block;box-sizing:border-box;width:100%;margin: 0;
             overflow-y:auto;overflow-x:hidden;height:45vh;padding:10px;line-height:1.5;
             border:rgba(127, 127, 127, 0.32) 1px solid;
+            border-radius:10px;
         }
         #imageList > div {position:relative;margin:15px;cursor:pointer;
             display: inline-flex;
@@ -39,14 +61,14 @@
         #imageList .viditem {width:80px;height:80px;}
         input[type=text], textarea {
             width:100%;
-            border-radius: 2px;
+            border-radius: 13px;
             height: 40px;
-            font-size: 14px;
+            font-size: 13px;
             box-sizing: border-box;
             margin: 0;
             font-family: sans-serif;
             letter-spacing: 1px;
-            padding: 5px;
+            padding-left: 8px;
             border:none;
         }
         textarea {height:30%;} 
@@ -54,9 +76,8 @@
         #divCaption label {margin:5px 0 5px;display: block;} 
         #divCaption {
             transition: all ease 0.3s;
-            position: fixed;width:400px;height: calc(100% - 20px);top:20px;right:-400px;padding:20px;box-sizing:border-box;
+            position: fixed;width:400px;height: calc(100% - 40px);top:20px;right:-400px;padding:20px;box-sizing:border-box;
             z-index:1000;
-            border: rgba(127, 127, 127, 0.32) 1px solid;
         }
         #divCaption:focus {
             outline: none;
@@ -116,8 +137,7 @@
             text-transform: uppercase;
             text-align: center;
             position: relative;
-            border-radius: 2px;
-            box-shadow: 0px 3px 6px -6px rgb(0 0 0 / 32%);  
+            border-radius: 8px;
         }
         button span {
             margin-left: 8px;

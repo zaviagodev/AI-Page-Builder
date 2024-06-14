@@ -869,11 +869,20 @@ body.controlpanel .is-content-view.mobile {
   opacity: 0;
   transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
 }
-.builder-ui .accordion-content[aria-hidden=false] {
+.builder-ui .accordion-content[aria-hidden=false],
+#contenttext1 {
   max-height: 1000px;
   opacity: 1;
   transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
 }
+
+#contenttext1 {display: block !important}
+[aria-controls='contenttext1'] {
+  cursor: default !important;
+  background:transparent !important;
+}
+[aria-controls='contenttext1'] span {display: none !important}
+
 .builder-ui .accordion-content.last[aria-hidden=true] {
   transition: max-height 0.2s ease-out, opacity 0.1s ease-out;
 }
@@ -1029,7 +1038,7 @@ body.controlpanel .is-wrapper {
   height: 100vh;
   display: flex;
   top: 0;
-  right: -380px;
+  right: -400px;
   z-index: 1;
   display: flex;
   overflow-y: scroll;
@@ -1043,6 +1052,7 @@ body.controlpanel .is-wrapper {
 .builder-ui .is-controlpanel::before {
   background-color: rgba(248, 247, 247, 0.67);
   content: '';
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index:-1;
   position: fixed;
@@ -1073,6 +1083,10 @@ body.controlpanel .is-wrapper {
 }
 .builder-ui .is-controlpanel > .is-devpanel .btn-close {
   background: none;
+  border-radius:9999px;
+}
+.builder-ui .is-controlpanel > .is-devpanel .btn-more {
+  display: none
 }
 .builder-ui .is-controlpanel .panelnav {
   margin-top: 30px;
@@ -1247,14 +1261,6 @@ body.controlpanel .is-wrapper {
 .builder-ui .is-controlpanel .group.editmodule button {
   width: 100%;
   height: 39px;
-  background: rgb(135, 116, 215);
-  color: #fff;
-}
-.builder-ui .is-controlpanel .group.editmodule button svg {
-  fill: #fff;
-}
-.builder-ui .is-controlpanel .group.editmodule button:hover {
-  background: rgb(135, 116, 215);
 }
 .builder-ui .is-controlpanel .group.editspacing, .builder-ui .is-controlpanel .group.moreoptions, .builder-ui .is-controlpanel .group.resetrotation {
   width: 222px;
@@ -1383,6 +1389,7 @@ body.controlpanel .is-wrapper {
   height: 100%;
   display: none;
   background-color: rgba(248, 247, 247, 0.67);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter:blur(20px);
   border-radius:17px;
   overflow-y: auto;
@@ -1665,10 +1672,6 @@ input.clr-color {
 .is-rangeslider:hover {
   opacity: 1;
 }
-.is-rangeslider:focus {
-  outline: #3e93f7 2px solid;
-  outline-offset: 2px;
-}
 .is-rangeslider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -1887,18 +1890,6 @@ body.frame-center.controlpanel .is-content-view {
   background-color: rgba(192, 192, 192, 0.3607843137) !important;
 }
 
-.dark #_cbhtml .is-side, .dark .is-ui .is-side {
-  color: #d3d3d3 !important;
-  background: #181818 !important;
-}
-.dark #_cbhtml .is-side button, .dark .is-ui .is-side button {
-  color: #d3d3d3 !important;
-  background: transparent !important;
-}
-.dark #_cbhtml .is-side button:hover, .dark .is-ui .is-side button:hover,
-.dark #_cbhtml .is-side button.on, .dark .is-ui .is-side button.on {
-  background-color: #636366 !important;
-}
 .dark #_cbhtml .is-side input[type=text], .dark #_cbhtml .is-side textarea, .dark .is-ui .is-side input[type=text], .dark .is-ui .is-side textarea {
   color: #c7c7c7 !important;
   background-color: #7676803D !important;
@@ -1956,9 +1947,6 @@ body.frame-center.controlpanel .is-content-view {
 }
 .dark .builder-ui button svg {
   color: #fff;
-}
-.dark .builder-ui button.is-btn-color {
-  border: 1px solid transparent;
 }
 .dark .builder-ui button.on,
 .dark .builder-ui button:not(.is-btn-color):hover {
@@ -2123,6 +2111,7 @@ body.frame-center.controlpanel .is-content-view {
   width: 60px;
   height: fit-content !important; /* Original: 100vh */
   background: rgba(255, 255, 255, 0.67);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   color: rgba(0, 0, 0, 0.8);
   border-right: rgba(0, 0, 0, 0.05) 1px solid;
@@ -2175,6 +2164,7 @@ body.frame-center.controlpanel .is-content-view {
   box-sizing: border-box;
   padding: 0;
   background: rgba(255, 255, 255, 0.67);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   color: rgba(0, 0, 0, 0.8);
   transition-property: transform;
@@ -2680,6 +2670,10 @@ body.frame-center.controlpanel .is-content-view {
   outline-offset: 2px !important;
 }
 
+.dark #divStyles > div {
+  color: #fff;
+}
+
 /*
 
 // Navbar Fix
@@ -2991,21 +2985,6 @@ body.fullview.topspace .is-content-view iframe {
 .dark #_cbhtml .div-anim-apply-to .flex-nowrap,
 .dark #_cbhtml .anim-controls .flex-nowrap {
   background: #7676803D;
-}
-
-.dark #_cbhtml button, 
-.dark #_cbhtml .is-btn, 
-.dark .is-ui button, 
-.dark .is-ui .is-btn {
-  background: #7676803D;
-  color: #fff;
-}
-
-.dark #_cbhtml button:hover, 
-.dark #_cbhtml .is-btn:hover, 
-.dark .is-ui button:hover, 
-.dark .is-ui .is-btn:hover {
-  background:#636366
 }
 
 .dark #_cbhtml .cmd-target,

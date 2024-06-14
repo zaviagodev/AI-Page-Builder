@@ -45,7 +45,7 @@ function DeleteFile(props) {
     }
 
     return <>
-        <button className="button-normal mb-1" onClick={deleteConfirmHandler}>Delete file permanently</button>
+        <button className="button-normal my-1" onClick={deleteConfirmHandler}>Delete file permanently</button>
         
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog
