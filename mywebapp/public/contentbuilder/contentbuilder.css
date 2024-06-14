@@ -2558,7 +2558,7 @@ button:focus-visible {
   position: fixed;
   overflow: hidden;
   width: 250px;
-  height: 410px;
+  height: fit-content;
   top: 50%;
   left: auto;
   right: 30%;
@@ -2620,10 +2620,6 @@ button:focus-visible {
 .is-ui .is-modal.edittable button {
   height: 35px;
   outline-offset: -2px;
-}
-#_cbhtml .is-modal.edittable button:focus,
-.is-ui .is-modal.edittable button:focus {
-  border-radius: 2px;
 }
 #_cbhtml .is-modal.edittable button.is-btn-color,
 .is-ui .is-modal.edittable button.is-btn-color {
@@ -3386,6 +3382,7 @@ button:focus-visible {
   height: 43px;
   display: flex;
   flex-direction: row;
+  gap:8px
 }
 #_cbhtml .is-modal.videolink .video-url .inpVideoLinkSource,
 .is-ui .is-modal.videolink .video-url .inpVideoLinkSource {
@@ -3405,6 +3402,8 @@ button:focus-visible {
 .is-ui .is-modal.videolink .input-upload {
   width: 50px;
   height: 43px;
+  background:white;
+  border-radius:8px;
 }
 #_cbhtml .is-modal.svgsettings div.is-modal-content,
 .is-ui .is-modal.svgsettings div.is-modal-content {
@@ -3429,6 +3428,7 @@ button:focus-visible {
   height: 43px;
   display: flex;
   flex-direction: row;
+  gap:8px;
 }
 #_cbhtml .is-modal.audiolink .audio-url .inpAudioLinkSource,
 .is-ui .is-modal.audiolink .audio-url .inpAudioLinkSource {
@@ -3448,6 +3448,8 @@ button:focus-visible {
 .is-ui .is-modal.audiolink .input-upload {
   width: 50px;
   height: 43px;
+  background:white;
+  border-radius:8px;
 }
 #_cbhtml .is-modal.createlink label,
 .is-ui .is-modal.createlink label {
@@ -3885,7 +3887,7 @@ button:focus-visible {
   -moz-appearance: menulist;
   appearance: menulist;
   padding: 0 5px;
-  border-radius: 1px;
+  border-radius: 10px;
 }
 #_cbhtml select option,
 .is-ui select option {
@@ -3962,7 +3964,7 @@ button:focus-visible {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   margin: 2px !important;
-  border-radius: 2px !important;
+  border-radius: 100px !important;
 }
 #_cbhtml .is-rangeslider:hover,
 .is-ui .is-rangeslider:hover {
@@ -3970,7 +3972,7 @@ button:focus-visible {
 }
 #_cbhtml .is-rangeslider:focus,
 .is-ui .is-rangeslider:focus {
-  outline: #3e93f7 2px solid;
+  outline: white 2px solid;
   outline-offset: 2px;
 }
 #_cbhtml .is-rangeslider::-webkit-slider-thumb,
@@ -6682,7 +6684,8 @@ i.bi, i.icon {
   background: #F8F7F7E0;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter:blur(20px);
-  border-top-width:60px !important
+  border-top-width:60px !important;
+  border-bottom-width:100px !important
 }
 
 #_cbhtml .is-modal.editmodule .input-ok,

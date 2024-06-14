@@ -271,18 +271,28 @@ export default function Home(props) {
         //         obj.clear();
         //     }
         // });
-        if(enableAiAssistant) {
-            obj.addButton({ 
-                'pos': 6,
-                'title': 'AI Assistant',
-                'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-message"></use></svg>', 
-                'onClick': (e)=>{
+        // if(enableAiAssistant) {
+        //     obj.addButton({ 
+        //         'pos': 6,
+        //         'title': 'AI Assistant',
+        //         'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-message"></use></svg>', 
+        //         'onClick': (e)=>{
             
-                    obj.openAIAssistant();
+        //             obj.openAIAssistant();
             
-                }
-            });
-        }
+        //         }
+        //     });
+        // }
+        obj.addButton({ 
+            'pos': 6,
+            'title': 'AI Assistant',
+            'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-message"></use></svg>', 
+            'onClick': (e)=>{
+        
+                obj.openAIAssistant();
+        
+            }
+        });
 
         //Get slug from query string ?page=slug
         let search = window.location.search;

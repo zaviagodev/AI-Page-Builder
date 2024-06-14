@@ -652,10 +652,10 @@
   background: rgba(95, 94, 94, 0.26);
   color: #fff;
 }
-.dark #_cbhtml .is-modal.edittable .is-modal-bar,
+/* .dark #_cbhtml .is-modal.edittable .is-modal-bar,
 .dark .is-ui .is-modal.edittable .is-modal-bar {
   background-color: #1A1A1CE0;
-}
+} */
 .dark #_cbhtml .is-modal.edittable button.is-btn-color,
 .dark .is-ui .is-modal.edittable button.is-btn-color {
   background-color: rgba(255, 255, 255, 0.2);
@@ -1319,13 +1319,21 @@
 }
 .dark #_cbhtml .is-modal.imagesource .input-upload, 
 .dark #_cbhtml .is-modal.mediasource .input-upload,
+.dark #_cbhtml .is-modal.videolink .input-upload,
+.dark #_cbhtml .is-modal.audiolink .input-upload,
 .dark .is-ui .is-modal.imagesource .input-upload,
-.dark .is-ui .is-modal.mediasource .input-upload {
+.dark .is-ui .is-modal.mediasource .input-upload,
+.dark .is-ui .is-modal.videolink .input-upload,
+.dark .is-ui .is-modal.audiolink .input-upload {
   background:#7676803D;
 }
 .dark #_cbhtml .is-modal.imagesource .input-upload:hover, 
 .dark #_cbhtml .is-modal.mediasource .input-upload:hover,
+.dark #_cbhtml .is-modal.videolink .input-upload:hover,
+.dark #_cbhtml .is-modal.audiolink .input-upload:hover
 .dark .is-ui .is-modal.imagesource .input-upload:hover,
-.dark .is-ui .is-modal.mediasource .input-upload:hover {
+.dark .is-ui .is-modal.mediasource .input-upload:hover,
+.dark .is-ui .is-modal.videolink .input-upload:hover,
+.dark .is-ui .is-modal.audiolink .input-upload {
   background:#636366
 }
