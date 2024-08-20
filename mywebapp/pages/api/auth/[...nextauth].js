@@ -23,34 +23,32 @@ export const authOptions = {
                 } catch (error) {
                     throw new Error('Connecting to the database failed.');
                 }
-
                 const db = client.db();
-
-
-
                 // Check for token in credentials
                 if (credentials.token) {
+
+
+                    let headers = {
+                        Authorization: `Bearer ${credentials.token}`
+                    };
+                    
+                    if (credentials.team) {
+                        headers['X-Press-Team'] = `${credentials.team}`;
+                    }
+
                     try {
-
-
-                        const response = await axios.post(
-                            'https://hosting.zaviago.com/api/method/press.api.account.get', {},
-                            {
-                                headers: {
-                                    Authorization: `Bearer ${credentials.token}` // Add the authorization header
-                                }
-                            }
+                        const response = await axios.get(
+                            'https://hosting.zaviago.com/api/method/press.api.account.get', 
+                            { headers }
                         );
-                        var userinfo = response?.data?.message?.user;
-                        var user_email = userinfo?.email;
-                        var user_name = userinfo?.full_name;
+                        var userinfo = response?.data?.message.team;
+                        var user_email = userinfo?.user;
 
                         const user = await db.collection('users').findOne({
                             email: user_email
                         });
 
                         if (!user) {
-                            
                             const hashedPassword = await hashPassword(credentials.token);
                             await db.collection('users').insertOne({
                                 username: user_email,
@@ -60,8 +58,6 @@ export const authOptions = {
                             await client.close();
                             const userData = { name: user.username, email: user.email };
                             return userData;
-
-
                         }
                         else{
                             const userData = { name: user.username, email: user.email };

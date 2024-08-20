@@ -21,6 +21,14 @@
   height: 844px;
 }
 
+
+.is-controlpanel.keep-selection.is-side.scroll-darker {
+  display: none;
+}
+
+body.controlpanel .is-controlpanel.keep-selection.is-side.scroll-darker {
+  display: block;
+}
 /* large screen*/
 /* @media all and (min-width: 1920px) {
   .is-content-view.desktop-lg {

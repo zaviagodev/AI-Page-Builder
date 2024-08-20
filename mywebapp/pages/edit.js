@@ -1,10 +1,10 @@
 import { getSession } from 'next-auth/react';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 import { connectDatabase } from '../src/db';
-import ContentBox from '@innovastudio/contentbox';
-// import ContentBox from '../src/contentbox/contentbox.js';
+// import ContentBox from '@innovastudio/contentbox';
+import ContentBox from '../public/contentbox/contentbox.min.js';
 import { getSiteByDomain } from '../src/domain';
 import Notif from '../src/notif';
 import { RenderCssIncludes, RenderJsIncludes } from '../src/render';
@@ -22,12 +22,12 @@ export default function Home(props) {
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [sitename, setSitename] = useState('')
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem("_theme", "1")
 
         builder();
 
-        if (typeof window !== undefined){
+        if (typeof window !== undefined) {
             setSitename(new URLSearchParams(window.location.search).get("page"))
         }
 
@@ -61,7 +61,7 @@ export default function Home(props) {
         let enableImageGeneration = props.aiImageGeneration;
 
         const session = await getSession();
-        if(!session) return;
+        if (!session) return;
         addExternalStyles([
             '/contentbox/contentbox.css',
             '/contentbuilder/contentbuilder.css'
@@ -72,8 +72,8 @@ export default function Home(props) {
 
             canvas: true,
 
-            onStart: ()=>{ // Builder start
-                if(window.loading) window.loading.stop(); // end loading status (see index.html for loading status start)
+            onStart: () => { // Builder start
+                if (window.loading) window.loading.stop(); // end loading status (see index.html for loading status start)
             },
 
             controlPanel: true,
@@ -87,12 +87,12 @@ export default function Home(props) {
             deviceButtons: true,
 
             // To enable AI Assistant
-            sendCommandUrl: enableAiAssistant?'/api/sendcommand':'',
+            sendCommandUrl: enableAiAssistant ? '/api/sendcommand' : '',
             AIToolbar: true,
             // showDisclaimer: false,
             startAIAssistant: true, // Auto open 'AI Assistant' panel
             enableShortCommands: true,
-            speechRecognitionLang: 'en-US', 
+            speechRecognitionLang: 'en-US',
             triggerWords: {
                 send: ['send', 'okay', 'ok', 'execute', 'run'],
                 abort: ['abort', 'cancel'],
@@ -106,7 +106,7 @@ export default function Home(props) {
             enableAnimation: true,
 
             // Enabling AI image generation
-            textToImageUrl: enableImageGeneration?'/api/texttoimage':'', 
+            textToImageUrl: enableImageGeneration ? '/api/texttoimage' : '',
             upscaleImageUrl: '/api/upscaleimage',
             viewImageUrl: '/api/viewimage',
             // imageAutoUpscale: false,
@@ -136,7 +136,7 @@ export default function Home(props) {
             With this you can create custom snippets with your own custom tags. Then you can replace custom tags
             inside the onAdd function.
             */
-            onAdd: (html)=>{
+            onAdd: (html) => {
                 html = html.replace(new RegExp(encodeURIComponent('{recaptchakey}'), 'g'), props.captchaSiteKey);
                 return html;
             },
@@ -152,23 +152,23 @@ export default function Home(props) {
 
             //-- New Template System:
             templates: [
-                {   
+                {
                     url: 'assets/templates-simple/templates.js',
-                    path: 'assets/templates-simple/', 
+                    path: 'assets/templates-simple/',
                     pathReplace: [],
                     numbering: true,
                     showNumberOnHover: true,
                 },
-                {   
+                {
                     url: 'assets/templates-quick/templates.js',
-                    path: 'assets/templates-quick/', 
+                    path: 'assets/templates-quick/',
                     pathReplace: [],
                     numbering: true,
                     showNumberOnHover: true,
                 },
-                {   
+                {
                     url: 'assets/templates-animated/templates.js',
-                    path: 'assets/templates-animated/', 
+                    path: 'assets/templates-animated/',
                     pathReplace: [],
                     numbering: true,
                     showNumberOnHover: true,
@@ -176,10 +176,10 @@ export default function Home(props) {
             ],
 
             contentStylePath: '/assets/styles/',
-    
+
             snippetUrl: '/assets/minimalist-blocks/content.js',
-            snippetPath: '/assets/minimalist-blocks/', 
-            snippetPathReplace: ['assets/','/assets/'], /* for snippets */
+            snippetPath: '/assets/minimalist-blocks/',
+            snippetPathReplace: ['assets/', '/assets/'], /* for snippets */
             modulePath: '/assets/modules/',
             assetPath: '/assets/', // Used for the location of ionicons/
             fontAssetPath: '/assets/fonts/',
@@ -189,69 +189,69 @@ export default function Home(props) {
             onChange: function () {
                 // Auto save
                 clearInterval(intervalId);
-                intervalId = setInterval(()=>{
+                intervalId = setInterval(() => {
                     // Check for change every 5s
-                    try{
+                    try {
                         let html = obj.htmlCheck();
-                        if(previousHtml!==html) { // Save only if content changed
-                            if(previousHtml) {// empty previousHtml means the current is initial content (no need to save)
-                                save(); 
+                        if (previousHtml !== html) { // Save only if content changed
+                            if (previousHtml) {// empty previousHtml means the current is initial content (no need to save)
+                                save();
                             }
-                            previousHtml=html;
+                            previousHtml = html;
                         }
-                    } catch(e) {
+                    } catch (e) {
 
                     }
                 }, 5000);
             },
             onUploadCoverImage: (e) => {
-                uploadFile(e, (response)=>{
-                    if(!response.error) {
+                uploadFile(e, (response) => {
+                    if (!response.error) {
                         const uploadedImageUrl = response.url;
-                        if(uploadedImageUrl) obj.boxImage(uploadedImageUrl);
+                        if (uploadedImageUrl) obj.boxImage(uploadedImageUrl);
                     }
                 });
             },
-            onMediaUpload: (e)=>{
-                uploadFile(e, (response)=>{
-                    if(!response.error) {
-                        const uploadedImageUrl = response.url; 
-                        if(uploadedImageUrl) obj.returnUrl(uploadedImageUrl);
+            onMediaUpload: (e) => {
+                uploadFile(e, (response) => {
+                    if (!response.error) {
+                        const uploadedImageUrl = response.url;
+                        if (uploadedImageUrl) obj.returnUrl(uploadedImageUrl);
                     }
                 });
             },
-            onVideoUpload: (e)=>{
-                uploadFile(e, (response)=>{
-                    if(!response.error) {
+            onVideoUpload: (e) => {
+                uploadFile(e, (response) => {
+                    if (!response.error) {
                         const uploadedFileUrl = response.url;
-                        if(uploadedFileUrl) obj.returnUrl(uploadedFileUrl);
+                        if (uploadedFileUrl) obj.returnUrl(uploadedFileUrl);
                     }
                 });
-            },  
-            onAudioUpload: (e)=>{
-                uploadFile(e, (response)=>{
-                    if(!response.error) {
+            },
+            onAudioUpload: (e) => {
+                uploadFile(e, (response) => {
+                    if (!response.error) {
                         const uploadedFileUrl = response.url;
-                        if(uploadedFileUrl) obj.returnUrl(uploadedFileUrl);
+                        if (uploadedFileUrl) obj.returnUrl(uploadedFileUrl);
                     }
                 });
-            },  
+            },
         });
 
         // Adding custom buttons
-        obj.addButton({ 
+        obj.addButton({
             'pos': 2,
             'title': 'Animation',
-            'html': '<svg class="is-icon-flex" style="fill:rgba(0, 0, 0, 0.7);width:14px;height:14px;"><use xlink:href="#icon-wand"></use></svg>', 
-            'onClick': ()=>{
+            'html': '<svg class="is-icon-flex" style="fill:rgba(0, 0, 0, 0.7);width:14px;height:14px;"><use xlink:href="#icon-wand"></use></svg>',
+            'onClick': () => {
                 obj.openAnimationPanel();
             }
         });
-        obj.addButton({ 
+        obj.addButton({
             'pos': 3,
             'title': 'Timeline Editor',
-            'html': '<svg><use xlink:href="#icon-anim-timeline"></use></svg>', 
-            'onClick': ()=>{
+            'html': '<svg><use xlink:href="#icon-anim-timeline"></use></svg>',
+            'onClick': () => {
                 obj.openAnimationTimeline();
             }
         });
@@ -271,15 +271,15 @@ export default function Home(props) {
         //         obj.clear();
         //     }
         // });
-        if(enableAiAssistant) {
-            obj.addButton({ 
+        if (enableAiAssistant) {
+            obj.addButton({
                 'pos': 6,
                 'title': 'AI Assistant',
-                'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-message"></use></svg>', 
-                'onClick': (e)=>{
-            
+                'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-message"></use></svg>',
+                'onClick': (e) => {
+
                     obj.openAIAssistant();
-            
+
                 }
             });
         }
@@ -288,20 +288,20 @@ export default function Home(props) {
         let search = window.location.search;
         let params = new URLSearchParams(search);
         let slug = params.get('page');
-        if(!slug) slug = '';
+        if (!slug) slug = '';
 
         const reqBody = { slug };
         let result = await fetch('/api/content', {
-            method:'POST',
+            method: 'POST',
             body: JSON.stringify(reqBody),
             header: {
                 'Content-Type': 'application/json'
             }
         });
         result = await result.json();
-        if(!result.error) { 
+        if (!result.error) {
 
-           
+
             //Load content
             const html = result.content.html || '';
             const mainCss = result.content.mainCss || '';
@@ -311,30 +311,30 @@ export default function Home(props) {
         }
         localStorage.setItem('mypage', '');
 
-        if(result.content.html == ''){
+        if (result.content.html == '') {
             document.querySelector('#_cbhtml').style.display = 'none';
             document.querySelector('.is-wrapper').style.opacity = '1';
 
             const handleClick = (studioInstance) => {
-                return function() {
+                return function () {
                     var html = studioInstance.html();
-                    obj.loadHtml(html);  
-                     setBuilderObj(obj);  
-                     document.querySelector('.custom-topbar').style.opacity = '';
-                     document.querySelector(`.custom-topbar [data-device=${obj.screenMode}]`).classList.add('on');
-                     document.querySelector('#_cbhtml').style.display = '';
-                     localStorage.setItem('mypage', '');
-                     studio.clear();
-                     studio.destroy();
-                     studio = null;
-                     save();
+                    obj.loadHtml(html);
+                    setBuilderObj(obj);
+                    document.querySelector('.custom-topbar').style.opacity = '';
+                    document.querySelector(`.custom-topbar [data-device=${obj.screenMode}]`).classList.add('on');
+                    document.querySelector('#_cbhtml').style.display = '';
+                    localStorage.setItem('mypage', '');
+                    studio.clear();
+                    studio.destroy();
+                    studio = null;
+                    save();
                     // You can add more logic here to interact with the studio instance
                 };
             };
             const container = document.querySelector('.ai_selector')
-            var studio =  new PageStudioAI(container, {
-                sendCommandUrl: '/api/sendcommand', 
-                textToImageUrl: '/api/texttoimage', 
+            var studio = new PageStudioAI(container, {
+                sendCommandUrl: '/api/sendcommand',
+                textToImageUrl: '/api/texttoimage',
                 upscaleImageUrl: '/api/upscaleimage',
                 enableImageGeneration: true,
                 imageAutoUpscale: true,
@@ -345,12 +345,12 @@ export default function Home(props) {
                 enableDownload: true
 
             });
-           
+
             const divElement = document.querySelector('button.btn-tool-3.tooltip');
             divElement.addEventListener('click', handleClick(studio));
 
 
-            
+
 
 
             // const checkContentReady = () => {
@@ -358,25 +358,25 @@ export default function Home(props) {
             //     //     console.log('Content is ready!');
             //     //     clearInterval(checkInterval);
             //     //     var html = studio.html();
-                    //  obj.loadHtml(html);  
-                    //  setBuilderObj(obj);  
-                    //  console.log(html);
-                    //  document.querySelector('.custom-topbar').style.opacity = '';
-                    //  document.querySelector(`.custom-topbar [data-device=${obj.screenMode}]`).classList.add('on');
-                    //  document.querySelector('#_cbhtml').style.display = '';
-                    //  localStorage.setItem('mypage', '');
-                    //  studio.clear();
-                    //  studio.destroy();
-                    //  studio = null;
-                    //  save(); 
+            //  obj.loadHtml(html);  
+            //  setBuilderObj(obj);  
+            //  console.log(html);
+            //  document.querySelector('.custom-topbar').style.opacity = '';
+            //  document.querySelector(`.custom-topbar [data-device=${obj.screenMode}]`).classList.add('on');
+            //  document.querySelector('#_cbhtml').style.display = '';
+            //  localStorage.setItem('mypage', '');
+            //  studio.clear();
+            //  studio.destroy();
+            //  studio = null;
+            //  save(); 
             //     // }
             // };
-            
+
             // const checkInterval = setInterval(checkContentReady, 100);
-            
+
             //studio.destroy();
             //localStorage.setItem('pagedata', html);
-            
+
             // obj.loadHtml(html);
 
 
@@ -387,11 +387,11 @@ export default function Home(props) {
             // document.querySelector(`.custom-topbar [data-device=${obj.screenMode}]`).classList.add('on');
             // document.querySelector('#_cbhtml').style.display = '';
         }
-        else{
+        else {
             setBuilderObj(obj);
             document.querySelector('.custom-topbar').style.opacity = '';
             document.querySelector(`.custom-topbar [data-device=${obj.screenMode}]`).classList.add('on');
-           
+
         }
 
     }
@@ -401,7 +401,7 @@ export default function Home(props) {
     //     if(!obj) obj = builderObj;
     //     console.log(obj);
     // };
-    
+
 
     async function uploadFile(e, callback) {
 
@@ -410,13 +410,13 @@ export default function Home(props) {
         const formData = new FormData();
         formData.append('file', selectedFile);
         await fetch('/api/upload', {
-          method: 'POST',
-          body: formData,
+            method: 'POST',
+            body: formData,
         })
-        .then(response=>response.json())
-        .then(data=>{
-            if(callback) callback(data);
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (callback) callback(data);
+            });
     }
 
     function back() {
@@ -425,22 +425,22 @@ export default function Home(props) {
     }
 
     function undo(e) {
-        if(!obj) obj = builderObj;
+        if (!obj) obj = builderObj;
         obj.undo();
     }
 
     function redo(e) {
-        if(!obj) obj = builderObj;
+        if (!obj) obj = builderObj;
         obj.redo();
     }
 
     function preview() {
-        if(!obj) obj = builderObj;
-        
+        if (!obj) obj = builderObj;
+
         let html = obj.html();
-        localStorage.setItem('preview-html', html); 
-        let mainCss = obj.mainCss(); 
-        localStorage.setItem('preview-maincss', mainCss); 
+        localStorage.setItem('preview-html', html);
+        let mainCss = obj.mainCss();
+        localStorage.setItem('preview-maincss', mainCss);
         let sectionCss = obj.sectionCss();
         localStorage.setItem('preview-sectioncss', sectionCss);
 
@@ -448,18 +448,18 @@ export default function Home(props) {
     }
 
     function download() {
-        if(!obj) obj = builderObj;
+        if (!obj) obj = builderObj;
         obj.download();
     }
 
     function viewHtml() {
-        if(!obj) obj = builderObj;
+        if (!obj) obj = builderObj;
         obj.viewHtml();
     }
 
     function toggleAppearance() {
         setIsDarkMode(!isDarkMode)
-        if (!isDarkMode){
+        if (!isDarkMode) {
             document.body.classList.add("dark")
             localStorage.setItem("mode", "dark")
         } else {
@@ -469,14 +469,14 @@ export default function Home(props) {
     }
 
     function setScreenMode(e) {
-        if(!obj) obj = builderObj;
+        if (!obj) obj = builderObj;
 
-        document.querySelectorAll('.custom-topbar [data-device]').forEach(btn=>btn.classList.remove('on'));
+        document.querySelectorAll('.custom-topbar [data-device]').forEach(btn => btn.classList.remove('on'));
 
         const btn = e.target.closest('button');
         const screenMode = btn.getAttribute('data-device');
 
-        if(screenMode==='fullview' && obj.screenMode==='fullview') {
+        if (screenMode === 'fullview' && obj.screenMode === 'fullview') {
             // toggle
             obj.setScreenMode('desktop');
             document.querySelector('.custom-topbar [data-device=desktop]').classList.add('on');
@@ -488,15 +488,15 @@ export default function Home(props) {
 
     async function save(e) {
 
-        if(!obj) obj = builderObj;
+        if (!obj) obj = builderObj;
 
-        if(e) {
+        if (e) {
             e.preventDefault();
-    
-            setNotif({mode: 'wait', text: 'Saving..'});
+
+            setNotif({ mode: 'wait', text: 'Saving..' });
         }
 
-        obj.saveImages('', async ()=>{
+        obj.saveImages('', async () => {
 
             //Save content
             let html = obj.html();
@@ -504,60 +504,60 @@ export default function Home(props) {
             let sectionCss = obj.sectionCss(); // Typography styles for the sections
 
             //To update preview
-            localStorage.setItem('preview-html', html); 
-            localStorage.setItem('preview-maincss', mainCss); 
+            localStorage.setItem('preview-html', html);
+            localStorage.setItem('preview-maincss', mainCss);
             localStorage.setItem('preview-sectioncss', sectionCss);
 
             //Get slug from query string ?page=slug
             let search = window.location.search;
             let params = new URLSearchParams(search);
             let slug = params.get('page');
-            if(!slug) slug = '';
+            if (!slug) slug = '';
 
             const reqBody = { action: 'save', slug: slug, html: html, mainCss: mainCss, sectionCss: sectionCss };
             let result = await fetch('/api/content', {
-                method:'POST',
+                method: 'POST',
                 body: JSON.stringify(reqBody),
                 header: {
                     'Content-Type': 'application/json'
                 }
             });
             result = await result.json();
-            if(!result.error) { 
+            if (!result.error) {
                 setNotif({});
             } else {
-                setNotif({mode: 'error', text: result.error});
-                setTimeout(()=>{
+                setNotif({ mode: 'error', text: result.error });
+                setTimeout(() => {
                     setNotif({});
                 }, 2000);
             }
 
-        }, async (img, base64, filename)=>{
+        }, async (img, base64, filename) => {
 
             // Upload base64 images
             const reqBody = { image: base64, filename: filename };
             let result = await fetch('/api/uploadbase64', {
-                method:'POST',
+                method: 'POST',
                 body: JSON.stringify(reqBody),
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
             result = await result.json();
-            if(!result.error) { 
+            if (!result.error) {
                 const uploadedImageUrl = result.url;
                 img.setAttribute('src', uploadedImageUrl); // Update image src
             }
-            
+
         });
     }
 
     async function publish(e) {
         e.preventDefault();
-        
-        setNotif({mode: 'wait', text: 'Publishing..'});
 
-        if(!obj) obj = builderObj;
+        setNotif({ mode: 'wait', text: 'Publishing..' });
+
+        if (!obj) obj = builderObj;
 
         //Save content
         let html = obj.html();
@@ -565,30 +565,30 @@ export default function Home(props) {
         let sectionCss = obj.sectionCss(); // Typography styles for the sections
 
         //To update preview
-        localStorage.setItem('preview-html', html); 
-        localStorage.setItem('preview-maincss', mainCss); 
+        localStorage.setItem('preview-html', html);
+        localStorage.setItem('preview-maincss', mainCss);
         localStorage.setItem('preview-sectioncss', sectionCss);
 
         //Get slug from query string ?page=slug
         let search = window.location.search;
         let params = new URLSearchParams(search);
         let slug = params.get('page');
-        if(!slug) slug = '';
+        if (!slug) slug = '';
 
         const reqBody = { slug: slug, html: html, mainCss: mainCss, sectionCss: sectionCss };
         let result = await fetch('/api/contentpublish', {
-            method:'POST',
+            method: 'POST',
             body: JSON.stringify(reqBody),
             header: {
                 'Content-Type': 'application/json'
             }
         });
         result = await result.json();
-        if(!result.error) { 
+        if (!result.error) {
             setNotif({});
         } else {
-            setNotif({mode: 'error', text: result.error});
-            setTimeout(()=>{
+            setNotif({ mode: 'error', text: result.error });
+            setTimeout(() => {
                 setNotif({});
             }, 2000);
         }
@@ -599,17 +599,17 @@ export default function Home(props) {
         includes.forEach((link) => {
             link.parentNode.removeChild(link); // Remove existing
         });
-        for(let i=0;i<=arrStyle.length-1;i++){
+        for (let i = 0; i <= arrStyle.length - 1; i++) {
             const url = arrStyle[i];
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.setAttribute('data-my-css-link','');
+            link.setAttribute('data-my-css-link', '');
             link.href = url;
             document.head.appendChild(link);
         }
     }
 
-    if(props.invalidDomain) {
+    if (props.invalidDomain) {
         return <>Invalid Domain</>;
     }
 
@@ -626,10 +626,11 @@ export default function Home(props) {
 
             <div className="ai_selector" style={{ background: 'black' }}></div>
 
-            <div className="builder-ui keep-selection custom-topbar" style={{opacity:'0'}} data-tooltip>
+            <div className="builder-ui keep-selection custom-topbar" style={{ opacity: '0' }} data-tooltip>
                 <div>
-                    <button className="additional-menu-btn" onClick={() => {}}>
-                        <div dangerouslySetInnerHTML={{ __html: `
+                    <button className="additional-menu-btn" onClick={() => { }}>
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
                         ` }} />
                     </button>
@@ -637,7 +638,8 @@ export default function Home(props) {
                 </div>
                 <div>
                     <button className="btn-back" onClick={back} title="Back">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg><use xlink:href="#icon-back"></use></svg>
                         ` }} />
                         <span>Back</span>
@@ -646,25 +648,29 @@ export default function Home(props) {
                     <div className="separator"></div>
 
                     <button className="btn-undo" onClick={undo} title="Undo">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg><use xlink:href="#icon-undo"></use></svg>
                         ` }} />
                     </button>
 
                     <button className="btn-redo" onClick={redo} title="Redo">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg><use xlink:href="#icon-redo"></use></svg>
                         ` }} />
                     </button>
 
                     <button className='button-normal bg-white hover:bg-white/60' onClick={save} title="Save">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg><use xlink:href="#icon-save"></use></svg>
                         ` }} />
                         <span>Save</span>
                     </button>
-                    <button className='button-normal bg-white hover:bg-white/60' style={{marginLeft:'7px'}} onClick={publish} title="Publish">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                    <button className='button-normal bg-white hover:bg-white/60' style={{ marginLeft: '7px' }} onClick={publish} title="Publish">
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg><use xlink:href="#icon-publish"></use></svg>
                         ` }} />
                         <span>Publish</span>
@@ -672,12 +678,14 @@ export default function Home(props) {
                 </div>
                 <div>
                     <button className="btn-device-desktop" data-device="desktop" onClick={setScreenMode} title="Desktop">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                             <svg style="width:18px;height:18px;"><use xlink:href="#icon-device-desktop"></use></svg>
                         ` }} />
                     </button>
                     <button className="btn-device-tablet-landscape" data-device="tablet-landscape" onClick={setScreenMode} title="Tablet"> {/* title="Tablet - Landscape" */}
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg style="width:18px;height:18px;transform:rotate(-90deg)"><use xlink:href="#icon-device-tablet"></use></svg>
                         ` }} />
                     </button>
@@ -687,17 +695,20 @@ export default function Home(props) {
                         ` }} />
                     </button> */}
                     <button className="btn-device-mobile" data-device="mobile" onClick={setScreenMode} title="Mobile">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg  style="width:18px;height:18px;"><use xlink:href="#icon-device-mobile"></use></svg>
                         ` }} />
                     </button>
                     <button className="btn-fullview" data-device="fullview" onClick={setScreenMode} title="Full View">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg  style="width:18px;height:18px;"><use xlink:href="#icon-fullview"></use></svg>
                         ` }} />
                     </button>
-                    <button className="btn-additional-menu" data-device="additional-menu" data-title="Additional Menu" onClick={() => {}} title="Additional Menu">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                    <button className="btn-additional-menu" data-device="additional-menu" data-title="Additional Menu" onClick={() => { }} title="Additional Menu">
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
                         ` }} />
                     </button>
@@ -722,24 +733,25 @@ export default function Home(props) {
                     </button> */}
 
                     <button className="btn-preview" onClick={preview} title="Preview">
-                        <div dangerouslySetInnerHTML={{ __html: `
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                         <svg><use xlink:href="#icon-eye"></use></svg>
                         ` }} />
                     </button>
-                    
+
                 </div>
             </div>
 
             <RenderCssIncludes cssIncludes={[
-              { css: "/assets/minimalist-blocks/content.css" }, // tailwind: content-tailwind.css
-              { css: "/box/box-flex.css" },
-              { css: "/assets/scripts/glide/css/glide.core.css" },
-              { css: "/assets/scripts/glide/css/glide.theme.css" },
-              { css: "/assets/scripts/navbar/navbar.css" }]}/>
+                { css: "/assets/minimalist-blocks/content.css" }, // tailwind: content-tailwind.css
+                { css: "/box/box-flex.css" },
+                { css: "/assets/scripts/glide/css/glide.core.css" },
+                { css: "/assets/scripts/glide/css/glide.theme.css" },
+                { css: "/assets/scripts/navbar/navbar.css" }]} />
 
-            <RenderCssIncludes cssIncludes={props.cssIncludes}/>
+            <RenderCssIncludes cssIncludes={props.cssIncludes} />
 
-            <div className="is-wrapper" style={{opacity: 0}}>
+            <div className="is-wrapper" style={{ opacity: 0 }}>
             </div>
 
             {/* <div className='fixed top-7 right-7 flex'>
@@ -747,7 +759,7 @@ export default function Home(props) {
                 <button className='button-normal bg-white hover:bg-white/60' style={{marginLeft:'7px'}} onClick={publish}>Publish</button>
             </div> */}
 
-            <RenderJsIncludes jsIncludes={props.jsIncludes}/>
+            <RenderJsIncludes jsIncludes={props.jsIncludes} />
             <Script src="assets/scripts/glide/glide.js" />
             <Script src="/assets/scripts/navbar/navbar.min.js" />
             <Notif mode={notif.mode} text={notif.text} duration={notif.duration} />
@@ -764,8 +776,8 @@ export async function getServerSideProps(context) {
 
     const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
     const GETIMG_API_KEY = process.env.GETIMG_API_KEY;
-    const aiAssistant = OPENAI_API_KEY?true:false;
-    const aiImageGeneration = GETIMG_API_KEY?true:false;
+    const aiAssistant = OPENAI_API_KEY ? true : false;
+    const aiImageGeneration = GETIMG_API_KEY ? true : false;
 
     let client = await connectDatabase();
     const db = client.db();
@@ -775,17 +787,17 @@ export async function getServerSideProps(context) {
     });
 
     await client.close();
-    
-    return { 
-        props: { 
+
+    return {
+        props: {
             mainHost: mainHost,
             domainName: domainName,
             owner: owner,
-            cssIncludes: page?page.cssIncludes?page.cssIncludes:'':'',
-            jsIncludes: page?page.jsIncludes?page.jsIncludes:'':'',
+            cssIncludes: page ? page.cssIncludes ? page.cssIncludes : '' : '',
+            jsIncludes: page ? page.jsIncludes ? page.jsIncludes : '' : '',
             captchaSiteKey: site.props.captchaSiteKey,
             aiAssistant,
             aiImageGeneration
-        } 
+        }
     };
 }

@@ -1,0 +1,38 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.type-marcellussc-heebo {
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.13rem; 
+    line-height: 1.5;
+    font-weight: 300;
+}
+.type-marcellussc-heebo h1, .type-marcellussc-heebo h2, .type-marcellussc-heebo h3, .type-marcellussc-heebo h4, .type-marcellussc-heebo h5, .type-marcellussc-heebo h6 {
+    font-family: 'Marcellus SC', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}        
+
+.type-marcellussc-heebo h1 {font-size: 3.3rem;}
+.type-marcellussc-heebo h2 {font-size: 2.6rem;}
+.type-marcellussc-heebo h3 {font-size: 2rem;}
+.type-marcellussc-heebo h4 {font-size: 1.7rem;}
+.type-marcellussc-heebo h5 {font-size: 1.4rem;}
+.type-marcellussc-heebo h6 {font-size: 1.13rem;}
+
+.type-marcellussc-heebo .display { margin-bottom: 0.5rem; }
+.type-marcellussc-heebo .display h1 {
+	font-family: 'Marcellus SC', serif;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin: 0.4rem 0 1rem;
+}
+.type-marcellussc-heebo .display p {
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}

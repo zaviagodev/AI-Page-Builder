@@ -2429,7 +2429,7 @@ body { /* optional */
 .is-block .is-container {
     max-width: unset !important;
     width: 100%;
-    padding: 20px 30px;
+    padding: 0px;
     box-sizing: border-box;
     position: relative;
     z-index: 1;

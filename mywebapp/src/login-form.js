@@ -21,18 +21,20 @@ function LoginForm(props) {
             setSignupOk(true);
         }
         const token = params.get('token');
-        if (token) {
+        const team = params.get('team');
+        if (team) {
+            handleToken(token, team);
+        } else {
             handleToken(token);
         }
 
-
     }, []);
 
-    const handleToken = async (token) => {
-
+    const handleToken = async (token,team="") => {
         const result = await signIn('credentials', { 
             redirect: false,
             token: token,
+            team: team,
         });
         if(!result.error) { 
             if(props.redirect) {

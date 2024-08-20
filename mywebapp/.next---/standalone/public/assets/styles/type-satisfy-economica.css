@@ -1,0 +1,37 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.type-satisfy-economica {
+    font-family: 'Economica', sans-serif;
+    font-size: 1.34rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.type-satisfy-economica h1, .type-satisfy-economica h2, .type-satisfy-economica h3, .type-satisfy-economica h4, .type-satisfy-economica h5, .type-satisfy-economica h6 {
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}        
+
+.type-satisfy-economica h1 {font-size: 3.5rem;}
+.type-satisfy-economica h2 {font-size: 2.7rem;}
+.type-satisfy-economica h3 {font-size: 2.1rem;}
+.type-satisfy-economica h4 {font-size: 1.8rem;}
+.type-satisfy-economica h5 {font-size: 1.5rem;}
+.type-satisfy-economica h6 {font-size: 1.34rem;font-weight: 600;}
+
+.type-satisfy-economica .display { margin-bottom: 0.5rem; }
+.type-satisfy-economica .display h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 4.8rem;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0.4rem 0 1rem;
+}
+.type-satisfy-economica .display p {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

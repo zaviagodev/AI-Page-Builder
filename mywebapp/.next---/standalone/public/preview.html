@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Default Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="#" />  
+    
+    <link href="assets/minimalist-blocks/content.css" rel="stylesheet" type="text/css" /> 
+    <link href="box/box-flex.css" rel="stylesheet" type="text/css" />
+    <link href="assets/scripts/glide/css/glide.core.css" rel="stylesheet" type="text/css" />
+    <link href="assets/scripts/glide/css/glide.theme.css" rel="stylesheet" type="text/css" />
+    <link href="assets/scripts/navbar/navbar.css" rel="stylesheet" type="text/css" />
+    
+    <script>
+        /* Add saved styles */
+        if (localStorage.getItem('preview-maincss') != null) {
+            document.head.insertAdjacentHTML('beforeend', localStorage.getItem('preview-maincss'));
+        }
+        if (localStorage.getItem('preview-sectioncss') != null) {
+            document.head.insertAdjacentHTML('beforeend', localStorage.getItem('preview-sectioncss'));
+        }
+    </script>
+
+    <style>
+        body {
+            background: #d3d3d3;
+        }
+    </style>
+
+</head>
+<body style="touch-action: pan-y">
+    <div class="is-wrapper">
+        
+    </div>
+    
+    <script>
+        var html = localStorage.getItem('preview-html');
+        
+        // Add saved HTML
+        const wrapper = document.querySelector('.is-wrapper');
+        wrapper.innerHTML = '';
+        const range = document.createRange(); 
+        range.setStart(wrapper, 0);
+        wrapper.appendChild(
+            range.createContextualFragment(html) 
+        ); 
+    </script>
+
+    <script src="assets/scripts/glide/glide.js" type="text/javascript"></script>
+    <script src="assets/scripts/navbar/navbar.min.js" type="text/javascript"></script>
+
+    <script src="box/box-flex.js" type="text/javascript"></script>
+
+    <!-- Optional: if you want to add smooth scrolling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" type="text/javascript"></script>
+    <script>
+    SmoothScroll({
+        frameRate: 150,
+        animationTime: 800,
+        stepSize: 120,
+        pulseAlgorithm: 1,
+        pulseScale: 4,
+        pulseNormalize: 1,
+        accelerationDelta: 300,
+        accelerationMax: 2,
+        keyboardSupport: 1,
+        arrowScroll: 50,
+        fixedBackground: 0
+    });
+    </script>
+</body>
+</html>
