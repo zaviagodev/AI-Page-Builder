@@ -661,13 +661,13 @@ body.controlpanel .is-content-view.mobile {
   width: 150px;
 }
 .builder-ui button.is-btn-color {
-  width: 59px;
-  height: 56px;
+  /* width: 59px; */
+  height: 7px;
   margin:-2px;
 }
 .builder-ui button.is-btn-color.nocolor {
-  width: 59px;
-  height: 56px;
+  /* width: 59px; */
+  height: 7px;
 }
 .builder-ui button.on,
 .builder-ui button:not(.is-btn-color):hover {
@@ -807,10 +807,18 @@ body.controlpanel .is-content-view.mobile {
   box-shadow: none;
 }
 
+.builder-ui .panel-text .submain .separator  {
+ height: 57%;
+ width: 2px;
+ background-color: rgb(139, 139, 139);
+ margin: 0px 10px;
+}
 .builder-ui .panel-text .submain .group,
 .builder-ui .panel-box #boxcontent2 .subpanel .group  {
-  width:100%;
-  justify-content:space-between
+  /* width:100%; */
+  justify-content:space-between;
+  display: flex;
+  align-items: center;
 }
 
 .builder-ui .panel-text .submain .mr-8 .group {
@@ -818,12 +826,12 @@ body.controlpanel .is-content-view.mobile {
 }
 
 .builder-ui .group {
-  margin-bottom: 11px;
+  /* margin-bottom: 11px; */
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: inline-flex;
-  flex-wrap: wrap;
-  padding: 2px;
+  /* flex-wrap: wrap; */
+  /* padding: 2px; */
   box-sizing: border-box;
   background:white;
 }
@@ -902,7 +910,7 @@ body.controlpanel .is-content-view.mobile {
   position: relative;
   display: inline-block;
   font-size: 15px;
-  width:100% !important;
+  /* width:100% !important; */
   border-radius:10px;
 }
 .builder-ui .custom-select .select-styled {
@@ -910,14 +918,14 @@ body.controlpanel .is-content-view.mobile {
   align-items: center;
   justify-content: space-between;
   padding: 0 6px 0 6px;
-  border: var(--cs-border);
+  border: 1.3px solid;
   cursor: pointer;
   position: relative;
   user-select: none;
   box-sizing: border-box;
   height: var(--cs-height);
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 12px;
   box-shadow: none;
   outline: none;
 }
@@ -925,7 +933,7 @@ body.controlpanel .is-content-view.mobile {
   display: flex;
 }
 .builder-ui .custom-select .select-styled span img {
-  height: 25px;
+  height: 17px;
   margin-top: 3px;
 }
 .builder-ui .custom-select .select-styled:focus-visible {
@@ -955,7 +963,7 @@ body.controlpanel .is-content-view.mobile {
 .builder-ui .custom-select input {
   display: none;
   width: 100%;
-  height: 40px;
+  height: 30px;
   border: var(--cs-border);
   border-top: none;
   padding: 0 3px 0 8px;
@@ -992,7 +1000,7 @@ body.controlpanel .is-content-view.mobile {
   overflow-y: auto;
 }
 .builder-ui .custom-select.has-search .select-options {
-  top: calc(var(--cs-height) + 40px);
+  top: calc(var(--cs-height) + 30px);
 }
 .builder-ui .custom-select .select-options.active {
   display: block;
@@ -1001,12 +1009,12 @@ body.controlpanel .is-content-view.mobile {
   padding: 0 8px;
   cursor: pointer;
   white-space: nowrap;
-  min-height: 36px;
+  min-height: 27px;
   align-items: center;
 }
 .builder-ui .custom-select .select-options li img {
   margin: 8px 0;
-  height: 25px;
+  height: 18px;
 }
 .builder-ui .custom-select .select-options li:hover {
   background-color: var(--cs-hover-background);
@@ -1030,6 +1038,501 @@ body.controlpanel .is-content-view.mobile {
 .builder-ui .scroll-darker *::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+/* /UI */
+/* TOP TEXT CONTROL PANEL */
+
+body.controlpanel .builder-ui .is-textcontrolpanel {
+  right: 8px;
+}
+body.controlpanel .is-wrapper {
+  margin-left: 0 !important;
+}
+
+
+.builder-ui .is-textcontrolpanel {
+  position: fixed;
+  background-color: transparent;
+  width: 57vw;
+  height: 41px; 
+  display: flex;
+  top: 60px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 1;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  border-radius: 17px;
+  padding-right: 4px;
+}
+
+.builder-ui .is-textcontrolpanel::before {
+  content: '';
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: -1;
+  position: fixed;
+  width: 57vw;
+  height:41px; 
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.builder-ui .is-textcontrolpanel [class^=panel-] {
+  display: none;
+  flex-direction: column;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].active {
+  display: flex;
+  border-radius: 13px;
+  background-color: #504f4f;
+  justify-content: center;
+  align-items: center;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-section .submain, .builder-ui .is-textcontrolpanel [class^=panel-].panel-box .submain {
+  padding: 0 24px 20px;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-] .submain {
+
+  display: flex;
+  align-items: center;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-] .subpanel {
+  padding: 14px 24px 15px;
+  width:100%;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-] .last .subpanel {
+  padding: 14px 24px 30px;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-] .subtitle {
+  font-weight: 600;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop {
+  position: fixed;
+  width: 132px;
+  height: auto;
+  background-color: #fff;
+  display: none;
+  border-radius: 7px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 2px;
+  box-sizing: border-box;
+  flex: none;
+  flex-direction: row;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.08);
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop button {
+  flex: none;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop.more {
+  width: auto;
+  flex-direction: column;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop.more > button {
+  padding: 0 20px;
+  width: auto;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop.more .label {
+  margin: 6px 0 0 0;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop.more div {
+  display: flex;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop.more div button {
+  flex: none;
+}
+.builder-ui .is-textcontrolpanel [class^=panel-].panel-pop.more .plugins {
+  justify-content: center;
+}
+.builder-ui .is-textcontrolpanel .panel-image .asset-preview img,
+.builder-ui .is-textcontrolpanel .panel-box .asset-preview img,
+.builder-ui .is-textcontrolpanel .panel-block .asset-preview img {
+  max-width: 130px;
+  max-height: 130px;
+}
+.builder-ui .is-textcontrolpanel .panel-audio .asset-preview,
+.builder-ui .is-textcontrolpanel .panel-iframe .asset-preview {
+  width: 100%;
+  height: auto;
+}
+.builder-ui .is-textcontrolpanel .panel-audio .asset-preview div,
+.builder-ui .is-textcontrolpanel .panel-iframe .asset-preview div {
+  margin-top: 0 !important;
+}
+.builder-ui .is-textcontrolpanel .group.color-pick > div {
+  width: 36px;
+  display: flex;
+  padding: 1px;
+  align-items: center;
+}
+.builder-ui .is-textcontrolpanel .group.color-pick > div button {
+  margin: 0;
+  border-radius: 6px;
+  z-index: 1;
+  width: 36px;
+  flex: none;
+  color: inherit;
+}
+.builder-ui .is-textcontrolpanel .group.color-pick > div input {
+  width: 36px;
+  height: 34px;
+  border-radius: 6px;
+  font-weight: 200;
+  outline: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.builder-ui .is-textcontrolpanel .group.addcontent button {
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.removecontent {
+  width: 222px;
+}
+.builder-ui .is-textcontrolpanel .group.removecontent button {
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.contentsize button {
+  width: 50px;
+  font-size: 12px;
+}
+.builder-ui .is-textcontrolpanel .group.contentheight {
+  width: 222px;
+  flex-flow: wrap;
+}
+.builder-ui .is-textcontrolpanel .group.contentheight > div:first-child {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.contentheight > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.contentheight button {
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.editmodule {
+  width: 222px;
+  margin-top: 8px;
+}
+.builder-ui .is-textcontrolpanel .group.editmodule button {
+  width: 100%;
+  height: 39px;
+}
+.builder-ui .is-textcontrolpanel .group.editspacing, .builder-ui .is-textcontrolpanel .group.moreoptions, .builder-ui .is-textcontrolpanel .group.resetrotation {
+  width: 222px;
+}
+.builder-ui .is-textcontrolpanel .group.editspacing button, .builder-ui .is-textcontrolpanel .group.moreoptions button, .builder-ui .is-textcontrolpanel .group.resetrotation button {
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.contentspacing {
+  width: 218px;
+}
+.builder-ui .is-textcontrolpanel .group.contentposition {
+  width: 112px;
+  flex-flow: wrap;
+}
+.builder-ui .is-textcontrolpanel .group.contentposition button {
+  width: 33px;
+  height: 28px;
+  font-size: 10px;
+}
+.builder-ui .is-textcontrolpanel .group.textcolor {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.builder-ui .is-textcontrolpanel .group.textcolor button {
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .group.sectionaction {
+  width: 175px;
+}
+.builder-ui .is-textcontrolpanel .group.sectionheight {
+  width: 232px;
+}
+.builder-ui .is-textcontrolpanel .group.sectionheight button {
+  width: 41px;
+  height: 34px;
+  font-size: 11px;
+}
+.builder-ui .is-textcontrolpanel .group.sectionspacing {
+  width: 230px;
+}
+.builder-ui .is-textcontrolpanel .group.sectionspacing button {
+  width: 33px;
+  height: 32px;
+  font-size: 12px;
+}
+.builder-ui .is-textcontrolpanel .group.betweenbox {
+  width: 215px;
+}
+.builder-ui .is-textcontrolpanel .group.betweenbox button {
+  width: 100px;
+}
+.builder-ui .is-textcontrolpanel .group.boxesperline {
+  width: 217px;
+}
+.builder-ui .is-textcontrolpanel .group.animstart {
+  width: 225px;
+}
+.builder-ui .is-textcontrolpanel .group.animstart button {
+  width: 105px;
+}
+.builder-ui .is-textcontrolpanel .group.animend {
+  width: 225px;
+}
+.builder-ui .is-textcontrolpanel .group.animend button {
+  width: 105px;
+}
+.builder-ui .is-textcontrolpanel .group.scrollbuttons {
+  width: 218px;
+}
+.builder-ui .is-textcontrolpanel .group.colsperline {
+  width: 175px;
+}
+.builder-ui .is-textcontrolpanel .group.colsperline button[data-colsperline=""] {
+  width: 79px;
+}
+.builder-ui .is-textcontrolpanel .group.defaultparasize, .builder-ui .is-textcontrolpanel .group.defaultlinespacing {
+  width: 175px;
+}
+.builder-ui .is-textcontrolpanel .group.contenttransparency {
+  width: 132px;
+}
+.builder-ui .is-textcontrolpanel .group.flexjustify button svg {
+  width: 18px;
+  height: 18px;
+}
+.builder-ui .is-textcontrolpanel .group.clearflex button {
+  width: auto;
+  padding: 0 14px;
+}
+.builder-ui .is-textcontrolpanel .label.changedevice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.builder-ui .is-textcontrolpanel .label.changedevice .btn-device {
+  width: 27px;
+  height: 24px;
+}
+.builder-ui .is-textcontrolpanel .label.changedevice .btn-device svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+.builder-ui .is-textcontrolpanel .customtags .group > div {
+  width: 216px;
+  height: 111px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.builder-ui .is-textcontrolpanel .customtags .group > div button {
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 12px;
+}
+.builder-ui .is-textcontrolpanel .imagesource input[type=text] {
+  font-size: 13px;
+  height: 40px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 8px;
+  width: 380px;
+  height: 100%;
+  display: none;
+  background-color: rgba(248, 247, 247, 0.67);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter:blur(20px);
+  border-radius:17px;
+  overflow-y: auto;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog button.btn-back {
+  width: 43px;
+  height: 40px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog button.btn-back svg {
+  width: 22px;
+  height: 22px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.icons input {
+  outline-offset: -2px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.icons > div {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.icons > div button {
+  width: 63px;
+  height: 60px;
+  font-size: 24px;
+  opacity: 0.9;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks {
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+  position: absolute;
+  top: 90px;
+  border-top: #efefef 1px solid;
+  box-sizing: border-box;
+  padding-bottom: 35px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks > div {
+  width: 212px;
+  overflow: hidden;
+  margin: 28px 0 0 34px;
+  cursor: move;
+  display: block;
+  opacity: 1;
+  outline: #d5d5d5 1px solid;
+  box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks > div.hide {
+  display: none;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks > div img {
+  box-shadow: none;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  width: 100%;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks > div .is-overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks > div .is-overlay:after {
+  background: rgba(0, 0, 0, 0.04);
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks > div:hover .is-overlay:after {
+  opacity: 0.9;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.blocks .div-blocks .snippet-item.sortable-drag:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions {
+  overflow-y: auto;
+  font-size: 13px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element button.btn-back, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions button.btn-back {
+  flex: none;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .submain, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .submain {
+  padding-bottom: 26px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .subpanel, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .subpanel {
+  padding-bottom: 26px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .subtitle, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .subtitle {
+  font-weight: 600;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .part-breadcrumb, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .part-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  margin-left: -1px;
+  align-items: center;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .part-breadcrumb a, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .part-breadcrumb a {
+  font-size: 12px;
+  text-decoration: none;
+  margin: 0 2px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .part-breadcrumb svg, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .part-breadcrumb svg {
+  width: 10px;
+  height: 10px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .part-element, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .part-element {
+  font-size: 26px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .flex > *:first-child, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .flex > *:first-child {
+  width: 105px;
+  margin-right: 15px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .flex > * > *:first-child, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .flex > * > *:first-child {
+  margin-bottom: 3px;
+  margin-top: 16px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .unit > div, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .unit > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .unit .label, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .unit .label {
+  margin: 0;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .group, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .group {
+  margin-bottom: 5px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element input, .builder-ui .is-textcontrolpanel .panel-dialog.element select, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions input, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions select {
+  width: 105px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element div, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions div {
+  flex: none;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element label, .builder-ui .is-textcontrolpanel .panel-dialog.element .label, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions label, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .label {
+  white-space: nowrap;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element a, .builder-ui .is-textcontrolpanel .panel-dialog.element span, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions a, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions span {
+  font-size: 13px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.element .is-btn-color, .builder-ui .is-textcontrolpanel .panel-dialog.blockoptions .is-btn-color {
+  width: 59px;
+  height: 56px;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.shadow .div-shadow-list {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  height: calc(100vh - 500px);
+  max-height: 725px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 0 0 20px;
+  margin: 30px 0 0;
+  border: rgba(177, 177, 177, 0.38) 1px solid;
+  width: 100%;
+  box-sizing: border-box;
+}
+.builder-ui .is-textcontrolpanel .panel-dialog.shadow .div-shadow-list [data-shadow] {
+  width: 75px;
+  height: 70px;
+  flex: none;
+  margin: 0 20px 30px 0px;
+  background: #fbfbfb;
+  border-radius: 4px;
+} 
+
 
 /* /UI */
 /* CONTROL PANEL */
@@ -1965,7 +2468,7 @@ body.frame-center.controlpanel .is-content-view {
 }
 .dark .builder-ui input[type=text], .dark .builder-ui textarea {
   color: #c7c7c7;
-  background-color: #7676803D;
+  /* background-color: #7676803D; */
 }
 /* .dark .builder-ui input[type=checkbox] {
   opacity: 0.7;
@@ -1976,7 +2479,8 @@ body.frame-center.controlpanel .is-content-view {
 }
 .dark .builder-ui .group,
 .dark .builder-ui .custom-select {
-  background-color:#7676803D;
+  background-color:transparent;
+  /* background-color:#7676803D; */
 }
 /* .dark .builder-ui .accordion-item {
   background-color: #353535;
@@ -2886,6 +3390,7 @@ body.fullview.topspace .is-content-view.fullview iframe {
 }
 
 body.fullview.frame-center #editPanel {
+  margin-top: 50px;
   right: 0px !important;
   transition: all 0.3s ease;
 }
