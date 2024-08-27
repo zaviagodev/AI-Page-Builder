@@ -1053,7 +1053,7 @@ body.controlpanel .is-wrapper {
 .builder-ui .is-textcontrolpanel {
   position: fixed;
   background-color: transparent;
-  width: 55vw;
+  width: 57vw;
   height: 41px; 
   display: flex;
   top: 60px; 
@@ -1073,7 +1073,7 @@ body.controlpanel .is-wrapper {
   backdrop-filter: blur(20px);
   z-index: -1;
   position: fixed;
-  width: 55vw;
+  width: 57vw;
   height:41px; 
   border-radius: 17px;
   overflow: hidden;
