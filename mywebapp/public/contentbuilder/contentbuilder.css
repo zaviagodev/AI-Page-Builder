@@ -6202,7 +6202,7 @@ div[data-html] {
   }
 } */
 .custom-select {
-  --cs-height: 46px;
+  --cs-height: 30px;
   --cs-background: #fff;
   --cs-hover-background: #f2f2f2;
   --cs-selected-background: #eee;
