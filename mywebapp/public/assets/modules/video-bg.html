@@ -394,13 +394,14 @@
       </label>
     </div>
     <div class="newController">
-      <div id="videoSource" class="_item _item-active" data-value="true">
+      <div  id="videoSource" class="_item _item-active" data-value="true">
         Video Source
       </div>
       <div id="videoLoop" class="_item" data-value="false">Loop</div>
       <div id="videoAutoplay" class="_item" data-value="false">Autoplay</div>
       <div id="VideoShowControl" class="_item">Show Control</div>
       <div id="videoMute" class="_item" data-value="false">Mute</div>
+    
     </div>
 
     <script>
@@ -442,6 +443,9 @@
       }
 
       inpVideoSource.onclick = function () {
+        var inpMP4 = document.querySelector("#txtMP4");
+          console.log("thereee")
+          parent._cb.openAsset(inpMP4, "video", inpVideoSource);
         toggleActiveState(inpVideoSource);
       };
 
@@ -470,6 +474,7 @@
       if (parent._cb.opts.onVideoSelectClick || parent._cb.opts.videoSelect) {
         var inpMP4 = document.querySelector("#txtMP4");
         btnSelect.addEventListener("click", function (e) {
+          console.log("thereee")
           parent._cb.openAsset(inpMP4, "video", btnSelect);
         });
       } else {
