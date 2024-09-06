@@ -6682,12 +6682,12 @@ i.bi, i.icon {
   background: #F8F7F7E0;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter:blur(20px);
-  border-top-width:60px !important
+  /* border-top-width:60px !important */
 }
 
 #_cbhtml .is-modal.editmodule .input-ok,
 .is-ui .is-modal.editmodule .input-ok {
-  margin:20px;
+  /* margin:20px; */
   width:calc(100% - 40px) !important
 }
 

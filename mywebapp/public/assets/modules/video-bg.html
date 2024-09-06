@@ -1,35 +1,45 @@
-﻿<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
     <style>
-        html { height:100%; }
-        body { 
-            margin:3px 25px 20px;
-            background:rgba(0,0,0,0); /*transparent*/
-            height:100%;
-            overflow:hidden;
-            font-family:Sans-Serif;
-            font-size:14px;
-            font-weight:300;
-            line-height:1.7; 
-        }
-        label {width:100%;padding-bottom:3px;display:block;}
-        input[type=text] {
-            font-size:14px;
-            font-weight:300;
-            letter-spacing:1px;
-            border:none;
-            padding:10px;
-            height:45px;
-            box-sizing:border-box
-        }
-        input[type=text]:focus {outline:none}
-        body {opacity:0}
-        /* svg {
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: rgba(0, 0, 0, 0); /*transparent*/
+        height: 100%;
+        overflow: hidden;
+        font-family: Sans-Serif;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+      label {
+        width: 100%;
+        padding-bottom: 3px;
+        display: block;
+      }
+      input[type="text"] {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        border: none;
+        padding: 10px;
+        height: 45px;
+        box-sizing: border-box;
+      }
+      input[type="text"]:focus {
+        outline: none;
+      }
+      body {
+        opacity: 0;
+      }
+      /* svg {
             overflow: hidden;
             vertical-align: middle;
             pointer-events: none;
@@ -48,417 +58,659 @@
             cursor:pointer;
         } */
 
-        input[type=text], textarea {
-            width:100%;
-            border-radius: 2px;
-            height: 40px;
-            font-size: 14px;
-            box-sizing: border-box;
-            margin: 0;
-            font-family: sans-serif;
-            letter-spacing: 1px;
-            padding: 5px;
-            border:none;
-        }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        border-radius: 2px;
+        height: 40px;
+        font-size: 14px;
+        box-sizing: border-box;
+        margin: 0;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        padding: 5px;
+        border: none;
+      }
 
-        .info {font-size: 14px;margin-bottom: 20px;text-align: left;font-style:italic;opacity: 0.8;}
-        
-        select {
-            font-size: 13px;
-            letter-spacing: 1px;
-            height: 35px;
-            line-height: 1.7;
-            border-radius: 4px;
-            border: none;
-            width: auto; 
-            display: inline-block;
-            background-image: none;
-            -webkit-appearance: menulist;
-            -moz-appearance: menulist;
-            appearance: menulist;
-            padding: 0 5px;
-        }
-        
-        button {
-            width: auto;
-            height: 36px;
-            line-height: 1;    
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0 15px;
-            border: none;
-            cursor: pointer;
-            font-family: sans-serif;
-            letter-spacing: 1px;
-            font-size: 11px;
-            font-weight: 300;
-            text-transform: uppercase;
-            text-align: center;
-            position: relative;
-            border-radius: 2px;
-            box-shadow: 0px 3px 6px -6px rgb(0 0 0 / 32%);  
-        }
-        button span {
-            margin-left: 8px;
-            font-size: 11px;
-        }
-        svg {
-            overflow: hidden;
-            vertical-align: middle;
-            pointer-events: none;
-        }
-        .is-icon-flex {
-            width: 16px;
-            height: 16px;
-        }
-        .flex {
-            display: flex;
-        }
-        
-        #divVidOpts > div {
-            display: flex;
-            align-items: center;
-            /* justify-content: space-between; */
-            padding: 0 0 5px;
-        }
-        #divVidOpts > div button {
-            background-color: transparent;
-            box-shadow: none;
-            height: 30px;
-        }
+      .info {
+        font-size: 14px;
+        margin-bottom: 20px;
+        text-align: left;
+        font-style: italic;
+        opacity: 0.8;
+      }
 
-        .is-btn-color {
-            border: rgba(200,200,200,0.5) 1px solid !important;
-        }
+      select {
+        font-size: 13px;
+        letter-spacing: 1px;
+        height: 35px;
+        line-height: 1.7;
+        border-radius: 4px;
+        border: none;
+        width: auto;
+        display: inline-block;
+        background-image: none;
+        -webkit-appearance: menulist;
+        -moz-appearance: menulist;
+        appearance: menulist;
+        padding: 0 5px;
+      }
+
+      button {
+        width: auto;
+        height: 36px;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 15px;
+        border: none;
+        cursor: pointer;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        font-size: 11px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        border-radius: 2px;
+        box-shadow: 0px 3px 6px -6px rgb(0 0 0 / 32%);
+      }
+      button span {
+        margin-left: 8px;
+        font-size: 11px;
+      }
+      svg {
+        overflow: hidden;
+        vertical-align: middle;
+        pointer-events: none;
+      }
+      .is-icon-flex {
+        width: 16px;
+        height: 16px;
+      }
+      .flex {
+        display: flex;
+      }
+
+      #divVidOpts > div {
+        display: flex;
+        align-items: center;
+        /* justify-content: space-between; */
+        padding: 0 0 5px;
+      }
+      #divVidOpts > div button {
+        background-color: transparent;
+        box-shadow: none;
+        height: 30px;
+      }
+
+      .is-btn-color {
+        border: rgba(200, 200, 200, 0.5) 1px solid !important;
+      }
+
+      .newController {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #505051;
+        border-radius: 14px;
+        padding: 8px 12px;
+      }
+
+      .newController ._item {
+        padding: 2px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .newController ._item-active {
+        background-color: #29292a;
+      }
     </style>
-</head>
-<body>
-    <svg width="0" height="0" style="position:absolute;display:none;">
-        <defs>
-            <symbol viewBox="0 0 512 512" id="ion-image"><path d="M368 224c26.5 0 48-21.5 48-48s-21.5-48-48-48-48 21.5-48 48 21.5 48 48 48z"></path><path d="M452 64H60c-15.6 0-28 12.7-28 28.3v327.4c0 15.6 12.4 28.3 28 28.3h392c15.6 0 28-12.7 28-28.3V92.3c0-15.6-12.4-28.3-28-28.3zM348.9 261.7c-3-3.5-7.6-6.2-12.8-6.2-5.1 0-8.7 2.4-12.8 5.7L304.6 277c-3.9 2.8-7 4.7-11.5 4.7-4.3 0-8.2-1.6-11-4.1-1-.9-2.8-2.6-4.3-4.1L224 215.3c-4-4.6-10-7.5-16.7-7.5-6.7 0-12.9 3.3-16.8 7.8L64 368.2V107.7c1-6.8 6.3-11.7 13.1-11.7h357.7c6.9 0 12.5 5.1 12.9 12l.3 260.4-99.1-106.7z"></path></symbol>
-            <symbol viewBox="0 0 512 512" id="ion-ios-film-outline"><path d="M56 88v336h400V88H56zm72 320H72v-48h56v48zm0-64H72v-48h56v48zm0-64H72v-48h56v48zm0-64H72v-48h56v48zm0-64H72v-48h56v48zm240 256H144V264h224v144zm0-160H144V104h224v144zm72 160h-56v-48h56v48zm0-64h-56v-48h56v48zm0-64h-56v-48h56v48zm0-64h-56v-48h56v48zm0-64h-56v-48h56v48z"></path></symbol>
-            <symbol viewBox="0 0 24 24" id="icon-trash" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <line x1="4" y1="7" x2="20" y2="7"></line>
-                <line x1="10" y1="11" x2="10" y2="17"></line>
-                <line x1="14" y1="11" x2="14" y2="17"></line>
-                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-             </symbol>
-             <symbol viewBox="0 0 512 512" id="ion-ios-plus-empty"><path d="M384 265H264v119h-17V265H128v-17h119V128h17v120h120v17z"></path></symbol>
-             <symbol viewBox="0 0 512 512" id="ion-more"><path d="M113.7 304C86.2 304 64 282.6 64 256c0-26.5 22.2-48 49.7-48 27.6 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48zM256 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.3-48 49.8-48 27.5 0 49.7 21.5 49.7 48 0 26.6-22.2 48-49.7 48zM398.2 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.2-48 49.8-48 27.5 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48z"></path></symbol>
-             <symbol viewBox="0 0 512 512" id="ion-ios-close-empty"><path d="M340.2 160l-84.4 84.3-84-83.9-11.8 11.8 84 83.8-84 83.9 11.8 11.7 84-83.8 84.4 84.2 11.8-11.7-84.4-84.3 84.4-84.2z"></path></symbol>
-        </defs>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute; display: none">
+      <defs>
+        <symbol viewBox="0 0 512 512" id="ion-image">
+          <path
+            d="M368 224c26.5 0 48-21.5 48-48s-21.5-48-48-48-48 21.5-48 48 21.5 48 48 48z"
+          ></path>
+          <path
+            d="M452 64H60c-15.6 0-28 12.7-28 28.3v327.4c0 15.6 12.4 28.3 28 28.3h392c15.6 0 28-12.7 28-28.3V92.3c0-15.6-12.4-28.3-28-28.3zM348.9 261.7c-3-3.5-7.6-6.2-12.8-6.2-5.1 0-8.7 2.4-12.8 5.7L304.6 277c-3.9 2.8-7 4.7-11.5 4.7-4.3 0-8.2-1.6-11-4.1-1-.9-2.8-2.6-4.3-4.1L224 215.3c-4-4.6-10-7.5-16.7-7.5-6.7 0-12.9 3.3-16.8 7.8L64 368.2V107.7c1-6.8 6.3-11.7 13.1-11.7h357.7c6.9 0 12.5 5.1 12.9 12l.3 260.4-99.1-106.7z"
+          ></path>
+        </symbol>
+        <symbol viewBox="0 0 512 512" id="ion-ios-film-outline">
+          <path
+            d="M56 88v336h400V88H56zm72 320H72v-48h56v48zm0-64H72v-48h56v48zm0-64H72v-48h56v48zm0-64H72v-48h56v48zm0-64H72v-48h56v48zm240 256H144V264h224v144zm0-160H144V104h224v144zm72 160h-56v-48h56v48zm0-64h-56v-48h56v48zm0-64h-56v-48h56v48zm0-64h-56v-48h56v48zm0-64h-56v-48h56v48z"
+          ></path>
+        </symbol>
+        <symbol
+          viewBox="0 0 24 24"
+          id="icon-trash"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="10" y1="11" x2="10" y2="17"></line>
+          <line x1="14" y1="11" x2="14" y2="17"></line>
+          <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+          <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+        </symbol>
+        <symbol viewBox="0 0 512 512" id="ion-ios-plus-empty">
+          <path
+            d="M384 265H264v119h-17V265H128v-17h119V128h17v120h120v17z"
+          ></path>
+        </symbol>
+        <symbol viewBox="0 0 512 512" id="ion-more">
+          <path
+            d="M113.7 304C86.2 304 64 282.6 64 256c0-26.5 22.2-48 49.7-48 27.6 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48zM256 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.3-48 49.8-48 27.5 0 49.7 21.5 49.7 48 0 26.6-22.2 48-49.7 48zM398.2 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.2-48 49.8-48 27.5 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48z"
+          ></path>
+        </symbol>
+        <symbol viewBox="0 0 512 512" id="ion-ios-close-empty">
+          <path
+            d="M340.2 160l-84.4 84.3-84-83.9-11.8 11.8 84 83.8-84 83.9 11.8 11.7 84-83.8 84.4 84.2 11.8-11.7-84.4-84.3 84.4-84.2z"
+          ></path>
+        </symbol>
+      </defs>
     </svg>
 
-    <label id="lblMP4" for="txtMP4" style="width:100%"><span data-lang>Video URL</span>:</label>
-    <div style="display: flex;">
-        <input id="txtMP4" type="text" style="width:100%;margin-right:2px;" />
-        <button title="Select" class="input-select" style="height:40px;background:transparent"><svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg></button>
+    <label id="lblMP4" for="txtMP4" style="width: 100%; display: none"
+      ><span data-lang>Video URL</span>:</label
+    >
+    <div style="display: flex; display: none">
+      <input id="txtMP4" type="text" style="width: 100%; margin-right: 2px" />
+      <button
+        title="Select"
+        class="input-select"
+        style="height: 40px; background: transparent"
+      >
+        <svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg>
+      </button>
     </div>
 
-    <label id="lblPoster" for="txtPoster" style="width:100%;margin-top:12px;"><span data-lang>Video Poster</span>:</label>
-    <div style="display:flex;">
-        <input id="txtPoster" type="text" style="width:100%;margin-right:2px;" />
-        <button title="Select" class="input-select2" style="height:40px;background:transparent"><svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg></button>
+    <label
+      id="lblPoster"
+      for="txtPoster"
+      style="width: 100%; margin-top: 12px; display: none"
+      ><span data-lang>Video Poster</span>:</label
+    >
+    <div style="display: flex; display: none">
+      <input
+        id="txtPoster"
+        type="text"
+        style="width: 100%; margin-right: 2px"
+      />
+      <button
+        title="Select"
+        class="input-select2"
+        style="height: 40px; background: transparent"
+      >
+        <svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg>
+      </button>
     </div>
-
 
     <!------>
-    <div id="divVideos" style="margin:20px 0 15px;">
-        <label><span data-lang>Alternate Videos</span>:</label>
-        <div id="divVidOpts" style="padding-bottom:10px;max-height: 137px;overflow-y: auto;"></div>
+    <div id="divVideos" style="margin: 20px 0 15px; display: none">
+      <label><span data-lang>Alternate Videos</span>:</label>
+      <div
+        id="divVidOpts"
+        style="padding-bottom: 10px; max-height: 137px; overflow-y: auto"
+      ></div>
 
-        <div class="flex">
-            <select id="inpVideoType" style="margin-right:5px;">
-                <option value="240">240p</option>
-                <option value="360">360p</option>
-                <option value="480">480p</option>
-                <option value="540">540p</option>
-                <option value="720">720p</option>
-                <option value="1080" selected>1080p</option>
-                <option value="1440">1440p</option>
-                <option value="2160">2160p</option>
-            </select>
-            <button title="Add/Update Video" data-lang-title class="input-add-video" style="margin-right:3px;">
-                <svg class="is-icon-flex" style="width: 19px;height: 19px;"><use xlink:href="#ion-ios-plus-empty"></use></svg>
-                <span data-lang>Add/Update Video</span>
-            </button>
+      <div class="flex">
+        <select id="inpVideoType" style="margin-right: 5px">
+          <option value="240">240p</option>
+          <option value="360">360p</option>
+          <option value="480">480p</option>
+          <option value="540">540p</option>
+          <option value="720">720p</option>
+          <option value="1080" selected>1080p</option>
+          <option value="1440">1440p</option>
+          <option value="2160">2160p</option>
+        </select>
+        <button
+          title="Add/Update Video"
+          data-lang-title
+          class="input-add-video"
+          style="margin-right: 3px"
+        >
+          <svg class="is-icon-flex" style="width: 19px; height: 19px">
+            <use xlink:href="#ion-ios-plus-empty"></use>
+          </svg>
+          <span data-lang>Add/Update Video</span>
+        </button>
 
-            <button title="Select" data-lang-title class="input-select-video" style="flex:none;">
-                <svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg>
-            </button>
-        </div>
+        <button
+          title="Select"
+          data-lang-title
+          class="input-select-video"
+          style="flex: none"
+        >
+          <svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg>
+        </button>
+      </div>
     </div>
     <!------>
 
-    <div class="flex">
-        <div class="flex" style="align-items:center;margin-right:20px;">
-            <label id="lblOverlay" for="txtOverlay" style="margin-right:4px;width:auto;display:inline-block;"><span data-lang>Overlay Opacity</span>:</label>   
-            <input id="txtOverlay" type="text" style="width:80px;" value="0.25" />
-        </div>
+    <div class="flex" style="display: none">
+      <div class="flex" style="align-items: center; margin-right: 20px">
+        <label
+          id="lblOverlay"
+          for="txtOverlay"
+          style="margin-right: 4px; width: auto; display: inline-block"
+          ><span data-lang>Overlay Opacity</span>:</label
+        >
+        <input id="txtOverlay" type="text" style="width: 80px" value="0.25" />
+      </div>
     </div>
 
-    <div style="margin-top:15px"><span data-lang>Show Control</span>:</div>
+    <div style="margin-top: 15px; display: none">
+      <span data-lang>Show Control</span>:
+    </div>
 
-    <div class="flex" style="margin-top:5px">
-        <div class="flex" style="align-items:center;margin-right:20px;width:100%;">
-            <label for="chkShowPlayButton" class="flex" style="align-items:center;white-space:nowrap;margin-right:10px;padding:0;">
-                <input id="chkShowPlayButton" type="checkbox"> <span data-lang>Play/Pause</span>
-            </label>
-
-            <label for="chkShowMuteButton" class="flex" style="align-items:center;white-space:nowrap;margin-right:20px;padding:0;">
-                <input id="chkShowMuteButton" type="checkbox"> <span data-lang>Mute/Unmute</span>
-            </label>
-
-            <select id="inpVideoControlPos" style="margin-right:5px;">
-                <option value="top-left" data-lang>Top Left</option>
-                <option value="top-right" data-lang>Top Right</option>
-                <option value="bottom-left" data-lang>Bottom Left</option>
-                <option value="bottom-right" selected data-lang>Bottom right</option>
-            </select>
-
-            <label for="btnControlColor" style="padding:0;">
-                <button id="btnControlColor" data-lang-title title="Control Color" class="is-btn-color" style="width:35px;height:35px;margin-left:5px;"></button>
-            </label>
-        </div>
-        <label class="flex" style="white-space:nowrap;align-items:center;width:auto;padding:0;">
-            <input id="chkAutoplay" type="checkbox" />  <span data-lang>Autoplay</span>&nbsp;
+    <div class="flex" style="margin-top: 5px ;display: none">
+      <div
+        class="flex"
+        style="align-items: center; margin-right: 20px; width: 100%"
+      >
+        <label
+          for="chkShowPlayButton"
+          class="flex"
+          style="
+            align-items: center;
+            white-space: nowrap;
+            margin-right: 10px;
+            padding: 0;
+          "
+        >
+          <input id="chkShowPlayButton" type="checkbox" />
+          <span data-lang>Play/Pause</span>
         </label>
+
+        <label
+          for="chkShowMuteButton"
+          class="flex"
+          style="
+            align-items: center;
+            white-space: nowrap;
+            margin-right: 20px;
+            padding: 0;
+          "
+        >
+          <input id="chkShowMuteButton" type="checkbox" />
+          <span data-lang>Mute/Unmute</span>
+        </label>
+
+        <select id="inpVideoControlPos" style="margin-right: 5px">
+          <option value="top-left" data-lang>Top Left</option>
+          <option value="top-right" data-lang>Top Right</option>
+          <option value="bottom-left" data-lang>Bottom Left</option>
+          <option value="bottom-right" selected data-lang>Bottom right</option>
+        </select>
+
+        <label for="btnControlColor" style="padding: 0">
+          <button
+            id="btnControlColor"
+            data-lang-title
+            title="Control Color"
+            class="is-btn-color"
+            style="width: 35px; height: 35px; margin-left: 5px"
+          ></button>
+        </label>
+      </div>
+      <label
+        class="flex"
+        style="
+          white-space: nowrap;
+          align-items: center;
+          width: auto;
+          padding: 0;
+        "
+      >
+        <input id="chkAutoplay" type="checkbox" />
+        <span data-lang>Autoplay</span>&nbsp;
+      </label>
+      <label
+        class="flex"
+        style="
+          white-space: nowrap;
+          align-items: center;
+          width: auto;
+          padding: 0;
+        "
+      >
+        <input id="loopi" type="checkbox" />
+        <span data-lang>Loop</span>&nbsp;
+      </label>
+    </div>
+    <div class="newController">
+      <div  id="videoSource" class="_item _item-active" data-value="true">
+        Video Source
+      </div>
+      <div id="videoLoop" class="_item" data-value="false">Loop</div>
+      <div id="videoAutoplay" class="_item" data-value="false">Autoplay</div>
+      <div id="VideoShowControl" class="_item">Show Control</div>
+      <div id="videoMute" class="_item" data-value="false">Mute</div>
+    
     </div>
 
     <script>
+      // -----
+      var jsonVidOpts = [];
+      // -----
 
-        // -----
-        var jsonVidOpts = [];
-        // -----
+      var inpMP4 = document.querySelector("#txtMP4");
+      var inpPoster = document.querySelector("#txtPoster");
+      var inpOpacity = document.querySelector("#txtOverlay");
+      var chkShowPlayButton = document.querySelector("#chkShowPlayButton");
+      var chkShowMuteButton = document.querySelector("#chkShowMuteButton");
+      var inpVideoControlPos = document.querySelector("#inpVideoControlPos");
+      var btnControlColor = document.querySelector("#btnControlColor");
+      var btnLoop = document.querySelector("#loopi");
 
-        var inpMP4 = document.querySelector('#txtMP4');
-        var inpPoster = document.querySelector('#txtPoster');
-        var inpOpacity = document.querySelector('#txtOverlay');
-        var chkShowPlayButton = document.querySelector('#chkShowPlayButton');
-        var chkShowMuteButton = document.querySelector('#chkShowMuteButton');
-        var inpVideoControlPos = document.querySelector('#inpVideoControlPos');
-        var btnControlColor = document.querySelector("#btnControlColor");
+      // new design controller
+      var inpVideoSource = document.querySelector("#videoSource");
+      var inpVideoLoop = document.querySelector("#videoLoop");
+      var inpVideoAutoplay = document.querySelector("#videoAutoplay");
+      var inpVideoShowControl = document.querySelector("#VideoShowControl");
+      var inpVideoMute = document.querySelector("#videoMute");
 
-        var btnSelect = document.querySelector('.input-select');
-        if (parent._cb.opts.onVideoSelectClick || parent._cb.opts.videoSelect ) {
-            var inpMP4 = document.querySelector('#txtMP4');
-            btnSelect.addEventListener('click', function(e) {
-                parent._cb.openAsset(inpMP4,'video',btnSelect);
-            });
+      function toggleActiveState(element) {
+        var currentValue = element.getAttribute("data-value");
+        element.classList.toggle("_item-active");
+        var newValue = currentValue === "true" ? "false" : "true";
+        element.setAttribute("data-value", newValue);
+      }
+
+      function setActiveState(element, value) {
+        if (value) {
+          element.classList.add("_item-active");
+          element.setAttribute("data-value", "true");
         } else {
-            btnSelect.style.display = 'none';
+          element.classList.remove("_item-active");
+          element.setAttribute("data-value", "false");
         }
-        
-        var btnSelect2 = document.querySelector('.input-select2');
-        if (parent._cb.opts.onImageSelectClick || parent._cb.opts.imageSelect ) {
-            var inpPoster = document.querySelector('#txtPoster');
-            btnSelect2.addEventListener('click', function(e) {
-                parent._cb.openAsset(inpPoster,'image',btnSelect2);
-            });
-        } else {
-            btnSelect2.style.display = 'none';
-        }
-        
-        var settings = getSettings();
-        if (settings != 'undefined') {
-            try {
-                var json = JSON.parse(settings);
-                inpMP4.value = json[0].mp4;
-                inpPoster.value = json[0].poster;
-                inpOpacity.value = json[0].overlay;
+      }
 
-                chkShowPlayButton.checked = false;
-                chkShowMuteButton.checked = false;
-                inpVideoControlPos.value = 'bottom-right';
-                chkAutoplay.checked = true;
-                btnControlColor.style.backgroundColor = '';
-                btnControlColor.setAttribute('data-color', '');
-                if(json[0].controlPlay) chkShowPlayButton.checked = json[0].controlPlay;
-                if(json[0].controlMute) chkShowMuteButton.checked = json[0].controlMute;
-                if(json[0].pos) inpVideoControlPos.value = json[0].pos;
-                if(Object.prototype.hasOwnProperty.call(json[0], 'autoplay')) chkAutoplay.checked = json[0].autoplay;
-                if(Object.prototype.hasOwnProperty.call(json[0], 'controlColor'))  {
-                    btnControlColor.style.backgroundColor = json[0].controlColor;
-                    btnControlColor.setAttribute('data-color', json[0].controlColor);
-                }
+      inpVideoSource.onclick = function () {
+        var inpMP4 = document.querySelector("#txtMP4");
+          console.log("thereee")
+          parent._cb.openAsset(inpMP4, "video", inpVideoSource);
+        toggleActiveState(inpVideoSource);
+      };
 
-                // -----
-                for(var i=0;i<json[0].videos.length;i++) {
-                    let n = json[0].videos[i];
+      inpVideoLoop.onclick = function () {
+        toggleActiveState(inpVideoLoop);
+      };
 
-                    let sv = '';
-                    let s240 = n.src240;
-                    let s360 = n.src360;
-                    let s480 = n.src480;
-                    let s540 = n.src540;
-                    let s720 = n.src720;
-                    let s1080 = n.src1080;
-                    let s1440 = n.src1440;
-                    let s2160 = n.src2160;
+      inpVideoAutoplay.onclick = function () {
+        toggleActiveState(inpVideoAutoplay);
+      };
 
-                    if(s240) jsonVidOpts.push({ type: 240, src: s240 });
-                    if(s360) jsonVidOpts.push({ type: 360, src: s360 });
-                    if(s480) jsonVidOpts.push({ type: 480, src: s480 });
-                    if(s540) jsonVidOpts.push({ type: 540, src: s540 });
-                    if(s720) jsonVidOpts.push({ type: 720, src: s720 });
-                    if(s1080) jsonVidOpts.push({ type: 1080, src: s1080 });
-                    if(s1440) jsonVidOpts.push({ type: 1440, src: s1440 });
-                    if(s2160) jsonVidOpts.push({ type: 2160, src: s2160 });
-                }
+      inpVideoShowControl.onclick = function () {
+        toggleActiveState(inpVideoShowControl);
+      };
 
-                renderVideoOptions();
-                // -----
+      inpVideoMute.onclick = function () {
+        toggleActiveState(inpVideoMute);
+        console.log("parent", parent._cb.opts);
+      };
 
-            } catch (e) { }
-        }
+      // ----------- end
 
 
-        // -----
-        function addVideo(s) {
-            inpVideoType = document.querySelector('#inpVideoType');
-            let update = false;
-            jsonVidOpts.forEach(vid=>{
-                if(parseInt(inpVideoType.value)===vid.type) {
-                    vid.src = s;
-                    update=true;
-                }
-            });
-            if(!update) {
-                jsonVidOpts.push({ type: parseInt(inpVideoType.value), src: s })
-            }
 
-            renderVideoOptions();
-        }
-        var btnAddVideo = document.querySelector('.input-add-video');
-        btnAddVideo.addEventListener('click', function() {
-
-            let val = '';
-            inpVideoType = document.querySelector('#inpVideoType');
-            
-            jsonVidOpts.forEach(vid=>{
-                if(parseInt(inpVideoType.value)===vid.type) {
-                    val = vid.src;
-                }
-            });
-
-            parent._cb.openMediaPicker(val, 'video', function(s){
-                if(s==='') return;
-                addVideo(s);
-            });
+      var btnSelect = document.querySelector(".input-select");
+      if (parent._cb.opts.onVideoSelectClick || parent._cb.opts.videoSelect) {
+        var inpMP4 = document.querySelector("#txtMP4");
+        btnSelect.addEventListener("click", function (e) {
+          console.log("thereee")
+          parent._cb.openAsset(inpMP4, "video", btnSelect);
         });
-        var btnSelectVideo = document.querySelector('.input-select-video');
-        parent._cb.renderSelectAsset(btnSelectVideo, 'video', (s)=>{
-            addVideo(s);
+      } else {
+        btnSelect.style.display = "none";
+      }
+      var btnSelect2 = document.querySelector(".input-select2");
+      if (parent._cb.opts.onImageSelectClick || parent._cb.opts.imageSelect) {
+        var inpPoster = document.querySelector("#txtPoster");
+        btnSelect2.addEventListener("click", function (e) {
+          parent._cb.openAsset(inpPoster, "image", btnSelect2);
         });
-        if (!parent._cb.onVideoSelectClick && !parent._cb.videoSelect ) {
-            btnSelectVideo.style.display = 'none';
+      } else {
+        btnSelect2.style.display = "none";
+      }
+
+      var settings = getSettings();
+      if (settings != "undefined") {
+        try {
+          var json = JSON.parse(settings);
+          inpMP4.value = json[0].mp4;
+          inpPoster.value = json[0].poster;
+          inpOpacity.value = json[0].overlay;
+
+          chkShowPlayButton.checked = false;
+          chkShowMuteButton.checked = false;
+          inpVideoControlPos.value = "bottom-right";
+          chkAutoplay.checked = true;
+          btnControlColor.style.backgroundColor = "";
+          btnControlColor.setAttribute("data-color", "");
+          if (json[0].controlPlay) {
+            chkShowPlayButton.checked = json[0].controlPlay;
+            setActiveState(inpVideoShowControl, json[0].controlPlay);
+          }
+          if (json[0].controlMute) {
+            chkShowMuteButton.checked = json[0].controlMute;
+            setActiveState(inpVideoMute, json[0].controlMute);
+          }
+          if (json[0].loop) {
+            btnLoop.checked = json[0].loop;
+            setActiveState(inpVideoLoop, json[0].loop);
+          }
+          if (json[0].pos) inpVideoControlPos.value = json[0].pos;
+          if (Object.prototype.hasOwnProperty.call(json[0], "autoplay")) {
+            chkAutoplay.checked = json[0].autoplay;
+            setActiveState(inpVideoAutoplay, json[0].autoplay);
+          }
+          if (Object.prototype.hasOwnProperty.call(json[0], "controlColor")) {
+            btnControlColor.style.backgroundColor = json[0].controlColor;
+            btnControlColor.setAttribute("data-color", json[0].controlColor);
+          }
+
+          // -----
+          for (var i = 0; i < json[0].videos.length; i++) {
+            let n = json[0].videos[i];
+
+            let sv = "";
+            let s240 = n.src240;
+            let s360 = n.src360;
+            let s480 = n.src480;
+            let s540 = n.src540;
+            let s720 = n.src720;
+            let s1080 = n.src1080;
+            let s1440 = n.src1440;
+            let s2160 = n.src2160;
+
+            if (s240) jsonVidOpts.push({ type: 240, src: s240 });
+            if (s360) jsonVidOpts.push({ type: 360, src: s360 });
+            if (s480) jsonVidOpts.push({ type: 480, src: s480 });
+            if (s540) jsonVidOpts.push({ type: 540, src: s540 });
+            if (s720) jsonVidOpts.push({ type: 720, src: s720 });
+            if (s1080) jsonVidOpts.push({ type: 1080, src: s1080 });
+            if (s1440) jsonVidOpts.push({ type: 1440, src: s1440 });
+            if (s2160) jsonVidOpts.push({ type: 2160, src: s2160 });
+          }
+
+          renderVideoOptions();
+          // -----
+        } catch (e) {}
+      }
+
+      // -----
+      function addVideo(s) {
+        inpVideoType = document.querySelector("#inpVideoType");
+        let update = false;
+        jsonVidOpts.forEach((vid) => {
+          if (parseInt(inpVideoType.value) === vid.type) {
+            vid.src = s;
+            update = true;
+          }
+        });
+        if (!update) {
+          jsonVidOpts.push({ type: parseInt(inpVideoType.value), src: s });
         }
-        // -----
 
+        renderVideoOptions();
+      }
+      var btnAddVideo = document.querySelector(".input-add-video");
+      btnAddVideo.addEventListener("click", function () {
+        let val = "";
+        inpVideoType = document.querySelector("#inpVideoType");
 
-        var colorpicker = parent._cb.colorpicker();
-
-        var btnControlColor = document.querySelector('#btnControlColor');
-        btnControlColor.addEventListener('click', function() {
-
-            let currentColor = btnControlColor.style.backgroundColor; // default color
-
-            colorpicker.open((color)=>{
-
-                btnControlColor.style.backgroundColor = color; // preview
-
-                btnControlColor.setAttribute('data-color', color); // save color value for later read when needed
-
-
-            }, currentColor);
+        jsonVidOpts.forEach((vid) => {
+          if (parseInt(inpVideoType.value) === vid.type) {
+            val = vid.src;
+          }
         });
 
+        parent._cb.openMediaPicker(val, "video", function (s) {
+          if (s === "") return;
+          addVideo(s);
+        });
+      });
+      var btnSelectVideo = document.querySelector(".input-select-video");
+      parent._cb.renderSelectAsset(btnSelectVideo, "video", (s) => {
+        addVideo(s);
+      });
+      if (!parent._cb.onVideoSelectClick && !parent._cb.videoSelect) {
+        btnSelectVideo.style.display = "none";
+      }
+      // -----
 
+      var colorpicker = parent._cb.colorpicker();
 
-        // -----
-        function renderVideoOptions() {
-            let item = document.querySelector('#imageList div.active');
-           
-            const divVidOpts = document.querySelector('#divVidOpts');
-            divVidOpts.innerHTML='';
-            jsonVidOpts.forEach(vid=>{
-                let filename = vid.src.substring(vid.src.lastIndexOf('/')+1); 
-                divVidOpts.insertAdjacentHTML('beforeend', `<div>
+      var btnControlColor = document.querySelector("#btnControlColor");
+      btnControlColor.addEventListener("click", function () {
+        let currentColor = btnControlColor.style.backgroundColor; // default color
+
+        colorpicker.open((color) => {
+          btnControlColor.style.backgroundColor = color; // preview
+
+          btnControlColor.setAttribute("data-color", color); // save color value for later read when needed
+        }, currentColor);
+      });
+
+      // -----
+      function renderVideoOptions() {
+        let item = document.querySelector("#imageList div.active");
+
+        const divVidOpts = document.querySelector("#divVidOpts");
+        divVidOpts.innerHTML = "";
+        jsonVidOpts.forEach((vid) => {
+          let filename = vid.src.substring(vid.src.lastIndexOf("/") + 1);
+          divVidOpts.insertAdjacentHTML(
+            "beforeend",
+            `<div>
                     <div><b>${vid.type}p</b>: ${filename}</div><button data-type="${vid.type}" class="remove-video-option"><svg class="is-icon-flex"><use xlink:href="#icon-trash"></use></svg></button>
-                </div>`);
+                </div>`
+          );
+        });
+
+        const btns = document.querySelectorAll(".remove-video-option");
+        btns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            let vidType = btn.getAttribute("data-type");
+
+            jsonVidOpts = jsonVidOpts.filter((vid) => {
+              if (parseInt(vidType) === vid.type) {
+                return false;
+              }
+
+              return true;
             });
+            renderVideoOptions();
+          });
+        });
+      }
 
-            const btns = document.querySelectorAll('.remove-video-option');
-            btns.forEach(btn=>{
-                btn.addEventListener('click',()=>{
+    
+      // -----
 
-                    let vidType = btn.getAttribute('data-type');
-
-                    jsonVidOpts = jsonVidOpts.filter((vid)=>{
-                        if(parseInt(vidType)===vid.type) {
-                            return false;
-                        }
-
-                        return true;
-                    });
-                    renderVideoOptions();
-                    
-                });
-            });
-        }
-        // -----
-
-        /*
+      /*
         Use construct() function to construct html & settings
         */
-        function construct() {
-            var inpMP4 = document.querySelector('#txtMP4');
-            var inpPoster = document.querySelector('#txtPoster');
-            var inpOpacity = document.querySelector('#txtOverlay');
-            var chkShowPlayButton = document.querySelector('#chkShowPlayButton');
-            var chkShowMuteButton = document.querySelector('#chkShowMuteButton');
-            var inpVideoControlPos = document.querySelector('#inpVideoControlPos');
-            var chkAutoplay = document.querySelector('#chkAutoplay');
-            var btnControlColor = document.querySelector("#btnControlColor");
-            var controlColor = btnControlColor.getAttribute('data-color')?btnControlColor.getAttribute('data-color'):'';
+      function construct() {
+        var inpMP4 = document.querySelector("#txtMP4");
+        var inpPoster = document.querySelector("#txtPoster");
+        var inpOpacity = document.querySelector("#txtOverlay");
+        var inpVideoControlPos = document.querySelector("#inpVideoControlPos");
 
-            var hideClass = '';
-            if(!chkShowPlayButton.checked && !chkShowMuteButton.checked) {
-                hideClass = ' hide';
-            }
+        var chkShowPlayButton = document.querySelector("#chkShowPlayButton");
+        var chkShowMuteButton = document.querySelector("#chkShowMuteButton");
+        var chkAutoplay = document.querySelector("#chkAutoplay");
+        var chkLoop = document.querySelector("#loopi");
 
-            var hidePlayClass = '';
-            if(!chkShowPlayButton.checked) {
-                hidePlayClass = ' hide';
-            }
+        var inpVideoAutoplay =
+          document
+            .querySelector("#videoAutoplay")
+            .getAttribute("data-value") === "true";
+        var inpVideoShowControl =
+          document
+            .querySelector("#VideoShowControl")
+            .getAttribute("data-value") === "true";
+        var inpVideoMute =
+          document.querySelector("#videoMute").getAttribute("data-value") ===
+          "true";
+        var inpVideoLoop =
+          document.querySelector("#videoLoop").getAttribute("data-value") ===
+          "true";
 
-            var hideMuteClass = '';
-            if(!chkShowMuteButton.checked) {
-                hideMuteClass = ' hide';
-            }
+        var btnControlColor = document.querySelector("#btnControlColor");
+        var controlColor = btnControlColor.getAttribute("data-color")
+          ? btnControlColor.getAttribute("data-color")
+          : "";
 
-            var posClass = ' ' + inpVideoControlPos.value;
+        var hideClass = "";
+        if (!inpVideoShowControl && !inpVideoMute) {
+          hideClass = " hide";
+        }
 
-            // var posterImage = inpPoster.value!==''?inpPoster.value:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+P///38ACfsD/QVDRcoAAAAASUVORK5CYII=';
-            
-            // -----
-            let vs = '';
-            let jsonItem = '';
-            jsonVidOpts.forEach(vid=>{
-                vs += ` data-${vid.type}="${vid.src}"`;
+        var hidePlayClass = "";
+        if (!inpVideoShowControl) {
+          hidePlayClass = " hide";
+        }
 
-                if(jsonItem==='') jsonItem += `{"src${vid.type}": "${vid.src}"}`;
-                else jsonItem += `,{"src${vid.type}": "${vid.src}"}`;
-            });
-            // -----
+        var hideMuteClass = "";
+        if (!inpVideoMute) {
+          hideMuteClass = " hide";
+        }
 
-            var html = `
+        var posClass = " " + inpVideoControlPos.value;
+
+        // var posterImage = inpPoster.value!==''?inpPoster.value:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+P///38ACfsD/QVDRcoAAAAASUVORK5CYII=';
+
+        // -----
+        let vs = "";
+        let jsonItem = "";
+        jsonVidOpts.forEach((vid) => {
+          vs += ` data-${vid.type}="${vid.src}"`;
+
+          if (jsonItem === "") jsonItem += `{"src${vid.type}": "${vid.src}"}`;
+          else jsonItem += `,{"src${vid.type}": "${vid.src}"}`;
+        });
+        // -----
+
+        var html =
+          `
             <div id="_style_{id}" style="display:none">
                 .video-bg-control {position:absolute;}
                 .video-bg-control button {cursor:pointer;background:transparent;}
@@ -468,11 +720,14 @@
                 .video-bg-control.bottom-left { bottom:20px;left:20px; }
                 .video-bg-control svg { width:40px; height:40px; }
                 .video-bg-control.hide, .video-audio-play.hide , .video-bg-play.hide { display:none }
-                ${controlColor!==''?`
+                ${
+                  controlColor !== ""
+                    ? `
                 #{id}_control * {
                     stroke: ${controlColor} !important;
                 }
-                `:`
+                `
+                    : `
                 #{id}_control * {
                     stroke: rgba(255,255,255,0.93);
                 }
@@ -482,23 +737,42 @@
                 .is-dark-text #{id}_control * {
                     stroke: #000;
                 }
-                `}
+                `
+                }
             </div>
-            <video id="{id}" class="is-video-bg"${inpPoster.value!==''?` poster="${inpPoster.value}"`:''} loop playsinline${chkAutoplay.checked?' muted autoplay':''}>
-                <source src="{assetpath}videos/blank.mp4" data-default="${inpMP4.value}"${vs}>
+            <video id="{id}" class="is-video-bg"${
+              inpPoster.value !== "" ? ` poster="${inpPoster.value}"` : ""
+            }  ${inpVideoLoop ? "loop" : ""} playsinline${
+            inpVideoAutoplay ? " autoplay" : ""
+          }
+            ${inpVideoMute ? " muted " : ""}>
+                <source src="{assetpath}videos/blank.mp4" data-default="${
+                  inpMP4.value
+                }"${vs}>
             </video>
-            <div class="is-overlay-video" style="opacity:${inpOpacity.value}"></div>
+            <div class="is-overlay-video" style="opacity:${
+              inpOpacity.value
+            }"></div>
 
             <div id="{id}_control" class="video-bg-control${hideClass}${posClass}">
                 <button class="video-audio-play${hideMuteClass}${posClass}">
-                    ${chkAutoplay.checked?'<svg class="is-icon-flex"><use xlink:href="#__icon-volume-off"></use></svg>':'<svg class="is-icon-flex"><use xlink:href="#__icon-volume"></use></svg>'}
+                    ${
+                      inpVideoAutoplay
+                        ? '<svg class="is-icon-flex"><use xlink:href="#__icon-volume-off"></use></svg>'
+                        : '<svg class="is-icon-flex"><use xlink:href="#__icon-volume"></use></svg>'
+                    }
                 </button>
                 <button class="video-bg-play${hidePlayClass}${posClass}">
-                    ${chkAutoplay.checked?'<svg class="is-icon-flex"><use xlink:href="#__icon-pause"></use></svg>':'<svg class="is-icon-flex"><use xlink:href="#__icon-play"></use></svg>'}
+                    ${
+                      inpVideoAutoplay
+                        ? '<svg class="is-icon-flex"><use xlink:href="#__icon-pause"></use></svg>'
+                        : '<svg class="is-icon-flex"><use xlink:href="#__icon-play"></use></svg>'
+                    }
                 </button>
             </div>
             
-            <scr`+`ipt>
+            <scr` +
+          `ipt>
                 var css = document.querySelector('#_style_{id}').innerHTML;
                 var head = document.getElementsByTagName('head')[0];
                 var s = document.createElement('style');
@@ -744,6 +1018,7 @@
                     });
                     let btnAudio = overlay.querySelector('.video-audio-play');
                     btnAudio.addEventListener('click', (e)=>{
+                    console.log("thereeeeee")
                         if (video.muted) {
                             video.muted = false;
                             btnAudio.innerHTML = '<svg class="is-icon-flex"><use xlink:href="#__icon-volume"></use></svg>';
@@ -756,56 +1031,81 @@
                     });
                 });
 
-            </scr`+`ipt>
+            </scr` +
+          `ipt>
             `;
 
-            // html = html.replace(/{id}/g, makeid());
+        // html = html.replace(/{id}/g, makeid());
 
-            setHtml(html);
+        setHtml(html);
 
-            var settings = '[{"mp4":"' + inpMP4.value + '","poster":"' + inpPoster.value + '","videos":[' + jsonItem + '],"overlay":' + inpOpacity.value + ',"controlPlay":' + chkShowPlayButton.checked + ',"controlMute":' + chkShowMuteButton.checked + ',"autoplay":' + chkAutoplay.checked + ',"pos":"' + inpVideoControlPos.value + '","controlColor":"' + controlColor + '"}]';
+        var settings =
+          '[{"mp4":"' +
+          inpMP4.value +
+          '","poster":"' +
+          inpPoster.value +
+          '","videos":[' +
+          jsonItem +
+          '],"overlay":' +
+          inpOpacity.value +
+          ',"controlPlay":' +
+          inpVideoShowControl +
+          ',"controlMute":' +
+          inpVideoMute +
+          ',"autoplay":' +
+          inpVideoAutoplay +
+          ',"pos":"' +
+          inpVideoControlPos.value +
+          '","controlColor":"' +
+          controlColor +
+          '","loop":' +
+          inpVideoLoop +
+          "}]";
 
-            setSettings(settings);
-        }
-        
-        /* 
+        setSettings(settings);
+      }
+
+      /* 
         COMMON METHODS FOR MODULE.
         */
-        function getHtml() {
-            var activeModule = parent._cb.doc.querySelector('[data-module-active]');
-            return decodeURIComponent(activeModule.getAttribute('data-html'));
-        }
+      function getHtml() {
+        var activeModule = parent._cb.doc.querySelector("[data-module-active]");
+        return decodeURIComponent(activeModule.getAttribute("data-html"));
+      }
 
-        function getSettings() {
-            var activeModule = parent._cb.doc.querySelector('[data-module-active]');
-            return decodeURIComponent(activeModule.getAttribute('data-settings'));
-        }
+      function getSettings() {
+        var activeModule = parent._cb.doc.querySelector("[data-module-active]");
+        return decodeURIComponent(activeModule.getAttribute("data-settings"));
+      }
 
-        function setHtml(html) {
-            parent.document.querySelector('#hidModuleCode').value = html;
-        }
+      function setHtml(html) {
+        parent.document.querySelector("#hidModuleCode").value = html;
+      }
 
-        function setSettings(settings) {
-            parent.document.querySelector('#hidModuleSettings').value = settings;
-        }
+      function setSettings(settings) {
+        parent.document.querySelector("#hidModuleSettings").value = settings;
+      }
 
-        function makeid() {
-            var text = '';
-            var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-            for (var i = 0; i < 2; i++)
-                text += possible.charAt(Math.floor(Math.random() * possible.length));
+      function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        for (var i = 0; i < 2; i++)
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-            var text2 = '';
-            var possible2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            for (var i = 0; i < 5; i++)
-                text2 += possible2.charAt(Math.floor(Math.random() * possible2.length));
+        var text2 = "";
+        var possible2 =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 5; i++)
+          text2 += possible2.charAt(
+            Math.floor(Math.random() * possible2.length)
+          );
 
-            return text + text2;
-        }
+        return text + text2;
+      }
 
-        // Style stuff
-        function applyParentStyles() {
-            var cssString = `
+      // Style stuff
+      function applyParentStyles() {
+        var cssString = `
                 body {
                     color: ${parent._cb.styleModalColor};
                 }
@@ -856,30 +1156,34 @@
                     background-color: ${parent._cb.styleOutlineColor};
                 } 
             `;
-            var style = document.createElement('style');
-            style.type = 'text/css';
-            style.innerHTML = cssString;
-            document.getElementsByTagName('head')[0].appendChild(style);
-        }
+        var style = document.createElement("style");
+        style.type = "text/css";
+        style.innerHTML = cssString;
+        document.getElementsByTagName("head")[0].appendChild(style);
+      }
 
-        applyParentStyles();
+      applyParentStyles();
 
-        // Language file stuff
-        function applyLang() {
-            let elms = document.querySelectorAll('[data-lang]');
-            elms.forEach(function(elm){
-                elm.innerHTML = parent._cb.out(elm.innerHTML);
-            });
-        }
-        applyLang();
+      // Language file stuff
+      function applyLang() {
+        let elms = document.querySelectorAll("[data-lang]");
+        elms.forEach(function (elm) {
+          elm.innerHTML = parent._cb.out(elm.innerHTML);
+        });
+      }
+      applyLang();
 
-        document.body.style.opacity = 1;
+      document.body.style.opacity = 1;
     </script>
 
-    <svg width="0" height="0" style="position:absolute;display:none;">
-        <defs>
-            <symbol viewBox="0 0 512 512" id="ion-more"><path d="M113.7 304C86.2 304 64 282.6 64 256c0-26.5 22.2-48 49.7-48 27.6 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48zM256 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.3-48 49.8-48 27.5 0 49.7 21.5 49.7 48 0 26.6-22.2 48-49.7 48zM398.2 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.2-48 49.8-48 27.5 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48z"></path></symbol>
-        </defs>
+    <svg width="0" height="0" style="position: absolute; display: none">
+      <defs>
+        <symbol viewBox="0 0 512 512" id="ion-more">
+          <path
+            d="M113.7 304C86.2 304 64 282.6 64 256c0-26.5 22.2-48 49.7-48 27.6 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48zM256 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.3-48 49.8-48 27.5 0 49.7 21.5 49.7 48 0 26.6-22.2 48-49.7 48zM398.2 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.2-48 49.8-48 27.5 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48z"
+          ></path>
+        </symbol>
+      </defs>
     </svg>
-</body>
+  </body>
 </html>
