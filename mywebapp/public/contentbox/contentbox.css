@@ -760,7 +760,7 @@ body.controlpanel .is-content-view.mobile {
 }
 .builder-ui input[type=text], .builder-ui textarea {
   width: 100%;
-  height: 43px;
+  height: 33px;
   box-sizing: border-box;
   margin: 0;
   font-size: 15px;
@@ -960,7 +960,7 @@ body.controlpanel .is-content-view.mobile {
   transform: rotate(-180deg);
   top: calc(50% - 7.5px);
 }
-.builder-ui .custom-select input {
+/* .builder-ui .custom-select input {
   display: none;
   width: 100%;
   height: 30px;
@@ -977,9 +977,27 @@ body.controlpanel .is-content-view.mobile {
   outline-offset: 0;
   background: var(--cs-background);
   border-radius:10px 10px 0 0 !important;
-}
+} */
 .builder-ui .custom-select input:focus {
   outline: none;
+}
+.builder-ui .custom-select .select-options1 {
+  /* display: none;
+  position: absolute;
+  top: calc(var(--cs-height) + 1px);
+  left: 0;
+  border: var(--cs-border);
+  box-sizing: border-box;
+  border-top: none;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 1;
+  max-height: 200px;
+  background-color: var(--cs-background);
+  overflow-y: auto; */
 }
 .builder-ui .custom-select .select-options {
   display: none;
@@ -1000,7 +1018,35 @@ body.controlpanel .is-content-view.mobile {
   overflow-y: auto;
 }
 .builder-ui .custom-select.has-search .select-options {
-  top: calc(var(--cs-height) + 30px);
+  /* top: calc(var(--cs-height) + 30px); */
+}
+.builder-ui .custom-select .select-options1.active {
+  display: block;
+}
+.builder-ui .custom-select .select-options1 li {
+  padding: 0 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 27px;
+  align-items: center;
+  border-radius: 10px;
+  flex: 1;
+}
+.builder-ui .custom-select .select-options1 li img {
+  filter: invert(100%);
+  margin: 8px 0;
+  height: 15px;
+}
+
+.builder-ui .custom-select .select-options1 li:hover {
+  background-color: #404040c2;
+  
+}
+.builder-ui .custom-select .select-options1 li.selected {
+  background-color: #404040c2;
+}
+.builder-ui .inp-heading .select-options1 li {
+  padding: 3px 8px;
 }
 .builder-ui .custom-select .select-options.active {
   display: block;
