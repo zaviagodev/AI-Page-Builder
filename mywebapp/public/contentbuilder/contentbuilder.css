@@ -2885,13 +2885,13 @@ button:focus-visible {
 }
 #_cbhtml .is-modal.buttoneditor button,
 .is-ui .is-modal.buttoneditor button {
-  padding: 0 10px;
-  height: 35px;
+  padding: 0 12px;
+  height: 30px;
   outline-offset: -2px;
 }
 #_cbhtml .is-modal.buttoneditor button:focus,
 .is-ui .is-modal.buttoneditor button:focus {
-  border-radius: 2px;
+  /* border-radius: 2px; */
 }
 #_cbhtml .is-modal.buttoneditor .is-button-remove,
 .is-ui .is-modal.buttoneditor .is-button-remove {
@@ -4131,7 +4131,7 @@ button:focus-visible {
 #_cbhtml .is-tabs a,
 .is-ui .is-tabs a {
   display: inline-block;
-  padding: 10px 16px;
+  padding: 7px 16px;
   color: #4a4a4a;
   border-bottom: transparent 1px solid;
   text-decoration: none;
