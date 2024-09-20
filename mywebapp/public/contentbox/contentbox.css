@@ -1596,7 +1596,7 @@ body.controlpanel .is-wrapper {
   display: flex;
   top: 0;
   right: -400px;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
@@ -3432,7 +3432,7 @@ body.fullview .is-content-view > div:first-child {
 
 /* fullview & topspace */
 body.fullview.topspace .is-content-view.fullview iframe {
-  height: calc(100vh - var(--topspace));
+  height: calc(100vh - 105px);
 }
 
 body.fullview.frame-center #editPanel {
