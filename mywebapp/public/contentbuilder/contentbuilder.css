@@ -2885,13 +2885,13 @@ button:focus-visible {
 }
 #_cbhtml .is-modal.buttoneditor button,
 .is-ui .is-modal.buttoneditor button {
-  padding: 0 10px;
-  height: 35px;
+  padding: 0 12px;
+  height: 30px;
   outline-offset: -2px;
 }
 #_cbhtml .is-modal.buttoneditor button:focus,
 .is-ui .is-modal.buttoneditor button:focus {
-  border-radius: 2px;
+  /* border-radius: 2px; */
 }
 #_cbhtml .is-modal.buttoneditor .is-button-remove,
 .is-ui .is-modal.buttoneditor .is-button-remove {
@@ -4131,7 +4131,7 @@ button:focus-visible {
 #_cbhtml .is-tabs a,
 .is-ui .is-tabs a {
   display: inline-block;
-  padding: 10px 16px;
+  padding: 7px 16px;
   color: #4a4a4a;
   border-bottom: transparent 1px solid;
   text-decoration: none;
@@ -4982,25 +4982,28 @@ button:focus-visible {
   */
 }
 #_cbhtml .is-pop.columnmore > div {
-  max-width: 190px;
-  margin: 12px;
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
 }
 #_cbhtml .is-pop.columnmore button {
-  width: 95px;
-  height: 60px;
-  text-align: center;
-  font-size: 9px;
+  height: 35px;
+  font-size: 11px;
   font-weight: 400;
   text-transform: uppercase;
-  flex-direction: column;
+  flex-direction: row;
   background-color: transparent;
   box-shadow: none;
   border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  justify-content: flex-start;
+  padding-left: 6px;
 }
 #_cbhtml .is-pop.columnmore button span {
-  display: inline-block;
-  width: 95px;
-  height: 24px;
+display: flex;
+align-items: center;
 }
 #_cbhtml .is-pop.columnmore button.on,
 #_cbhtml .is-pop.columnmore button:hover {
