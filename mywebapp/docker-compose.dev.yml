@@ -1,0 +1,15 @@
+version: '3'
+services:
+  # database service
+  database:
+    image: mongo:latest
+    container_name: database
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    env_file:
+      - .env.local
+
+volumes:
+  mongo-data:
