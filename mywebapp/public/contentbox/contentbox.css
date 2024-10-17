@@ -928,6 +928,7 @@ body.controlpanel .is-content-view.mobile {
   border-radius: 12px;
   box-shadow: none;
   outline: none;
+  font-size: 12px;
 }
 .builder-ui .custom-select .select-styled span {
   display: flex;
@@ -978,6 +979,32 @@ body.controlpanel .is-content-view.mobile {
   background: var(--cs-background);
   border-radius:10px 10px 0 0 !important;
 } */
+
+@media screen and (max-width: 1540px) {
+  .builder-ui .custom-select #myDiv {
+    left: -15.5dvw !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .builder-ui .custom-select #myDiv {
+    left: -14.5dvw !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .builder-ui .custom-select #myDiv {
+    left: -13.5dvw !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .builder-ui .custom-select #myDiv {
+    left: -12.5dvw !important;
+  }
+}
+
+
 .builder-ui .custom-select input:focus {
   outline: none;
 }
@@ -1002,7 +1029,7 @@ body.controlpanel .is-content-view.mobile {
 .builder-ui .custom-select .select-options {
   display: none;
   position: absolute;
-  top: calc(var(--cs-height) + 1px);
+  top: calc(var(--cs-height) + 9px);
   left: 0;
   border: var(--cs-border);
   box-sizing: border-box;
@@ -1016,6 +1043,8 @@ body.controlpanel .is-content-view.mobile {
   z-index: 1;
   max-height: 200px;
   overflow-y: auto;
+  border-radius: 7px;
+  font-size: 12px;
 }
 .builder-ui .custom-select.has-search .select-options {
   /* top: calc(var(--cs-height) + 30px); */
