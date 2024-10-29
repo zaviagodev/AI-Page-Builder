@@ -1,7 +1,8 @@
+
 @tailwind base;
 
 * {
-  font-family:'Inter', sans-serif
+  font-family: poppins
 }
 
 .bg-front-gradient {
