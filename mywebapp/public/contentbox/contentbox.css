@@ -3347,6 +3347,10 @@ body.frame-center.controlpanel .is-content-view {
   color: #fff;
 }
 
+.active.editable .is-builder > div > div.cell-active:not([data-protected]) {
+  outline: none !important;
+}
+
 /*
 
 // Navbar Fix
